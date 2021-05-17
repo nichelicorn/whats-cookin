@@ -23,3 +23,14 @@
 
 // 📝 Recipe.constructor
 // it should store a property `tags` whose value is an array of strings
+
+// 📝 Recipe.listIngredients
+// it should determine the names or ingredients needed for a recipe
+
+// 📝 Recipe.calcCost
+// it should determine the total cost of making a recipe
+// will need to factor in the amount listed in the recipe
+// the price per unit is listed in pennies
+
+// 📝 Recipe.returnRecipe
+// it should return a recipe's ingredients and instructions
