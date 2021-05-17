@@ -26,24 +26,22 @@ describe('Ingredient', () => {
     expect(Ingredient).to.be.a('function');
   })
 
+  // 🧂 Ingredient.constructor tests
   describe('Ingredient properties', () => {
-    // 🧂 Ingredient.constructor
     // should store a property `id` whose value is a `number`
     it.skip('should store an id', () => {
       expect(ingr1.id).to.equal(0);
     })
-
-    // 🧂 Ingredient.constructor
     // should store a property `name` whose value is a `string`
     it.skip('should store a name', () => {
       expect(ingr2.name).to.equal('egg');
+    })
+    // should store a property `estimatedCostInCents` whose value is a `number`
+    it.skip('should store a name', () => {
+      expect(ingr3.estimatedCostInCents).to.equal(250);
     })
   })
 })
 
 // 🧂 Ingredient class
 // a new `Ingredient` represents one ingredint object
-
-
-// 🧂 Ingredient.constructor
-// should store a property `estimatedCostInCents` whose value is a `number`
