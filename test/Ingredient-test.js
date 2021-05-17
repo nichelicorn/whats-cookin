@@ -6,17 +6,17 @@ describe('Ingredient', () => {
 
   beforeEach(() => {
     ingr1 = {
-      "id": 1,
+      "id": 0,
       "name": "rice",
       "estimatedCostInCents": 150
     },
     ingr2 = {
-      "id": 2,
+      "id": 1,
       "name": "egg",
       "estimatedCostInCents": 10
     },
     ingr3 = {
-      "id": 3,
+      "id": 2,
       "name": "avocado",
       "estimatedCostInCents": 250
     }
@@ -25,4 +25,22 @@ describe('Ingredient', () => {
   it.skip('should be a function', () => {
     expect(Ingredient).to.be.a('function');
   })
+
+  describe('Ingredient properties', () => {
+    // 🧂 Ingredient.constructor
+    // should store a property `id` whose value is a `number`
+    it.skip('should store an id', () => {
+      expect(ingr1.id).to.equal(0);
+    })
+  })
 })
+
+// 🧂 Ingredient class
+// a new `Ingredient` represents one ingredint object
+
+
+// 🧂 Ingredient.constructor
+// should store a property `name` whose value is a `string`
+
+// 🧂 Ingredient.constructor
+// should store a property `estimatedCostInCents` whose value is a `number`
