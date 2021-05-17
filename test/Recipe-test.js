@@ -224,7 +224,7 @@ describe('Recipe', () => {
           "number": 4
         }
       ]);
-    }')
+    })
   })
 })
 
