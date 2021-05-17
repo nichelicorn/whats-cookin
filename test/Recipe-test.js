@@ -101,7 +101,7 @@ describe('Recipe', () => {
             "unit": "large"
           }
         }
-      ])
+      ]);
     })
     // it should store a property `instructions` whose value is an array of objects
     it.skip('should an array of instructions', () => {
@@ -123,9 +123,13 @@ describe('Recipe', () => {
           "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
           "number": 4
         }
-      ])
+      ]);
     })
-    
+    // it should a property `name` whose value is a string
+    it.skip('should store a name property', () => {
+      expect(recipe1.name).to.be.a('string');
+      expect(recipe1.name).to.equal("Rice bowl with Fried Egg");
+    })
   })
 })
 
@@ -135,9 +139,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.constructor
-// it should a property `name` whose value is a string
 
 // 📝 Recipe.constructor
 // it should store a property `tags` whose value is an array of strings
