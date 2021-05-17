@@ -1,9 +1,8 @@
 import { expect } from 'chai';
-import Ingredient from '../src/classes/Ingredient';
 import Recipe from '../src/classes/Recipe';
 
 describe('Recipe', () => {
-  let recipe1, ingr1, ingr2, ingr3;
+  let recipe1;
 
   beforeEach(() => {
     recipe1 = new Recipe( 1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [
@@ -51,9 +50,6 @@ describe('Recipe', () => {
         "snack",
         "appetizer"
       ] );
-    ingr1 = new Ingredient ( 0, 'rice', 150 );
-    ingr2 = new Ingredient ( 1, 'egg',  10 );
-    ingr3 = new Ingredient ( 2, 'avocado', 250 );
   })
 
   it.skip('should be a function', () => {
@@ -147,21 +143,13 @@ describe('Recipe', () => {
 
     })
   })
-  // 📝 Recipe.listIngredients
-  describe('A method to return ingredient names', () => {
-    // it should determine the names or ingredients needed for a recipe
-    it.skip('should return the names of ingredients for a recipe', () => {
-      expect(recipe1.listIngredients()).to.be.an('array');
-      expect(recipe1.listIngredients()).to.deep.equal(['rice', 'egg', 'avocado']);
-    })
-  })
   // 📝 Recipe.calculateCost
   describe('A method to determind the total cost of making a recipe', () => {
     // it should determine the total cost of making a recipe
     // will need to factor in the amount listed in the recipe
     // the price per unit is listed in pennies
     it.skip('should return the cost of making a recipe', () => {
-      expect(recipe1.calculateCost()).to.equal(410);
+      expect(recipe1.calculateCost()).to.equal(4.10);
     })
 
     it.skip('should update the recipe cost', () => {
@@ -171,8 +159,13 @@ describe('Recipe', () => {
   })
   // 📝 Recipe.return(Property)
   describe('Methods to return the recipe details', () => {
+    // it should determine the names or ingredients needed for a recipe
+    it.skip('should return the names of ingredients for a recipe', () => {
+      expect(recipe1.returnIngrNames()).to.be.an('array');
+      expect(recipe1.returnIngrNames()).to.deep.equal(['rice', 'egg', 'avocado']);
+    })
     // it should return a recipe's ingredients and instructions
-    it.skip('should return the recipe ingredients', () => {
+    it.skip('should return the recipe ingredient details', () => {
       expect(recipe1.returnIngredients()).to.deep.equal([
         {
           "id": 0,
