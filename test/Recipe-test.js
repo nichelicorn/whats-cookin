@@ -65,13 +65,17 @@ describe('Recipe', () => {
 
   // 📝 Recipe.constructor
   describe('Recipe properties', () => {
+    // it should store a property `id` whose value is a number
     it.skip('should store an id', () => {
-      // it should store a property `id` whose value is a number
       expect(recipe1.id).to.be.a('number');
       expect(recipe1.id).to.equal(1);
     })
+    // it should store a property `image` whose value is a string representing a url/image source path
+    it.skip('should store an image source', () => {
+      expect(recipe1.image).to.be.a('string');
+      expect(recipe1.image).to.equal("https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg");
+    })
   })
-
 })
 
 // 📝 Recipe class
@@ -80,9 +84,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.constructor
-// it should store a property `image` whose value is a string representing a url/image source path
 
 // 📝 Recipe.constructor
 // it should store a property `ingredients` whose value is an array of objects
