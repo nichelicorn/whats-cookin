@@ -230,16 +230,4 @@ describe('Recipe', () => {
     // ♻️ refactor into one method with a parameter when this logic is working
     // expect(recipe1.returnIn(property))
   })
-
-  // 📝 Recipe.returnTags - this seems like it might be better suited to the `RecipeRepository` - that way we can iterate through all the recipes and create a new array using the tags as keys, with each recipe containing that tag added to an array of recipe names
-  // describe('A method to return the recipe tags', () => {
-    // it.skip('should reassign the recipe to a category tag')
-  // })
-})
-
-// 📝 Recipe class
-// a new `Recipe` represents one recipe object
-// √ Recipe.constructor - it should store all the details provided in the data file
-// √ Recipe.returnIngrNames - it should have a method to determine the names of ingredients needed to make a Recipe
-// √ Recipe.calculateCost - it should have a method to determine the cost of ingredients for a Recipe
-// √ Recipe.returnIngredients/Instructions - it should have a method to return ingredients / instructions for a Recipe
+});
