@@ -75,6 +75,57 @@ describe('Recipe', () => {
       expect(recipe1.image).to.be.a('string');
       expect(recipe1.image).to.equal("https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg");
     })
+    // it should store a property `ingredients` whose value is an array of objects
+    // refactor to instantiate each ingredient in this array as a `new Ingredient()` instantiation
+    it.skip('should store an ingredients array', () => {
+      expect(recipe1.ingredients).to.be.an('array');
+      expect(recipe1.ingredients).to.deep.equal([
+        {
+          "id": 0,
+          "quantity": {
+            "amount": 2,
+            "unit": "c"
+          }
+        },
+        {
+          "id": 1,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          }
+        },
+        {
+          "id": 2,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          }
+        }
+      ])
+    })
+    // it should store a property `instructions` whose value is an array of objects
+    it.skip('should an array of instructions', () => {
+      expect(recipe1.instructions).to.be.an('array');
+      expect(recipe1.instructions).to.deep.equal([
+        {
+          "instruction": "Cook rice.",
+          "number": 1
+        },
+        {
+          "instruction": "Fry egg.",
+          "number": 2
+        },
+        {
+          "instruction": "Slice avocado.",
+          "number": 3
+        },
+        {
+          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
+          "number": 4
+        }
+      ])
+    })
+    
   })
 })
 
@@ -84,13 +135,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.constructor
-// it should store a property `ingredients` whose value is an array of objects
-// refactor to instantiate each ingredient in this array as a `new Ingredient()` instantiation
-
-// 📝 Recipe.constructor
-// it should store a property `instructions` whose value is an array of objects
 
 // 📝 Recipe.constructor
 // it should a property `name` whose value is a string
