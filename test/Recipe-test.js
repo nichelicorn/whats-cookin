@@ -6,10 +6,7 @@ describe('Recipe', () => {
   let recipe1, ingr1, ingr2, ingr3;
 
   beforeEach(() => {
-    recipe1 = {
-      "id": 1,
-      "image": "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg",
-      "ingredients": [
+    recipe1 = new Recipe( 1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [
         {
           "id": 0,
           "quantity": {
@@ -31,8 +28,7 @@ describe('Recipe', () => {
             "unit": "large"
           }
         }
-      ],
-      "instructions": [
+      ], [
         {
           "instruction": "Cook rice.",
           "number": 1
@@ -49,15 +45,12 @@ describe('Recipe', () => {
           "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
           "number": 4
         }
-      ],
-      "name": "Rice bowl with Fried Egg",
-      "tags": [
+      ], "Rice bowl with Fried Egg", [
         "breakfast",
         "morning meal",
         "snack",
         "appetizer"
-      ]
-    };
+      ] );
     ingr1 = new Ingredient ( 0, 'rice', 150 );
     ingr2 = new Ingredient ( 1, 'egg',  10 );
     ingr3 = new Ingredient ( 2, 'avocado', 250 );
@@ -225,7 +218,15 @@ describe('Recipe', () => {
         }
       ]);
     })
+
+    // refactor into one method with a parameter when this logic is working
+    // expect(recipe1.returnIn(property))
   })
+
+  // 📝 Recipe.returnTags
+  // describe('A method to return the recipe tags', () => {
+    // it.skip('should reassign the recipe to a category tag')
+  // })
 })
 
 // 📝 Recipe class
