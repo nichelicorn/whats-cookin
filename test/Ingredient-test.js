@@ -5,21 +5,9 @@ describe('Ingredient', () => {
   let ingr1, ingr2, ingr3;
 
   beforeEach(() => {
-    ingr1 = {
-      'id': 0,
-      'name': 'rice',
-      'estimatedCostInCents': 150
-    },
-    ingr2 = {
-      'id': 1,
-      'name': 'egg',
-      'estimatedCostInCents': 10
-    },
-    ingr3 = {
-      'id': 2,
-      'name': 'avocado',
-      'estimatedCostInCents': 250
-    }
+    ingr1 = new Ingredient ( 0, 'rice', 150 );
+    ingr2 = new Ingredient ( 1, 'egg',  10 );
+    ingr3 = new Ingredient ( 2, 'avocado', 250 );
   });
 
   it.skip('should be a function', () => {
