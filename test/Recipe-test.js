@@ -144,6 +144,15 @@ describe('Recipe', () => {
         "appetizer"
       ]);
     })
+    // it should store a property `cost` whose value is a number; should have a default value of 0
+    it.skip('should store a cost to make the recipe', () => {
+      expect(recipe1.cost).to.be.a('number');
+
+    it.skip('should have a default cost of zero', () => {
+      expect(recipe1.cost).to.equal(0);
+    });
+
+    })
   })
   // 📝 Recipe.listIngredients
   describe('A method to return ingredient names', () => {
@@ -153,6 +162,21 @@ describe('Recipe', () => {
       expect(recipe1.listIngredients()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
   })
+  // 📝 Recipe.calculateCost
+  describe('A method to determind the total cost of making a recipe', () => {
+    // it should determine the total cost of making a recipe
+    // will need to factor in the amount listed in the recipe
+    // the price per unit is listed in pennies
+    it.skip('should return the cost of making a recipe', () => {
+      expect(recipe1.calculateCost()).to.equal(410);
+    })
+
+    it.skip('should update the recipe cost', () => {
+      recipe1.calculateCost();
+      expect(recipe1.cost).to.equal(410);
+    })
+  })
+
 })
 
 // 📝 Recipe class
@@ -161,11 +185,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.calcCost
-// it should determine the total cost of making a recipe
-// will need to factor in the amount listed in the recipe
-// the price per unit is listed in pennies
 
 // 📝 Recipe.returnRecipe
 // it should return a recipe's ingredients and instructions
