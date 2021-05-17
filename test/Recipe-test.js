@@ -104,7 +104,7 @@ describe('Recipe', () => {
       ]);
     })
     // it should store a property `instructions` whose value is an array of objects
-    it.skip('should an array of instructions', () => {
+    it.skip('should store an array of instructions', () => {
       expect(recipe1.instructions).to.be.an('array');
       expect(recipe1.instructions).to.deep.equal([
         {
@@ -126,9 +126,19 @@ describe('Recipe', () => {
       ]);
     })
     // it should a property `name` whose value is a string
-    it.skip('should store a name property', () => {
+    it.skip('should store a name', () => {
       expect(recipe1.name).to.be.a('string');
       expect(recipe1.name).to.equal("Rice bowl with Fried Egg");
+    })
+    // it should store a property `tags` whose value is an array of strings
+    it.skip('should store an array of tags', () => {
+      expect(recipe1.tags).to.be.an('array');
+      expect(recipe1.tags).to.deep.equal([
+        "breakfast",
+        "morning meal",
+        "snack",
+        "appetizer"
+      ]);
     })
   })
 })
@@ -139,9 +149,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.constructor
-// it should store a property `tags` whose value is an array of strings
 
 // 📝 Recipe.listIngredients
 // it should determine the names or ingredients needed for a recipe
