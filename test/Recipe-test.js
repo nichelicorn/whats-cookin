@@ -1,4 +1,5 @@
 import { expect } from 'chai';
+import Ingredient from '../src/classes/Ingredient';
 import Recipe from '../src/classes/Recipe';
 
 describe('Recipe', () => {
@@ -141,6 +142,13 @@ describe('Recipe', () => {
       ]);
     })
   })
+  // 📝 Recipe.listIngredients
+  describe('A method to return ingredient names', () => {
+    // it should determine the names or ingredients needed for a recipe
+    it('should return the names of ingredients for a recipe', () => {
+      expect(recipe1.listIngredients()).to.deep.equal([])
+    })
+  })
 })
 
 // 📝 Recipe class
@@ -149,9 +157,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.listIngredients
-// it should determine the names or ingredients needed for a recipe
 
 // 📝 Recipe.calcCost
 // it should determine the total cost of making a recipe
