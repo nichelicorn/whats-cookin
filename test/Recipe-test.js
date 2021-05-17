@@ -61,17 +61,21 @@ describe('Recipe', () => {
     // it should store a property `id` whose value is a number
     it.skip('should store an id', () => {
       expect(recipe1.id).to.be.a('number');
+    })
+
+    it.skip('should store a number as the id', () => {
       expect(recipe1.id).to.equal(1);
     })
     // it should store a property `image` whose value is a string representing a url/image source path
     it.skip('should store an image source', () => {
-      expect(recipe1.image).to.be.a('string');
       expect(recipe1.image).to.equal("https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg");
+    })
+    it.skip('should store a string as the image source', () => {
+      expect(recipe1.image).to.be.a('string');
     })
     // it should store a property `ingredients` whose value is an array of objects
     // refactor to instantiate each ingredient in this array as a `new Ingredient()` instantiation
-    it.skip('should store an ingredients array', () => {
-      expect(recipe1.ingredients).to.be.an('array');
+    it.skip('should store recipe ingredients', () => {
       expect(recipe1.ingredients).to.deep.equal([
         {
           "id": 0,
@@ -96,9 +100,12 @@ describe('Recipe', () => {
         }
       ]);
     })
+
+    it.skip('should store the ingredients in array', () => {
+      expect(recipe1.ingredients).to.be.an('array');
+    })
     // it should store a property `instructions` whose value is an array of objects
-    it.skip('should store an array of instructions', () => {
-      expect(recipe1.instructions).to.be.an('array');
+    it.skip('should store recipe instructions', () => {
       expect(recipe1.instructions).to.deep.equal([
         {
           "instruction": "Cook rice.",
@@ -118,14 +125,20 @@ describe('Recipe', () => {
         }
       ]);
     })
+
+    it.skip('should store instructions in an array', () => {
+      expect(recipe1.instructions).to.be.an('array');
+    })
     // it should a property `name` whose value is a string
     it.skip('should store a name', () => {
-      expect(recipe1.name).to.be.a('string');
       expect(recipe1.name).to.equal("Rice bowl with Fried Egg");
     })
+
+    it.skip('should store the name as a string', () => {
+      expect(recipe1.name).to.be.a('string');
+    })
     // it should store a property `tags` whose value is an array of strings
-    it.skip('should store an array of tags', () => {
-      expect(recipe1.tags).to.be.an('array');
+    it.skip('should store recipe tags', () => {
       expect(recipe1.tags).to.deep.equal([
         "breakfast",
         "morning meal",
@@ -133,14 +146,17 @@ describe('Recipe', () => {
         "appetizer"
       ]);
     })
+
+    it.skip('should store tags in an array', () => {
+      expect(recipe1.tags).to.be.an('array');
+    })
     // it should store a property `cost` whose value is a number; should have a default value of 0
     it.skip('should store a cost to make the recipe', () => {
       expect(recipe1.cost).to.be.a('number');
+    })
 
     it.skip('should have a default cost of zero', () => {
       expect(recipe1.cost).to.equal(0);
-    });
-
     })
   })
   // 📝 Recipe.calculateCost
@@ -161,10 +177,9 @@ describe('Recipe', () => {
   describe('Methods to return the recipe details', () => {
     // it should determine the names or ingredients needed for a recipe
     it.skip('should return the names of ingredients for a recipe', () => {
-      expect(recipe1.returnIngrNames()).to.be.an('array');
       expect(recipe1.returnIngrNames()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
-    // it should return a recipe's ingredients and instructions
+    // it should return a recipe's ingredients ♻️
     it.skip('should return the recipe ingredient details', () => {
       expect(recipe1.returnIngredients()).to.deep.equal([
         {
@@ -190,7 +205,7 @@ describe('Recipe', () => {
         }
       ]);
     })
-
+    // it should return a recipe's instructions ♻️
     it.skip('should return the recipe instructions', () => {
       expect(recipe1.returnInstructions()).to.deep.equal([
         {
@@ -212,11 +227,11 @@ describe('Recipe', () => {
       ]);
     })
 
-    // refactor into one method with a parameter when this logic is working
+    // ♻️ refactor into one method with a parameter when this logic is working
     // expect(recipe1.returnIn(property))
   })
 
-  // 📝 Recipe.returnTags
+  // 📝 Recipe.returnTags - this seems like it might be better suited to the `RecipeRepository` - that way we can iterate through all the recipes and create a new array using the tags as keys, with each recipe containing that tag added to an array of recipe names
   // describe('A method to return the recipe tags', () => {
     // it.skip('should reassign the recipe to a category tag')
   // })
@@ -224,7 +239,7 @@ describe('Recipe', () => {
 
 // 📝 Recipe class
 // a new `Recipe` represents one recipe object
-// it should store all the details provided in the data file
-// it should have a method to determine the names of ingredients needed to make a Recipe
-// it should have a method to determine the cost of ingredients for a Recipe
-// it should have a method to return ingredients / instructions for a Recipe
+// √ Recipe.constructor - it should store all the details provided in the data file
+// √ Recipe.returnIngrNames - it should have a method to determine the names of ingredients needed to make a Recipe
+// √ Recipe.calculateCost - it should have a method to determine the cost of ingredients for a Recipe
+// √ Recipe.returnIngredients/Instructions - it should have a method to return ingredients / instructions for a Recipe
