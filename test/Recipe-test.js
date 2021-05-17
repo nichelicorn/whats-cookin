@@ -3,7 +3,7 @@ import Ingredient from '../src/classes/Ingredient';
 import Recipe from '../src/classes/Recipe';
 
 describe('Recipe', () => {
-  let recipe1, recipe2;
+  let recipe1, ingr1, ingr2, ingr3;
 
   beforeEach(() => {
     recipe1 = {
@@ -57,7 +57,10 @@ describe('Recipe', () => {
         "snack",
         "appetizer"
       ]
-    }
+    };
+    ingr1 = new Ingredient ( 0, 'rice', 150 );
+    ingr2 = new Ingredient ( 1, 'egg',  10 );
+    ingr3 = new Ingredient ( 2, 'avocado', 250 );
   })
 
   it.skip('should be a function', () => {
@@ -145,8 +148,9 @@ describe('Recipe', () => {
   // 📝 Recipe.listIngredients
   describe('A method to return ingredient names', () => {
     // it should determine the names or ingredients needed for a recipe
-    it('should return the names of ingredients for a recipe', () => {
-      expect(recipe1.listIngredients()).to.deep.equal([])
+    it.skip('should return the names of ingredients for a recipe', () => {
+      expect(recipe1.listIngredients()).to.be.an('array');
+      expect(recipe1.listIngredients()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
   })
 })
