@@ -10,8 +10,13 @@ describe('Ingredient', () => {
     ingr3 = new Ingredient ( 2, 'avocado', 250 );
   });
 
+  // 🧂 Ingredient class
   it.skip('should be a function', () => {
     expect(Ingredient).to.be.a('function');
+  })
+  // a new `Ingredient` represents one ingredint object
+  it.skip('should instantiate a new Ingredient', ( ) => {
+    expect(ingr1).to.be.an('object');
   })
 
   // 🧂 Ingredient.constructor tests
@@ -30,6 +35,3 @@ describe('Ingredient', () => {
     })
   })
 })
-
-// 🧂 Ingredient class
-// a new `Ingredient` represents one ingredint object
