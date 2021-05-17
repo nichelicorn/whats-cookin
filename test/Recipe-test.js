@@ -59,6 +59,19 @@ describe('Recipe', () => {
     }
   })
 
+  it.skip('should be a function', () => {
+    expect(Recipe).to.be.a('function');
+  })
+
+  // 📝 Recipe.constructor
+  describe('Recipe properties', () => {
+    it.skip('should store an id', () => {
+      // it should store a property `id` whose value is a number
+      expect(recipe1.id).to.be.a('number');
+      expect(recipe1.id).to.equal(1);
+    })
+  })
+
 })
 
 // 📝 Recipe class
@@ -67,9 +80,6 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.constructor
-// it should store a property `id` whose value is a number
 
 // 📝 Recipe.constructor
 // it should store a property `image` whose value is a string representing a url/image source path
