@@ -176,7 +176,56 @@ describe('Recipe', () => {
       expect(recipe1.cost).to.equal(410);
     })
   })
+  // 📝 Recipe.return(Property)
+  describe('Methods to return the recipe details', () => {
+    // it should return a recipe's ingredients and instructions
+    it.skip('should return the recipe ingredients', () => {
+      expect(recipe1.returnIngredients()).to.deep.equal([
+        {
+          "id": 0,
+          "quantity": {
+            "amount": 2,
+            "unit": "c"
+          }
+        },
+        {
+          "id": 1,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          }
+        },
+        {
+          "id": 2,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          }
+        }
+      ]);
+    })
 
+    it.skip('should return the recipe instructions', () => {
+      expect(recipe1.returnInstructions()).to.deep.equal([
+        {
+          "instruction": "Cook rice.",
+          "number": 1
+        },
+        {
+          "instruction": "Fry egg.",
+          "number": 2
+        },
+        {
+          "instruction": "Slice avocado.",
+          "number": 3
+        },
+        {
+          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
+          "number": 4
+        }
+      ]);
+    }')
+  })
 })
 
 // 📝 Recipe class
@@ -185,6 +234,3 @@ describe('Recipe', () => {
 // it should have a method to determine the names of ingredients needed to make a Recipe
 // it should have a method to determine the cost of ingredients for a Recipe
 // it should have a method to return ingredients / instructions for a Recipe
-
-// 📝 Recipe.returnRecipe
-// it should return a recipe's ingredients and instructions
