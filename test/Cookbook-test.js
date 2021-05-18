@@ -82,12 +82,6 @@ describe('Recipe Repository', () => {
       expect(ingrSearch).to.deep.equal([]);
     })
   })
+  // 🔮 future iteration
+  // it should be able to take in a single recipe object and add it to the existing recipes
 })
-
-// 📔 Cookbook
-// it should store all recipe objects
-
-
-
-// this might be an additional method
-// it should be able to take in a single recipe object and add it to the existing recipes
