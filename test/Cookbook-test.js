@@ -2,16 +2,38 @@ import { expect } from 'chai';
 import Cookbook from '../src/classes/Cookbook';
 
 describe('Recipe Repository', () => {
-  it('Should be a function', () => {
+  let testCookbook, recipe1, recipe2, recipe3, testData;
+
+  beforeEach(() => {
+    testCookbook = new Cookbook();
+    // recipe1 =
+    // testData =
+  })
+
+  it.skip('Should be a function', () => {
     expect(Cookbook).to.be.a('function');
-  });
+  })
+
+  it.skip('should be an instance of Cookbook', () => {
+    expect(testCookbook).to.be.an.instanceof(Cookbook);
+  })
+
+  // 📔 Cookbook.constructor
+  describe('Cookbook properties', () => {
+    // it should take in recipe objects and add them to an array
+    it.skip('should take in recipe data', () => {
+      expect(testCookbook.recipeData).to.deep.equal(testData);
+    })
+
+    it.skip('should store recipe data in an array', () => {
+      expect(testCookbook.recipeData).to.be.an('array');
+    })
+  })
 })
 
 // 📔 Cookbook
 // it should store all recipe objects
 
-// 📔 Cookbook.constructor
-// it should take in recipe objects and add them to an array
 // it should be able to take in a single recipe object and add it to the existing recipes
 // ex. this.cookbook = [{recipeData}] || {recipe}
 
