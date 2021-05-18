@@ -33,8 +33,8 @@ describe('Recipe Repository', () => {
     })
   })
   // 📔 Cookbook.filter
-  // it should have a method to filter through ingredients and return recipes containing those ingredients
   describe('Cookbook filter methods', () => {
+    // it should have a method to filter through tags and return recipe objects containing requested tags
     it.skip('should filter by tags and return an array of recipes', () => {
       let tagSearch = testCookbook.filterByTag('breakfast');
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
@@ -45,17 +45,32 @@ describe('Recipe Repository', () => {
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
       expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
     })
+
+    it.skip('should return an empty array if no tags are found', () => {
+      let tagSearch = testCookbook.filterByTag('saffron');
+      expect(tagSearch).to.deep.equal([]);
+    })
     // it should have a method to filter through recipe names and return matching results
     it.skip('should be able to search recipes by name', () => {
       let nameSearch = testCookbook.filterByName('Avocado and Tomatillo Salsa');
-      expect(nameSearch).to.deep.equal(recipe2);
+      expect(nameSearch).to.deep.equal([recipe2]);
     })
 
     it.skip('should be able to search a part of a name', () => {
       let nameSearch = testCookbook.filterByName('Fried');
-      expect(nameSearch).to.deep.equal(recipe1);
+      expect(nameSearch).to.deep.equal([recipe1]);
     })
-    // it should have a method to filter through tags and return recipe objects containing requested tags
+
+    it.skip('should return an empty array if a name is not found', () => {
+      let nameSearch = testCookbook.filterByName('saffron');
+      expect(nameSearch).to.deep.equal([]);
+    })
+
+    // it should have a method to filter through ingredients and return recipes containing those ingredients
+    it.skip('should be able to search recipes by ingredient', () => {
+      let ingrSearch = testCookbook.filterByIngredient('avocado');
+      expect(nameSearch).to.deep.equal([])
+    })
   })
 })
 
