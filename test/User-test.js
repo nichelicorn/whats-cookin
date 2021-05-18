@@ -27,4 +27,8 @@ describe('User', function() {
       expect(user.recipesToCook).to.be.an('array')
       expect(user.recipesToCook).to.deep.equal([])
     })
+
+
+
+
   });
