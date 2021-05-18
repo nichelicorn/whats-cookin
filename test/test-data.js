@@ -210,6 +210,6 @@ const testRecipes = [
   }
 ]
 
-const testRecipeData = [{testRecipes[0]}, {testRecipes[1]}]
+const testRecipeData = [testRecipes[0], testRecipes[1]]
 
-// const testCookbook = 
+export default { testIngredients, testRecipes, testRecipeData };

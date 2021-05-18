@@ -1,13 +1,16 @@
 import { expect } from 'chai';
 import Cookbook from '../src/classes/Cookbook';
+import { testIngredients, testRecipes, testRecipeData } from '../test/test-data';
 
 describe('Recipe Repository', () => {
-  let testCookbook, recipe1, recipe2, recipe3, testData;
+  let recipe1, recipe2, recipe3, testData, testCookbook;
 
   beforeEach(() => {
-    testCookbook = new Cookbook();
-    // recipe1 =
-    // testData =
+    recipe1 = testRecipes[0];
+    recipe2 = testRecipes[1];
+    recipe3 = testRecipes[2];
+    testData = testRecipeData;
+    testCookbook = new Cookbook(testData);
   })
 
   it.skip('Should be a function', () => {
