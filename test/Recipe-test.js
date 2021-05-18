@@ -183,8 +183,5 @@ describe('Recipe', () => {
         }
       ]);
     })
-
-    // ♻️ refactor into one method with a parameter when this logic is working
-    // expect(recipe1.returnIn(property))
   })
 });
