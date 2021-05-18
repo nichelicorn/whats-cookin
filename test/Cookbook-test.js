@@ -30,11 +30,15 @@ describe('Recipe Repository', () => {
     })
   })
   // 📔 Cookbook.filter
-  // it should have a method to filter through tags and return recipe objects containing requested tags
   // it should have a method to filter through recipe names and return matching results
   // it should have a method to filter through ingredients and return recipes containing those ingredients
   describe('Cookbook filter methods', () => {
-    
+    // it should have a method to filter through tags and return recipe objects containing requested tags
+    it.skip('should filter by tags and return an array of recipes', () => {
+      let tagSearch = testCookbook.filterByTag('breakfast');
+      expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
+    })
+
   })
 })
 
