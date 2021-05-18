@@ -29,15 +29,19 @@ describe('Recipe Repository', () => {
       expect(testCookbook.recipeData).to.be.an('array');
     })
   })
+  // 📔 Cookbook.filter
+  // it should have a method to filter through tags and return recipe objects containing requested tags
+  // it should have a method to filter through recipe names and return matching results
+  // it should have a method to filter through ingredients and return recipes containing those ingredients
+  describe('Cookbook filter methods', () => {
+    
+  })
 })
 
 // 📔 Cookbook
 // it should store all recipe objects
 
-// it should be able to take in a single recipe object and add it to the existing recipes
-// ex. this.cookbook = [{recipeData}] || {recipe}
 
-// 📔 Cookbook.filter
-// it should have a method to filter through tags and return recipe objects containing requested tags
-// it should have a method to filter through recipe names and return matching results
-// it should have a method to filter through ingredients and return recipes containing those ingredients
+
+// this might be an additional method
+// it should be able to take in a single recipe object and add it to the existing recipes
