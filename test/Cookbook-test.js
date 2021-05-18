@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { testIngredients, testRecipes, testRecipeData } from '../test/test-data';
 import Cookbook from '../src/classes/Cookbook';
 
-describe('Recipe Repository', () => {
+describe('Cookbook', () => {
   let recipe1, recipe2, recipe3, testData, testCookbook;
 
   beforeEach(() => {
