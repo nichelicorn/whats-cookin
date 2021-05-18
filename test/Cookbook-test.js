@@ -69,12 +69,17 @@ describe('Recipe Repository', () => {
     // it should have a method to filter through ingredients and return recipes containing those ingredients
     it.skip('should be able to search recipes by ingredient', () => {
       let ingrSearch = testCookbook.filterByIngredient('TOMATILLO');
-      expect(nameSearch).to.deep.equal(recipe2);
+      expect(ingrSearch).to.deep.equal(recipe2);
     })
 
     it.skip('should return all recipes containing a particular ingredient', () => {
       let ingrSearch = testCookbook.filterByIngredient('avocado');
-      expect(nameSearch).to.deep.equal([recipe1, recipe2])
+      expect(ingrSearch).to.deep.equal([recipe1, recipe2])
+    })
+
+    it.skip('should return an empty array if an ingredient is not found', () => {
+      let ingrSearch = testCookbook.filterByIngredient('saffron');
+      expect(ingrSearch).to.deep.equal([]);
     })
   })
 })
