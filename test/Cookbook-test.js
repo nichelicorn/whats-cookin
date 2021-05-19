@@ -13,18 +13,18 @@ describe('Cookbook', () => {
     testCookbook = new Cookbook(testData);
   })
 
-  it.skip('Should be a function', () => {
+  it('Should be a function', () => {
     expect(Cookbook).to.be.a('function');
   })
 
-  it.skip('should be an instance of Cookbook', () => {
+  it('should be an instance of Cookbook', () => {
     expect(testCookbook).to.be.an.instanceof(Cookbook);
   })
 
   // 📔 Cookbook.constructor
   describe('Cookbook properties', () => {
     // it should take in recipe objects and add them to an array
-    it.skip('should take in recipe data', () => {
+    it.only('should take in recipe data', () => {
       expect(testCookbook.recipeData).to.deep.equal(testData);
     })
 
