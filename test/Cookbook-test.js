@@ -91,7 +91,6 @@ describe('Cookbook', () => {
     // it should have a method to filter through tags and return recipe objects containing requested tags
     it.only('should filter by tags and return an array of recipes', () => {
       let tagSearch = testCookbook.filterByTag('breakfast');
-      console.log(tagSearch())
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
     })
 
