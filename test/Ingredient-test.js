@@ -1,13 +1,15 @@
 import { expect } from 'chai';
+import { testIngredients } from '../test/test-data';
 import Ingredient from '../src/classes/Ingredient';
 
 describe('Ingredient', () => {
   let ingr1, ingr2, ingr3;
 
   beforeEach(() => {
-    ingr1 = new Ingredient ( 0, 'rice', 150 );
-    ingr2 = new Ingredient ( 1, 'egg',  10 );
-    ingr3 = new Ingredient ( 2, 'avocado', 250 );
+    ingr1 = testIngredients[0];
+    ingr2 = testIngredients[1];
+    ingr3 = testIngredients[2];
+    console.log(ingr1, ingr2, ingr3)
   });
 
   // 🧂 Ingredient class
@@ -30,7 +32,9 @@ describe('Ingredient', () => {
       expect(ingr2.name).to.equal('egg');
     })
     // should store a property `estimatedCostInCents` whose value is a `number`
+
     it('should store the estimated cost in cents', () => {
+
       expect(ingr3.estimatedCostInCents).to.equal(250);
     })
   })

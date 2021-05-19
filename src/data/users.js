@@ -1,6 +1,6 @@
 const usersData = [
     {
-      "name": "Saige O'Kon",
+       
       "id": 1,
       "pantry": [
         {

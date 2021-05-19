@@ -1,55 +1,12 @@
 import { expect } from 'chai';
+import { testRecipes } from '../test/test-data';
 import Recipe from '../src/classes/Recipe';
 
 describe('Recipe', () => {
   let recipe1;
 
   beforeEach(() => {
-    recipe1 = new Recipe( 1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [
-        {
-          "id": 0,
-          "quantity": {
-            "amount": 2,
-            "unit": "c"
-          }
-        },
-        {
-          "id": 1,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
-        },
-        {
-          "id": 2,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
-        }
-      ], [
-        {
-          "instruction": "Cook rice.",
-          "number": 1
-        },
-        {
-          "instruction": "Fry egg.",
-          "number": 2
-        },
-        {
-          "instruction": "Slice avocado.",
-          "number": 3
-        },
-        {
-          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
-          "number": 4
-        }
-      ], "Rice bowl with Fried Egg", [
-        "breakfast",
-        "morning meal",
-        "snack",
-        "appetizer"
-      ] );
+    recipe1 = testRecipes[0];
   })
 
   it.skip('should be a function', () => {
@@ -159,23 +116,10 @@ describe('Recipe', () => {
       expect(recipe1.cost).to.equal(0);
     })
   })
-  // 📝 Recipe.calculateCost
-  describe('A method to determind the total cost of making a recipe', () => {
-    // it should determine the total cost of making a recipe
-    // will need to factor in the amount listed in the recipe
-    // the price per unit is listed in pennies
-    it.skip('should return the cost of making a recipe', () => {
-      expect(recipe1.calculateCost()).to.equal(4.10);
-    })
 
-    it.skip('should update the recipe cost', () => {
-      recipe1.calculateCost();
-      expect(recipe1.cost).to.equal(410);
-    })
-  })
   // 📝 Recipe.return(Property)
   describe('Methods to return the recipe details', () => {
-    // it should determine the names or ingredients needed for a recipe
+    // it should determine the names of ingredients needed for a recipe
     it.skip('should return the names of ingredients for a recipe', () => {
       expect(recipe1.returnIngrNames()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
@@ -205,6 +149,7 @@ describe('Recipe', () => {
         }
       ]);
     })
+
     // it should return a recipe's instructions ♻️
     it.skip('should return the recipe instructions', () => {
       expect(recipe1.returnInstructions()).to.deep.equal([
@@ -226,8 +171,19 @@ describe('Recipe', () => {
         }
       ]);
     })
+  })
+  // 📝 Recipe.calculateCost
+  describe('A method to determind the total cost of making a recipe', () => {
+    // it should determine the total cost of making a recipe
+    // will need to factor in the amount listed in the recipe
+    // the price per unit is listed in pennies
+    it.skip('should update the recipe cost', () => {
+      recipe1.calculateCost();
+      expect(recipe1.cost).to.equal(410);
+    })
 
-    // ♻️ refactor into one method with a parameter when this logic is working
-    // expect(recipe1.returnIn(property))
+    it.skip('should return the cost of making a recipe', () => {
+      expect(recipe1.calculateCost()).to.equal(4.10);
+    })
   })
 });
