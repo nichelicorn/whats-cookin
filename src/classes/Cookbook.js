@@ -4,9 +4,9 @@ class Cookbook {
   }
 
   filterByTag(tags) {
-    const tagFilterResults = this.recipeData.filter((recipe, i, arr) => {
+    const tagFilterResults = this.recipeData.filter((recipe) => {
       if (recipe.tags.includes(tags)) {
-        console.log('recipe <>>>', recipe);
+        // console.log('recipe <>>>', recipe);
         return recipe;
       }
     })

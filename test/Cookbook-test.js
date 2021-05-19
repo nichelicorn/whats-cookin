@@ -88,11 +88,11 @@ describe('Cookbook', () => {
 
   describe('Cookbook filter methods', () => {
     // 📔 Cookbook.filterByTag
-    it.only('should filter by tags and return an array of recipes', () => {
+    it('should filter by tags and return an array of recipes', () => {
       expect(testCookbook.filterByTag('breakfast')).to.deep.equal([recipe1]);
     })
 
-    it('should be able to filter by more than one tag', () => {
+    it.skip('should be able to filter by more than one tag', () => {
       let tagSearch = testCookbook.filterByTag('breakfast', 'appetizer');
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
       expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
