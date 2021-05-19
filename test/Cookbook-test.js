@@ -77,7 +77,6 @@ describe('Cookbook', () => {
 
   // 📔 Cookbook.constructor
   describe('Cookbook properties', () => {
-    // it should take in recipe objects and add them to an array
     it('should take in recipe data', () => {
       expect(testCookbook.recipeData).to.deep.equal(testData);
     })
@@ -86,14 +85,14 @@ describe('Cookbook', () => {
       expect(testCookbook.recipeData).to.be.an('array');
     })
   })
-  // 📔 Cookbook.filter
+
   describe('Cookbook filter methods', () => {
-    // it should have a method to filter through tags and return recipe objects containing requested tags
+    // 📔 Cookbook.filterByTag
     it.only('should filter by tags and return an array of recipes', () => {
       expect(testCookbook.filterByTag('breakfast')).to.deep.equal([recipe1]);
     })
 
-    it.skip('should be able to filter by more than one tag', () => {
+    it('should be able to filter by more than one tag', () => {
       let tagSearch = testCookbook.filterByTag('breakfast', 'appetizer');
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
       expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
