@@ -212,4 +212,4 @@ const testRecipes = [
 
 const testRecipeData = [testRecipes[0], testRecipes[1]]
 
-export default { testIngredients, testRecipes, testRecipeData };
+export { testIngredients, testRecipes, testRecipeData };

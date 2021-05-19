@@ -116,23 +116,10 @@ describe('Recipe', () => {
       expect(recipe1.cost).to.equal(0);
     })
   })
-  // 📝 Recipe.calculateCost
-  describe('A method to determind the total cost of making a recipe', () => {
-    // it should determine the total cost of making a recipe
-    // will need to factor in the amount listed in the recipe
-    // the price per unit is listed in pennies
-    it.skip('should return the cost of making a recipe', () => {
-      expect(recipe1.calculateCost()).to.equal(4.10);
-    })
 
-    it.skip('should update the recipe cost', () => {
-      recipe1.calculateCost();
-      expect(recipe1.cost).to.equal(410);
-    })
-  })
   // 📝 Recipe.return(Property)
   describe('Methods to return the recipe details', () => {
-    // it should determine the names or ingredients needed for a recipe
+    // it should determine the names of ingredients needed for a recipe
     it.skip('should return the names of ingredients for a recipe', () => {
       expect(recipe1.returnIngrNames()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
@@ -162,6 +149,7 @@ describe('Recipe', () => {
         }
       ]);
     })
+
     // it should return a recipe's instructions ♻️
     it.skip('should return the recipe instructions', () => {
       expect(recipe1.returnInstructions()).to.deep.equal([
@@ -182,6 +170,20 @@ describe('Recipe', () => {
           "number": 4
         }
       ]);
+    })
+  })
+  // 📝 Recipe.calculateCost
+  describe('A method to determind the total cost of making a recipe', () => {
+    // it should determine the total cost of making a recipe
+    // will need to factor in the amount listed in the recipe
+    // the price per unit is listed in pennies
+    it.skip('should update the recipe cost', () => {
+      recipe1.calculateCost();
+      expect(recipe1.cost).to.equal(410);
+    })
+
+    it.skip('should return the cost of making a recipe', () => {
+      expect(recipe1.calculateCost()).to.equal(4.10);
     })
   })
 });

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { testIngredients, testRecipes, testRecipeData } from '../test/test-data';
+import { testRecipes, testRecipeData } from '../test/test-data';
 import Cookbook from '../src/classes/Cookbook';
 
 describe('Cookbook', () => {

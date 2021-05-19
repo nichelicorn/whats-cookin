@@ -9,6 +9,7 @@ describe('Ingredient', () => {
     ingr1 = testIngredients[0];
     ingr2 = testIngredients[1];
     ingr3 = testIngredients[2];
+    console.log(ingr1, ingr2, ingr3)
   });
 
   // 🧂 Ingredient class
