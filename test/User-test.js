@@ -50,8 +50,8 @@ describe('User', function() {
           "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
           "number": 4
         }
-      ], "name": "Rice bowl with Fried Egg",
-      "tags": [
+      ], "Rice bowl with Fried Egg",
+       [
         "rice",
         "egg",
         "avocado",
