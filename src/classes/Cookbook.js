@@ -10,7 +10,7 @@ class Cookbook {
       // what do i want to do here?
       // return an array of Recipe objects containing desired tags
       if (recipe.tags.includes(tags)) {
-        console.log('recipe <>>>', recipe);
+        // console.log('recipe <>>>', recipe);
         return recipe;
       }
     })

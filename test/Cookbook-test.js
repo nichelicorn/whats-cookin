@@ -90,8 +90,10 @@ describe('Cookbook', () => {
   describe('Cookbook filter methods', () => {
     // it should have a method to filter through tags and return recipe objects containing requested tags
     it.only('should filter by tags and return an array of recipes', () => {
-      let tagSearch = testCookbook.filterByTag('breakfast');
-      expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
+      // let tagSearch = testCookbook.filterByTag('breakfast');
+      // console.log('tagSearch <>>>', tagSearch);
+      // expect(tagSearch.name).to.equal('Rice bowl with Fried Egg');
+      expect(testCookbook.filterByTag('breakfast')).to.deep.equal(recipe1);
     })
 
     it.skip('should be able to filter by more than one tag', () => {
