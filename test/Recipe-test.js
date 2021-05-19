@@ -9,18 +9,18 @@ describe('Recipe', () => {
     recipe1 = testRecipes[0];
   })
 
-  it.skip('should be a function', () => {
+  it('should be a function', () => {
     expect(Recipe).to.be.a('function');
   })
 
   // 📝 Recipe.constructor
   describe('Recipe properties', () => {
     // it should store a property `id` whose value is a number
-    it.skip('should store an id', () => {
+    it('should store an id', () => {
       expect(recipe1.id).to.be.a('number');
     })
 
-    it.skip('should store a number as the id', () => {
+    it('should store a number as the id', () => {
       expect(recipe1.id).to.equal(1);
     })
     // it should store a property `image` whose value is a string representing a url/image source path
