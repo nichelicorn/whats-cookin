@@ -1,7 +1,6 @@
 class Cookbook {
-  constructor() {
-
-    // One class to get you started!
+  constructor(recipeData) {
+    this.recipeData = recipeData;
   }
 }
 
