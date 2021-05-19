@@ -5,15 +5,15 @@ class Cookbook {
 
   filterByTag(tags) {
     // console.log('this.recipeData', this.recipeData);
-    // let tagFilterResults = [];
-    this.recipeData.filter((recipe, i, arr) => {
+    const tagFilterResults = this.recipeData.filter((recipe, i, arr) => {
       // what do i want to do here?
       // return an array of Recipe objects containing desired tags
       if (recipe.tags.includes(tags)) {
-        // console.log('recipe <>>>', recipe);
+        console.log('recipe <>>>', recipe);
         return recipe;
       }
     })
+    return tagFilterResults;
   }
 }
 
