@@ -24,18 +24,18 @@ describe('Cookbook', () => {
   // 📔 Cookbook.constructor
   describe('Cookbook properties', () => {
     // it should take in recipe objects and add them to an array
-    it.only('should take in recipe data', () => {
+    it('should take in recipe data', () => {
       expect(testCookbook.recipeData).to.deep.equal(testData);
     })
 
-    it.skip('should store recipe data in an array', () => {
+    it('should store recipe data in an array', () => {
       expect(testCookbook.recipeData).to.be.an('array');
     })
   })
   // 📔 Cookbook.filter
   describe('Cookbook filter methods', () => {
     // it should have a method to filter through tags and return recipe objects containing requested tags
-    it.skip('should filter by tags and return an array of recipes', () => {
+    it.only('should filter by tags and return an array of recipes', () => {
       let tagSearch = testCookbook.filterByTag('breakfast');
       expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
     })
