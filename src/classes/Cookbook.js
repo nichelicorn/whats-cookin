@@ -25,17 +25,27 @@ class Cookbook {
     // look at the recipe ingredients
     // compare the recipe ingredients to the filtIngred
     // if there is a match to any word, return the recipe object
-
     const ingrFilterResults = this.recipeData.filter(recipe => {
-      console.log('filtIngred <>>>', filtIngred);
-      // console.log('recipe <>>>', recipe);
-      return filtIngred.some(ingred => {
-        return recipe.ingredients.includes(ingred.toLowerCase());
+      return recipe.ingredients.some(ingr => {
+        console.log(ingr.name)
       })
-      // console.log('test result <>>>', recipe.ingredients.some(ingr => ingr.name.toLowerCase().includes(filtIngred)));
+        // if the ingr.name matches the filter, return the recipe
     })
     return ingrFilterResults;
   }
 }
+
+
+// console.log('filtIngred <>>>', filtIngred);
+// console.log('recipe.ingredients<>>>', recipe.ingredients); // array of objects
+// return filtIngred.some(ingred => {
+  // return recipe.ingredients.filter(recipe => {
+    // console.log('internal recipe <>>>', recipe);
+    // })
+    // let ingr = ingred.toLowerCase();
+    // console.log('ingr <>>>', ingr); 
+    // now i have
+    // console.log('recipe.ingred.includes(ingr) <>>>', recipe.ingredients.includes(ingr)); // logs false
+    // })
 
 export default Cookbook;
