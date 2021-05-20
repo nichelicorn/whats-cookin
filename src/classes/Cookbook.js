@@ -12,8 +12,8 @@ class Cookbook {
     return tagFilterResults;
   }
 
-  filterByName() {
-    
+  filterByName(nameArr) {
+    console.log('hi')
   }
 }
 
