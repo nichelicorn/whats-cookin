@@ -200,13 +200,9 @@ describe('Recipe', () => {
     // it should determine the total cost of making a recipe
     // will need to factor in the amount listed in the recipe
     // the price per unit is listed in pennies
-    it('should update the recipe cost', () => {
-      recipe1.calculateCost();
-      expect(recipe1.calculateCost()).to.equal(410);
-    })
 
-    it.skip('should return the cost of making a recipe', () => {
-      expect(recipe1.calculateCost()).to.equal(4.10);
+    it('should return the cost of making a recipe', () => {
+      expect(recipe1.calculateCost()).to.equal('$5.6');
     })
   })
 });
