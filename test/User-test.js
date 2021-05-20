@@ -30,6 +30,24 @@ describe('User', function() {
           },
         ]
       },
+      {
+        "name": "Ephraim Goyette",
+        "id": 2,
+        "pantry": [
+          {
+            "ingredient": 6150,
+            "amount": 3
+          },
+          {
+            "ingredient": 1032009,
+            "amount": 7
+          },
+          {
+            "ingredient": 1082047,
+            "amount": 8
+          },
+        ]
+      },
     ]
 
     user1 = new User()
