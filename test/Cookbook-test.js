@@ -157,18 +157,17 @@ describe('Cookbook', () => {
     })
 
     // 📔 Cookbook.filterByName
-    // it should have a method to filter through recipe names and return matching results
-    it.only('should be able to search recipes by name', () => {
+    it('should be able to search recipes by name', () => {
       let nameSearch = testCookbook.filterByName(['Avocado and Tomatillo Salsa']);
       expect(nameSearch).to.deep.equal([recipe2]);
     })
 
-    it.skip('should be able to search a part of a name', () => {
+    it('should be able to search a part of a name', () => {
       let nameSearch = testCookbook.filterByName(['Fried']);
       expect(nameSearch).to.deep.equal([recipe1]);
     })
 
-    it.skip('should return an empty array if a name is not found', () => {
+    it('should return an empty array if a name is not found', () => {
       let nameSearch = testCookbook.filterByName(['saffron']);
       expect(nameSearch).to.deep.equal([]);
     })
