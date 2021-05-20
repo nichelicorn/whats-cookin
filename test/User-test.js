@@ -89,9 +89,17 @@ describe('User', function() {
     user1.addToFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
     user1.filterFavoriteRecipes("breakfast");
-    expect(user1.filterFavoriteRecipes("breakfast")).to.equal([recipe1]);
-    // user1.filterRecipes("Rice bowl with Fried Egg");
-    // expect(user.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.equal(recipe1);
+    console.log("testarray", user1.favoriteRecipes[0])
+    expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
+  });
+
+it('should filter through favorite recipes by multiple tags', function() {
+  expect(user1.favoriteRecipes).to.deep.equal([])
+  user1.addToFavorites(recipe1);
+  expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+  user1.filterFavoriteRecipes("breakfast", "lunch");
+  console.log("testarray", user1.favoriteRecipes[0])
+  expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
   });
 
   it.skip('should instantiate an Ingredient', function() {
