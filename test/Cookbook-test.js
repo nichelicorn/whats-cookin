@@ -152,7 +152,7 @@ describe('Cookbook', () => {
     })
 
     it.only('should return an empty array if no tags are found', () => {
-      let tagSearch = testCookbook.filterByTag('dinner');
+      let tagSearch = testCookbook.filterByTag(['dinner']);
       expect(tagSearch).to.deep.equal([]);
     })
     // it should have a method to filter through recipe names and return matching results
