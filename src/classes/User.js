@@ -32,6 +32,25 @@ class User {
     }
   }
 
+//   filterFavoriteRecipes(tag) {
+//     // console.log('faves', this.favoriteRecipes[0])
+//   return this.favoriteRecipes.filter(recipe => {
+//     return recipe.tags.includes(tag);
+//   });
+//
+// }
+
+  filterFavoriteRecipes(tag) {
+    // console.log("currentFaves", this.favoriteRecipes)
+   let filteredTag = this.favoriteRecipes.filter(recipe => {
+      recipe.tags.includes(tag)
+      // console.log("whaaa", recipe)
+      return recipe
+    })
+    console.log("filtered", filteredTag)
+    return filteredTag
+    }
+
 
 
 }
