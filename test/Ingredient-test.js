@@ -13,27 +13,27 @@ describe('Ingredient', () => {
   });
 
   // 🧂 Ingredient class
-  it('should be a function', () => {
+  it.skip('should be a function', () => {
     expect(Ingredient).to.be.a('function');
   })
   // a new `Ingredient` represents one ingredient object
-  it('should instantiate a new Ingredient', ( ) => {
+  it.skip('should instantiate a new Ingredient', ( ) => {
     expect(ingr1).to.be.an.instanceof(Ingredient);
   })
 
   // 🧂 Ingredient.constructor tests
   describe('Ingredient properties', () => {
     // should store a property `id` whose value is a `number`
-    it('should store an id', () => {
+    it.skip('should store an id', () => {
       expect(ingr1.id).to.equal(0);
     })
     // should store a property `name` whose value is a `string`
-    it('should store a name', () => {
+    it.skip('should store a name', () => {
       expect(ingr2.name).to.equal('egg');
     })
     // should store a property `estimatedCostInCents` whose value is a `number`
 
-    it('should store the estimated cost in cents', () => {
+    it.skip('should store the estimated cost in cents', () => {
 
       expect(ingr3.estimatedCostInCents).to.equal(250);
     })
