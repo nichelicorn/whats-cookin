@@ -12,6 +12,7 @@ describe('Recipe', () => {
 
   beforeEach(() => {
     recipe1 = new Recipe (testRecipes[0], testIngredients);
+    recipe1.updateEachRecipeIngredients(testIngredients);
     ingr1 = new Ingredient(testIngredients[0]);
     ingr2 = new Ingredient(testIngredients[1]);
     ingr3 = new Ingredient(testIngredients[2]);
@@ -67,6 +68,40 @@ describe('Recipe', () => {
     it('should store the ingredients in array', () => {
       expect(recipe1.recipeIngredients).to.be.an('array');
     })
+
+    it('should update recipe ingredients to have name and cost', function() {
+      recipe1.updateEachRecipeIngredients(testIngredients);
+      console.log("TESTING", recipe1.recipeIngredients)
+      expect(recipe1.recipeIngredients).to.deep.equal([
+        {
+          "id": 0,
+          "quantity": {
+            "amount": 2,
+            "unit": "c"
+          },
+          "name": "rice",
+          "estimatedCostInCents": 150
+        },
+        {
+          "id": 1,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          },
+          "name": "egg",
+          "estimatedCostInCents": 10
+        },
+        {
+          "id": 2,
+          "quantity": {
+            "amount": 1,
+            "unit": "large"
+          },
+          "name": "avocado",
+          "estimatedCostInCents": 250
+        }
+      ])
+    });
 
     it('should store recipe instructions', () => {
       expect(recipe1.instructions).to.deep.equal([
@@ -174,7 +209,7 @@ describe('Recipe', () => {
     })
 
     it('should return the names of ingredients for a recipe', () => {
-      expect(recipe1.returnIngredientNames()).to.deep.equal(['rice', 'egg', 'avocado']);
+      expect(recipe1.returnIngredientNames(testIngredients)).to.deep.equal(['rice', 'egg', 'avocado']);
     })
 
   })
@@ -182,7 +217,8 @@ describe('Recipe', () => {
   describe('A method to determind the total cost of making a recipe', () => {
 
     it('should return the cost of making a recipe', () => {
-      expect(recipe1.calculateCost()).to.equal('$5.6');
+      expect(recipe1.calculateCost(testIngredients)).to.equal('$5.6');
     })
   })
+
 });
