@@ -31,15 +31,13 @@ class Recipe {
       let foundIng = this.ingredientsData.find(ing => (ingredient.id === ing.id))
       arr.push(foundIng)
       return arr
-    }, []);
-
-    let allNames = getIngredients.forEach(ingred => {
+    }, []).forEach(ingred => {
       return this.ingredientNames.push(ingred.name)
 
     });
-    // console.log("test1", this.ingredientNames)
-    return this.ingredientNames
 
+    console.log("test1", this.ingredientNames)
+    return this.ingredientNames
   }
 
   calculateCost() {
