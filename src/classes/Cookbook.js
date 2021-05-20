@@ -3,9 +3,9 @@ class Cookbook {
     this.recipeData = recipeData;
   }
 
-  filterByTag(tagArr) {
+  filterByTag(filtTags) {
     const tagFilterResults = this.recipeData.filter(recipe => {
-      return tagArr.some(tag => {
+      return filtTags.some(tag => {
         return recipe.tags.includes(tag);
       })
     })
@@ -20,14 +20,21 @@ class Cookbook {
   }
 
   filterByIngredient(filtIngred) {
-    const ingredFilterResults = this.recipeData.filter(recipe => {
-      return filtIngred.some(ingr => {
-        console.log('recipe.ingredients <>>>', recipe.ingredients);
-        console.log('ingr lowerCase <>>>', ingr.toLowerCase());
-        return recipe.ingredients.includes(ingr.toLowerCase());
+    // what am i trying to do?
+    // filter through recipes
+    // look at the recipe ingredients
+    // compare the recipe ingredients to the filtIngred
+    // if there is a match to any word, return the recipe object
+
+    const ingrFilterResults = this.recipeData.filter(recipe => {
+      console.log('filtIngred <>>>', filtIngred);
+      // console.log('recipe <>>>', recipe);
+      return filtIngred.some(ingred => {
+        return recipe.ingredients.includes(ingred.toLowerCase());
       })
+      // console.log('test result <>>>', recipe.ingredients.some(ingr => ingr.name.toLowerCase().includes(filtIngred)));
     })
-    return ingredFilterResults;
+    return ingrFilterResults;
   }
 }
 
