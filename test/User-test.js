@@ -17,17 +17,17 @@ describe('User', function() {
         "name": "Saige O'Kon",
         "pantry": [
           {
-            "ingredient": 11297,
+            "ingredient": 0,
             "amount": 4
           },
           {
-            "ingredient": 1082047,
+            "ingredient": 1,
             "amount": 10
           },
           {
-            "ingredient": 20081,
+            "ingredient": 2,
             "amount": 5
-          },
+          }
         ]
       },
       {
@@ -35,71 +35,23 @@ describe('User', function() {
         "id": 2,
         "pantry": [
           {
-            "ingredient": 6150,
+            "ingredient": 3,
             "amount": 3
           },
           {
-            "ingredient": 1032009,
+            "ingredient": 4,
             "amount": 7
           },
           {
-            "ingredient": 1082047,
+            "ingredient": 5,
             "amount": 8
-          },
+          }
         ]
-      },
-    ]
+      }
+    ];
 
-    user1 = new User()
-
-    recipe1 = new Recipe(1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [{
-          "id": 0,
-          "quantity": {
-            "amount": 2,
-            "unit": "c"
-          }
-        },
-        {
-          "id": 1,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
-        },
-        {
-          "id": 2,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
-        }
-      ], [{
-          "instruction": "Cook rice.",
-          "number": 1
-        },
-        {
-          "instruction": "Fry egg.",
-          "number": 2
-        },
-        {
-          "instruction": "Slice avocado.",
-          "number": 3
-        },
-        {
-          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
-          "number": 4
-        }
-      ], "Rice bowl with Fried Egg",
-       [
-        "rice",
-        "egg",
-        "avocado",
-        "bowl",
-        "breakfast",
-        "morning meal",
-        "snack",
-        "appetizer"
-      ]);
+    user1 = new User(userData[0])
+    // recipe1 = new Recipe()
   })
 
   it('should be a function', function() {
