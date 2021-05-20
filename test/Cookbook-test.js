@@ -151,7 +151,7 @@ describe('Cookbook', () => {
       expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
     })
 
-    it.only('should return an empty array if no tags are found', () => {
+    it('should return an empty array if no tags are found', () => {
       let tagSearch = testCookbook.filterByTag(['dinner']);
       expect(tagSearch).to.deep.equal([]);
     })
