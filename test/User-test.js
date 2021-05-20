@@ -29,30 +29,11 @@ describe('User', function() {
             "amount": 5
           }
         ]
-      },
-      {
-        "name": "Ephraim Goyette",
-        "id": 2,
-        "pantry": [
-          {
-            "ingredient": 3,
-            "amount": 3
-          },
-          {
-            "ingredient": 4,
-            "amount": 7
-          },
-          {
-            "ingredient": 5,
-            "amount": 8
-          }
-        ]
       }
     ];
 
     user1 = new User(userData[0])
     recipe1 = new Recipe (testRecipes[0]);
-    // recipe1 = new Recipe()
   })
 
   it('should be a function', function() {
@@ -73,22 +54,36 @@ describe('User', function() {
     expect(user1.recipesToCook).to.deep.equal([])
   })
 
-  it.skip('should instantiate a Recipe', function() {
-    expect(recipe1).to.be.an.instanceof(Recipe);
-  });
-
-  it.skip('should add favorited recipes in an array', function() {
+  it('should add favorited recipes in an array', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
-    user1.addToFavorites(recipe);
+    user1.addToFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
   });
 
+  it('should remove recipes from favorites', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.removeFromFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.removeFromFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([])
 
-  it.skip('should add recipes to cook in an array', function() {
+  });
+
+  it('should add recipes to cook in an array', function() {
     expect(user1.recipesToCook).to.deep.equal([])
-    user1.addRecipeToCook(recipe);
+    user1.addRecipeToCook(recipe1);
     expect(user1.recipesToCook).to.deep.equal([recipe1])
   });
+
+  it('should remove recipes to cook', function() {
+    expect(user1.recipesToCook).to.deep.equal([])
+    user1.addRecipeToCook(recipe1);
+    expect(user1.recipesToCook).to.deep.equal([recipe1])
+    user1.removeRecipeToCook(recipe1);
+    expect(user1.recipesToCook).to.deep.equal([])
+
+  });
+
 
   it.skip('should filter through recipes by tag or name', function() {
     user1.filterRecipes("avocado");
