@@ -15,7 +15,6 @@ describe('Recipe', () => {
     ingr1 = new Ingredient(testIngredients[0]);
     ingr2 = new Ingredient(testIngredients[1]);
     ingr3 = new Ingredient(testIngredients[2]);
-    // ingredientsTestData = new Ingredient(testIngredients)
   })
 
   it('should be a function', () => {
@@ -38,8 +37,7 @@ describe('Recipe', () => {
     it('should store a string as the image source', () => {
       expect(recipe1.image).to.be.a('string');
     })
-    // it should store a property `ingredients` whose value is an array of objects
-    // refactor to instantiate each ingredient in this array as a `new Ingredient()` instantiation
+
     it('should store recipe ingredients', () => {
       expect(recipe1.recipeIngredients).to.deep.equal([
         {
@@ -124,20 +122,6 @@ describe('Recipe', () => {
       expect(recipe1.ingredientNames).to.deep.equal([]);
     })
 
-    // it('should have access to ingredients data', () => {
-    //   expect(recipe1.ingredientsData).to.equal(ingredientsData);
-    // })
-
-    // it should store a property `cost` whose value is a number; should have a default value of 0
-    // it('should have a default cost of zero', () => {
-    //   expect(recipe1.cost).to.equal(0);
-    // })
-
-    // it('should store a cost to make the recipe', () => {
-    //   console.log(recipe1)
-    //   expect(recipe1.cost).to.be.a('number');
-    // })
-
   })
 
   // 📝 Recipe.return(Property)
@@ -189,7 +173,6 @@ describe('Recipe', () => {
       ]);
     })
 
-    // it should determine the names of ingredients needed for a recipe
     it('should return the names of ingredients for a recipe', () => {
       expect(recipe1.returnIngredientNames()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
@@ -197,9 +180,6 @@ describe('Recipe', () => {
   })
 
   describe('A method to determind the total cost of making a recipe', () => {
-    // it should determine the total cost of making a recipe
-    // will need to factor in the amount listed in the recipe
-    // the price per unit is listed in pennies
 
     it('should return the cost of making a recipe', () => {
       expect(recipe1.calculateCost()).to.equal('$5.6');
