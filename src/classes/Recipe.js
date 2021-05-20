@@ -17,11 +17,12 @@ class Recipe {
   }
 
   returnInstructions() {
+    console.log("allInstr", this.instructions)
     return this.instructions;
   }
 
   returnIngredients() {
-    console.log(this.recipeIngredients)
+    console.log("allIngs", this.recipeIngredients)
     return this.recipeIngredients
   }
 
@@ -30,28 +31,34 @@ class Recipe {
       let foundIng = this.ingredientsData.find(ing => (ingredient.id === ing.id))
       arr.push(foundIng)
       return arr
-    }, []).forEach(ingred => {
+    }, []);
+
+    let allNames = getIngredients.forEach(ingred => {
       return this.ingredientNames.push(ingred.name)
+
     });
+    console.log("test1", this.ingredientNames)
     return this.ingredientNames
 
 }
 
 calculateCost() {
-  console.log(this.ingredientNames)
+  let costCount = 0;
+  this.recipeIngredients.forEach(ingredient => {
+    this.ingredientsData.find(specificIng => {
+      if(specificIng.id === ingredient.id) {
+        costCount += specificIng.estimatedCostInCents * ingredient.quantity.amount
+      }
+    })
+  });
+  console.log('cost', costCount)
+  return `$${costCount/100}`
 
 
 }
 
-// It should have methods to:
-// Determine the names of ingredients needed
-// Get the cost of its ingredients
-// Return its directions / instructions
 
 }
-
-
-
 
 
 
