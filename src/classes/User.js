@@ -14,15 +14,21 @@ class User {
     }
   }
 
-  removeRecipeToCook(recipe) {
-    if(this.recipesToCook.includes(recipe)) {
-      this.recipesToCook.splice(recipe, 1)
+  removeFromFavorites(recipe) {
+    if(this.favoriteRecipes.includes(recipe)) {
+      this.favoriteRecipes.splice(recipe, 1)
     }
   }
 
   addRecipeToCook(recipe) {
     if(!this.recipesToCook.includes(recipe)) {
       this.recipesToCook.push(recipe)
+    }
+  }
+
+  removeRecipeToCook(recipe) {
+    if(this.recipesToCook.includes(recipe)) {
+      this.recipesToCook.splice(recipe, 1)
     }
   }
 
