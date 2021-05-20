@@ -19,8 +19,15 @@ class Cookbook {
     return nameFilterResults;
   }
 
-  filterByIngredient() {
-    
+  filterByIngredient(filtIngred) {
+    const ingredFilterResults = this.recipeData.filter(recipe => {
+      return filtIngred.some(ingr => {
+        console.log('recipe.ingredients <>>>', recipe.ingredients);
+        console.log('ingr lowerCase <>>>', ingr.toLowerCase());
+        return recipe.ingredients.includes(ingr.toLowerCase());
+      })
+    })
+    return ingredFilterResults;
   }
 }
 
