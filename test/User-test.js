@@ -11,8 +11,6 @@ describe('User', function() {
   beforeEach(() => {
     user1 = new User()
     ingr1 = new Ingredient(0, 'rice', 150);
-    user1.favoriteRecipes = []
-    user1.recipesToCook = []
     recipe1 = new Recipe(1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [{
           "id": 0,
           "quantity": {
