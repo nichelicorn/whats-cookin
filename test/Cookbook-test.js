@@ -173,7 +173,7 @@ describe('Cookbook', () => {
     })
 
     // it should have a method to filter through ingredients and return recipes containing those ingredients
-    it.skip('should be able to search recipes by ingredient', () => {
+    it.only('should be able to search recipes by ingredient', () => {
       let ingrSearch = testCookbook.filterByIngredient(['TOMATILLO']);
       expect(ingrSearch).to.deep.equal(recipe2);
     })

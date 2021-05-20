@@ -18,6 +18,10 @@ class Cookbook {
     })
     return nameFilterResults;
   }
+
+  filterByIngredient() {
+    
+  }
 }
 
 export default Cookbook;
