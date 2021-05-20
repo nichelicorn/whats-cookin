@@ -13,14 +13,8 @@ class Cookbook {
   }
 
   filterByName(filtName) {
-    // console.log('filtName <>>>', filtName); // this is an array with a single string
     const nameFilterResults = this.recipeData.filter(recipe => {
-      console.log('recipe.name <>>>', recipe.name); // this is a string
-      if (recipe.name.includes(filtName)) {
-        console.log('💩');
-        return recipe;
-      }
-      // return recipe.name.toLowerCase().includes(filtName);
+      return recipe.name.includes(filtName);
     })
     return nameFilterResults;
   }
