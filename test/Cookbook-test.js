@@ -9,6 +9,7 @@ describe('Cookbook', () => {
   beforeEach(() => {
     // recipe1 = testRecipes[0]; // this isn't working (wrong setup)
     // recipe1 = new Recipe(testRecipes[0]); // this isn't working because there isn't a Recipe class yet to construct the new Recipe object
+    // recipe2 = testRecipes[1];
     recipe1 = {
       "id": 1,
       "image": "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg",
@@ -61,7 +62,60 @@ describe('Cookbook', () => {
         "appetizer"
       ]
     };
-    recipe2 = testRecipes[1];
+    recipe2 = {
+      "id": 2,
+      "image": "https://i1.wp.com/www.wyldflour.com/wp-content/uploads/2017/05/Tomatillo-Avocado-Salsa-4.jpg",
+      "ingredients": [
+        {
+          "id": 2,
+          "name": "avocado",
+          "estimatedCostInCents": 250
+        },
+        {
+          "id": 3,
+          "name": "tomatillo",
+          "estimatedCostInCents": 50
+        },
+        {
+          "id": 4,
+          "name": "garlic",
+          "estimatedCostInCents": 25
+        },
+        {
+          "id": 5,
+          "name": "jalapeno",
+          "estimatedCostInCents": 10
+        },
+        {
+          "id": 6,
+          "name": "cilantro",
+          "estimatedCostInCents": 50
+        }
+      ],
+      "instructions": [
+        {
+          "instruction": "Char tomatillos under a broiler or over an open flame. When toasted, place in a sealed bag or container to steam.",
+          "number": 1
+        },
+        {
+          "instruction": "Peel the tomatillos.",
+          "number": 2
+        },
+        {
+          "instruction": "In a blender or food processor, combine tomatillos, garlic, jalapeno, and cilantro and pulse into a coarse puree. Add avocado and pulse until smooth. Add small amounts of water as needed if the mixture thickens too much.",
+          "number": 3
+        },
+        {
+          "instruction": "Season with salt and pepper, and serve with lime wedges and tortilla chips.",
+          "number": 4
+        }
+      ],
+      "name": "Avocado and Tomatillo Salsa",
+      "tags": [
+        "snack",
+        "appetizer"
+      ]
+    };
     recipe3 = testRecipes[2];
     testData = testRecipeData;
     testCookbook = new Cookbook(testData);
@@ -89,14 +143,15 @@ describe('Cookbook', () => {
   describe('Cookbook filter methods', () => {
     // 📔 Cookbook.filterByTag
     it('should filter by tags and return an array of recipes', () => {
-      expect(testCookbook.filterByTag('breakfast')).to.deep.equal([recipe1]);
+      expect(testCookbook.filterByTag(['breakfast'])).to.deep.equal([recipe1]);
     })
 
     it.only('should be able to filter by more than one tag', () => {
-      let tagSearch = testCookbook.filterByTag('breakfast', 'appetizer');
-      
-      expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
-      expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
+      let tagSearch = testCookbook.filterByTag(['breakfast', 'appetizer']);
+      // console.log('tagSearch <>>>', tagSearch);
+      expect(tagSearch).to.deep.equal(testRecipeData);
+      // expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
+      // expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
     })
 
     it.skip('should return an empty array if no tags are found', () => {
@@ -106,7 +161,7 @@ describe('Cookbook', () => {
     // it should have a method to filter through recipe names and return matching results
     it.skip('should be able to search recipes by name', () => {
       let nameSearch = testCookbook.filterByName('Avocado and Tomatillo Salsa');
-      expect(nameSearch).to.deep.equal([recipe2]);
+      expect(nameSearch).to.deep.equal([recipe1]);
     })
 
     it.skip('should be able to search a part of a name', () => {
