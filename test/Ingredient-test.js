@@ -16,7 +16,6 @@ describe('Ingredient', () => {
   it.skip('should be a function', () => {
     expect(Ingredient).to.be.a('function');
   })
->>>>>>> main
   // 🧂 Ingredient.constructor tests
   describe('Ingredient properties', () => {
     // should store a property `id` whose value is a `number`
