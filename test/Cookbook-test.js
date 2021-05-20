@@ -148,10 +148,7 @@ describe('Cookbook', () => {
 
     it.only('should be able to filter by more than one tag', () => {
       let tagSearch = testCookbook.filterByTag(['breakfast', 'appetizer']);
-      // console.log('tagSearch <>>>', tagSearch);
-      expect(tagSearch).to.deep.equal(testRecipeData);
-      // expect(tagSearch[0].name).to.equal('Rice bowl with Fried Egg');
-      // expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
+      expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
     })
 
     it.skip('should return an empty array if no tags are found', () => {

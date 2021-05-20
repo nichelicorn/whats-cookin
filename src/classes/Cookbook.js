@@ -3,17 +3,16 @@ class Cookbook {
     this.recipeData = recipeData;
   }
 
-  filterByTag(tagArr) { // tags are an array
-    // can iterate through the recipeData and then iterate through the tags and return recipes that match the tags array
-    console.log('recipes <>>>', this.recipeData);
+  filterByTag(tagArr) {
+    // console.log('recipes <>>>', this.recipeData);
     console.log('tagArr <>>>', tagArr); // only accepting 'breakfast'
     const tagFilterResults = this.recipeData.filter(recipe => {
-      return tagArr.every(tag => {
+      return tagArr.some(tag => {
         return recipe.tags.includes(tag);
       })
 
       // return recipe.tags.includes(tagArr);
-      // if (recipe.tags.includes(tags)) {
+      // if (recipe.tags.includes(tagArr)) {
       //   console.log('recipe <>>>', recipe);
       //   return recipe;
       // }
