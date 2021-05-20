@@ -11,6 +11,10 @@ class Cookbook {
     })
     return tagFilterResults;
   }
+
+  filterByName() {
+    
+  }
 }
 
 export default Cookbook;

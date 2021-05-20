@@ -155,8 +155,10 @@ describe('Cookbook', () => {
       let tagSearch = testCookbook.filterByTag(['dinner']);
       expect(tagSearch).to.deep.equal([]);
     })
+
+    // 📔 Cookbook.filterByName
     // it should have a method to filter through recipe names and return matching results
-    it.skip('should be able to search recipes by name', () => {
+    it.only('should be able to search recipes by name', () => {
       let nameSearch = testCookbook.filterByName('Avocado and Tomatillo Salsa');
       expect(nameSearch).to.deep.equal([recipe1]);
     })
