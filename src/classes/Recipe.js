@@ -12,9 +12,31 @@ class Recipe {
     this.name = recipe.name
     this.tags = recipe.tags
     this.ingredientNames = []
-    this.ingredientsData = ingredientsData
+    // this.ingredientsData = ingredientsData
 
   }
+//iterate through each ingredient in the this.recipeIngredients data set/array using forEach
+// for each ingredient in the recipe array, i want to add new key/value pairs that will
+// add names and cost to the ingredients in each recipe
+// i need to go through each item in the ingredients list for each recipe, and modify
+// each object.
+//I expect to return/receive the same amount of object in the recipe ingredients list
+
+  updateEachRecipeIngredients(ingredientsData) {
+    let matchNames = this.recipeIngredients.reduce((arr, ingredient) => {
+      let foundIng = ingredientsData.find(ing => (ingredient.id === ing.id))
+              ingredient.name = foundIng.name
+              ingredient.estimatedCostInCents = foundIng.estimatedCostInCents
+              arr.push(ingredient)
+              // console.log("foundIng", foundIng)
+              // console.log("ingredeitn", ingredient)
+            return arr
+  }, [])
+    this.recipeIngredients = matchNames
+    // console.log('testMatchNames', matchNames)
+}
+
+
 
   returnInstructions() {
     // console.log("allInstr", this.instructions)
@@ -26,13 +48,14 @@ class Recipe {
     return this.recipeIngredients
   }
 
-  returnIngredientNames() {
+  returnIngredientNames(ingredientsData) {
     let getIngredients = this.recipeIngredients.reduce((arr, ingredient) => {
-      let foundIng = this.ingredientsData.find(ing => (ingredient.id === ing.id))
+      let foundIng = ingredientsData.find(ing => (ingredient.id === ing.id))
       arr.push(foundIng)
+
       return arr
     }, []).forEach(ingred => {
-      return this.ingredientNames.push(ingred.name)
+       this.ingredientNames.push(ingred.name)
 
     });
 
@@ -40,10 +63,10 @@ class Recipe {
     return this.ingredientNames
   }
 
-  calculateCost() {
+  calculateCost(ingredientsData) {
     let costCount = 0;
     this.recipeIngredients.forEach(ingredient => {
-      this.ingredientsData.find(specificIng => {
+      ingredientsData.find(specificIng => {
         if (specificIng.id === ingredient.id) {
           costCount += specificIng.estimatedCostInCents * ingredient.quantity.amount
         }
