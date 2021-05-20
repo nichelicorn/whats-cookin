@@ -146,13 +146,13 @@ describe('Cookbook', () => {
       expect(testCookbook.filterByTag(['breakfast'])).to.deep.equal([recipe1]);
     })
 
-    it.only('should be able to filter by more than one tag', () => {
+    it('should be able to filter by more than one tag', () => {
       let tagSearch = testCookbook.filterByTag(['breakfast', 'appetizer']);
       expect(tagSearch[1].name).to.equal('Avocado and Tomatillo Salsa');
     })
 
-    it.skip('should return an empty array if no tags are found', () => {
-      let tagSearch = testCookbook.filterByTag('saffron');
+    it.only('should return an empty array if no tags are found', () => {
+      let tagSearch = testCookbook.filterByTag('dinner');
       expect(tagSearch).to.deep.equal([]);
     })
     // it should have a method to filter through recipe names and return matching results
