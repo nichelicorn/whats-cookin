@@ -84,12 +84,14 @@ describe('User', function() {
 
   });
 
-
-  it.skip('should filter through recipes by tag or name', function() {
-    user1.filterRecipes("avocado");
-    expect(user.filterRecipes("avocado")).to.equal(recipe1);
-    user1.filterRecipes("Rice bowl with Fried Egg");
-    expect(user.filterRecipes("Rice bowl with Fried Egg")).to.equal(recipe1);
+  it('should filter through favorite recipes by tag or name', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.filterFavoriteRecipes("breakfast");
+    expect(user1.filterFavoriteRecipes("breakfast")).to.equal([recipe1]);
+    // user1.filterRecipes("Rice bowl with Fried Egg");
+    // expect(user.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.equal(recipe1);
   });
 
   it.skip('should instantiate an Ingredient', function() {
