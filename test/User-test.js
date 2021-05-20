@@ -58,16 +58,16 @@ describe('User', function() {
     expect(User).to.be.a('function');
   });
 
-  it.skip('should instantiate a User', function() {
+  it('should instantiate a User', function() {
     expect(user1).to.be.an.instanceof(User);
   });
 
-  it.skip('should be able to store favorite recipes', function() {
+  it('should be able to store favorite recipes', function() {
     expect(user1.favoriteRecipes).to.be.an('array')
     expect(user1.favoriteRecipes).to.deep.equal([])
   })
 
-  it.skip('should be able to store recipes to cook', function() {
+  it('should be able to store recipes to cook', function() {
     expect(user1.recipesToCook).to.be.an('array')
     expect(user1.recipesToCook).to.deep.equal([])
   })
