@@ -16,11 +16,7 @@ describe('Ingredient', () => {
   it.skip('should be a function', () => {
     expect(Ingredient).to.be.a('function');
   })
-  // a new `Ingredient` represents one ingredient object
-  it.skip('should instantiate a new Ingredient', ( ) => {
-    expect(ingr1).to.be.an.instanceof(Ingredient);
-  })
-
+>>>>>>> main
   // 🧂 Ingredient.constructor tests
   describe('Ingredient properties', () => {
     // should store a property `id` whose value is a `number`
