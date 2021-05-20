@@ -142,6 +142,26 @@ describe('Recipe', () => {
 
   // 📝 Recipe.return(Property)
   describe('Methods to return the recipe details', () => {
+    it('should return the recipe instructions', () => {
+      expect(recipe1.returnInstructions()).to.deep.equal([
+        {
+          "instruction": "Cook rice.",
+          "number": 1
+        },
+        {
+          "instruction": "Fry egg.",
+          "number": 2
+        },
+        {
+          "instruction": "Slice avocado.",
+          "number": 3
+        },
+        {
+          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
+          "number": 4
+        }
+      ]);
+    })
 
     it('should return the recipe ingredient details', () => {
       expect(recipe1.returnIngredients()).to.deep.equal([
@@ -170,40 +190,19 @@ describe('Recipe', () => {
     })
 
     // it should determine the names of ingredients needed for a recipe
-    it.skip('should return the names of ingredients for a recipe', () => {
-      console.log("testttt", recipe1.returnIngredientNames())
+    it('should return the names of ingredients for a recipe', () => {
       expect(recipe1.returnIngredientNames()).to.deep.equal(['rice', 'egg', 'avocado']);
     })
 
-    it('should return the recipe instructions', () => {
-      expect(recipe1.returnInstructions()).to.deep.equal([
-        {
-          "instruction": "Cook rice.",
-          "number": 1
-        },
-        {
-          "instruction": "Fry egg.",
-          "number": 2
-        },
-        {
-          "instruction": "Slice avocado.",
-          "number": 3
-        },
-        {
-          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
-          "number": 4
-        }
-      ]);
-    })
   })
 
   describe('A method to determind the total cost of making a recipe', () => {
     // it should determine the total cost of making a recipe
     // will need to factor in the amount listed in the recipe
     // the price per unit is listed in pennies
-    it.skip('should update the recipe cost', () => {
+    it('should update the recipe cost', () => {
       recipe1.calculateCost();
-      expect(recipe1.cost).to.equal(410);
+      expect(recipe1.calculateCost()).to.equal(410);
     })
 
     it.skip('should return the cost of making a recipe', () => {
