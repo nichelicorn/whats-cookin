@@ -62,7 +62,7 @@ describe('User', function() {
 
   it('should remove recipes from favorites', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
-    user1.removeFromFavorites(recipe1);
+    user1.addToFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
     user1.removeFromFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([])
