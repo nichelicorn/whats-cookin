@@ -3,11 +3,11 @@ import {
 } from 'chai';
 import User from '../src/classes/User';
 import Recipe from '../src/classes/Recipe';
+import { testRecipes } from '../test/test-data';
 
 describe('User', function() {
   let user1;
   let recipe1;
-  let ingr1;
   let userData;
 
   beforeEach(() => {
@@ -51,6 +51,7 @@ describe('User', function() {
     ];
 
     user1 = new User(userData[0])
+    recipe1 = new Recipe (testRecipes[0]);
     // recipe1 = new Recipe()
   })
 
