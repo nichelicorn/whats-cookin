@@ -164,28 +164,28 @@ describe('Cookbook', () => {
     })
 
     it.skip('should be able to search a part of a name', () => {
-      let nameSearch = testCookbook.filterByName('Fried');
+      let nameSearch = testCookbook.filterByName(['Fried']);
       expect(nameSearch).to.deep.equal([recipe1]);
     })
 
     it.skip('should return an empty array if a name is not found', () => {
-      let nameSearch = testCookbook.filterByName('saffron');
+      let nameSearch = testCookbook.filterByName(['saffron']);
       expect(nameSearch).to.deep.equal([]);
     })
 
     // it should have a method to filter through ingredients and return recipes containing those ingredients
     it.skip('should be able to search recipes by ingredient', () => {
-      let ingrSearch = testCookbook.filterByIngredient('TOMATILLO');
+      let ingrSearch = testCookbook.filterByIngredient(['TOMATILLO']);
       expect(ingrSearch).to.deep.equal(recipe2);
     })
 
     it.skip('should return all recipes containing a particular ingredient', () => {
-      let ingrSearch = testCookbook.filterByIngredient('avocado');
+      let ingrSearch = testCookbook.filterByIngredient(['avocado']);
       expect(ingrSearch).to.deep.equal([recipe1, recipe2])
     })
 
     it.skip('should return an empty array if an ingredient is not found', () => {
-      let ingrSearch = testCookbook.filterByIngredient('saffron');
+      let ingrSearch = testCookbook.filterByIngredient(['saffron']);
       expect(ingrSearch).to.deep.equal([]);
     })
   })
