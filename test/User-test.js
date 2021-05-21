@@ -103,7 +103,8 @@ describe('User', function() {
   it('should filter through favorite recipes by multiple tags', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
     user1.addToFavorites(recipe1);
-    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
     user1.filterFavoriteRecipes("breakfast", "lunch");
     expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
   });
@@ -123,7 +124,7 @@ describe('User', function() {
     expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
     user1.filterFavoriteRecipesIng("rice");
     // console.log("HELPppppppppp", recipe1);
-    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal(recipe1)
+    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal([recipe1])
   });
 
 
