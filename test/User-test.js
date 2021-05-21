@@ -142,8 +142,16 @@ describe.only('User', function() {
     user1.addToFavorites(recipe2);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
     user1.filterFavoriteRecipesIng("rice");
-    // console.log("HELPppppppppp", recipe1);
     expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal([recipe1])
+  });
+
+  it('should return an empty array if ingredient not found', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipesIng("spaghetti");
+    expect(user1.filterFavoriteRecipesIng("spaghetti")).to.deep.equal([])
   });
 
 
