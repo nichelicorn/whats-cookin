@@ -1,6 +1,7 @@
 import {
   ingredientsData
 } from '../data/ingredients';
+import { recipeData } from '../data/recipes.js';
 import Ingredient from '../classes/Ingredient.js';
 
 class Recipe {
