@@ -83,7 +83,7 @@ describe.only('User', function() {
     expect(user1.recipesToCook).to.deep.equal([recipe1])
   });
 
-  it.only('should remove recipes to cook', function() {
+  it('should remove recipes to cook', function() {
     expect(user1.recipesToCook).to.deep.equal([])
     user1.addRecipeToCook(recipe1);
     user1.addRecipeToCook(recipe2)
@@ -99,6 +99,16 @@ describe.only('User', function() {
     user1.filterFavoriteRecipes("breakfast");
     expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
   });
+
+  it.only('should return an empty array if tag is not found', function() {
+    expect(user1.recipesToCook).to.deep.equal([])
+    user1.addRecipeToCook(recipe1);
+    user1.addRecipeToCook(recipe2)
+    expect(user1.recipesToCook).to.deep.equal([recipe1, recipe2])
+    user1.filterFavoriteRecipes("dinner");
+    expect(user1.filterFavoriteRecipes("dinner")).to.deep.equal([]);
+  });
+
 
   it('should filter through favorite recipes by multiple tags', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
