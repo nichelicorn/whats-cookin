@@ -9,45 +9,46 @@ class User {
   }
 
   addToFavorites(recipe) {
-    if(!this.favoriteRecipes.includes(recipe)) {
+    if (!this.favoriteRecipes.includes(recipe)) {
       this.favoriteRecipes.push(recipe)
     }
   }
 
   removeFromFavorites(recipe) {
-    if(this.favoriteRecipes.includes(recipe)) {
+    if (this.favoriteRecipes.includes(recipe)) {
       this.favoriteRecipes.splice(recipe, 1)
     }
   }
 
   addRecipeToCook(recipe) {
-    if(!this.recipesToCook.includes(recipe)) {
+    if (!this.recipesToCook.includes(recipe)) {
       this.recipesToCook.push(recipe)
     }
   }
 
   removeRecipeToCook(recipe) {
-    if(this.recipesToCook.includes(recipe)) {
+    if (this.recipesToCook.includes(recipe)) {
       this.recipesToCook.splice(recipe, 1)
     }
   }
 
-//   filterFavoriteRecipes(tag) {
-//     // console.log('faves', this.favoriteRecipes[0])
-//   return this.favoriteRecipes.filter(recipe => {
-//     return recipe.tags.includes(tag);
-//   });
-//
-// }
-
-  filterFavoriteRecipes(tag) {
-    // console.log("currentFaves", this.favoriteRecipes)
-   let filteredTag = this.favoriteRecipes.filter(recipe => {
-      return recipe.tags.includes(tag)
+  filterFavoriteRecipes(entry) {
+    let filteredEntry = this.favoriteRecipes.filter(recipe => {
+      return recipe.tags.includes(entry) || recipe.name.includes(entry)
     })
-    console.log("filtered", filteredTag)
-    return filteredTag
-    }
+    console.log("filtered", filteredEntry)
+    return filteredEntry
+  }
+
+  filterFavoriteRecipesIng(ingredient) {
+    let filterIngredient = this.favoriteRecipes.filter(recipe => {
+      return recipe.recipeIngredients.includes(ingredient)
+    })
+  }
+
+
+
+
 
 
 
