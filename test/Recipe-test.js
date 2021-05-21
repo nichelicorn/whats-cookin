@@ -46,21 +46,27 @@ describe('Recipe', () => {
           "quantity": {
             "amount": 2,
             "unit": "c"
-          }
+          },
+          "name": "rice",
+          "estimatedCostInCents": 150
         },
         {
           "id": 1,
           "quantity": {
             "amount": 1,
             "unit": "large"
-          }
+          },
+          "name": "egg",
+          "estimatedCostInCents": 10
         },
         {
           "id": 2,
           "quantity": {
             "amount": 1,
             "unit": "large"
-          }
+          },
+          "name": "avocado",
+          "estimatedCostInCents": 250
         }
       ]);
     })
@@ -71,7 +77,6 @@ describe('Recipe', () => {
 
     it('should update recipe ingredients to have name and cost', function() {
       recipe1.updateEachRecipeIngredients(testIngredients);
-      console.log("TESTING", recipe1.recipeIngredients)
       expect(recipe1.recipeIngredients).to.deep.equal([
         {
           "id": 0,
@@ -189,21 +194,27 @@ describe('Recipe', () => {
           "quantity": {
             "amount": 2,
             "unit": "c"
-          }
+          },
+          "name": "rice",
+          "estimatedCostInCents": 150
         },
         {
           "id": 1,
           "quantity": {
             "amount": 1,
             "unit": "large"
-          }
+          },
+          "name": "egg",
+          "estimatedCostInCents": 10
         },
         {
           "id": 2,
           "quantity": {
             "amount": 1,
             "unit": "large"
-          }
+          },
+          "name": "avocado",
+          "estimatedCostInCents": 250
         }
       ]);
     })
