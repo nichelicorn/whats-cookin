@@ -36,14 +36,18 @@ class User {
     let filteredEntry = this.favoriteRecipes.filter(recipe => {
       return recipe.tags.includes(entry) || recipe.name.includes(entry)
     })
-    console.log("filtered", filteredEntry)
+    // console.log("filtered", filteredEntry)
     return filteredEntry
   }
 
   filterFavoriteRecipesIng(ingredient) {
-    let filterIngredient = this.favoriteRecipes.filter(recipe => {
-      return recipe.recipeIngredients.includes(ingredient)
+    let filterIngredient = this.favoriteRecipes.find(recipe => {
+       recipe.ingredientNames.includes(ingredient)
+       // console.log("FUCK", recipe.ingredientNames)
+       return recipe
     })
+    // console.log("FILTERING", filterIngredient)
+    return filterIngredient
   }
 
 
@@ -55,15 +59,3 @@ class User {
 }
 
 export default User;
-
-
-// Create classes and methods that can:
-//
-// Allow a user to favorite or unfavorite recipes (add to / remove from the user’s favoriteRecipes)
-// Decide to cook a recipe that week (add to my recipesToCook)
-// Filter my favoriteRecipes by one or more tags.
-// Filter my favoriteRecipes by its name or ingredients.
-//addToFavorites. push a whole recipe object
-//push a recipe object into user.recipesToCook\
-//filter favoriteRecipes by one or more tags
-//filter favoriteRecipes by name or ingredients
