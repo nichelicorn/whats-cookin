@@ -2,33 +2,29 @@ import { expect } from 'chai';
 import { testIngredients } from '../test/test-data';
 import Ingredient from '../src/classes/Ingredient';
 
-describe('Ingredient', () => {
+describe.only('Ingredient', () => {
   let ingr1, ingr2, ingr3;
 
   beforeEach(() => {
     ingr1 = testIngredients[0];
     ingr2 = testIngredients[1];
     ingr3 = testIngredients[2];
-    console.log(ingr1, ingr2, ingr3)
   });
 
-  // 🧂 Ingredient class
-  it.skip('should be a function', () => {
+  it('should be a function', () => {
     expect(Ingredient).to.be.a('function');
   })
-  // 🧂 Ingredient.constructor tests
   describe('Ingredient properties', () => {
-    // should store a property `id` whose value is a `number`
-    it.skip('should store an id', () => {
+
+    it('should store an id', () => {
       expect(ingr1.id).to.equal(0);
     })
-    // should store a property `name` whose value is a `string`
-    it.skip('should store a name', () => {
+
+    it('should store a name', () => {
       expect(ingr2.name).to.equal('egg');
     })
-    // should store a property `estimatedCostInCents` whose value is a `number`
 
-    it.skip('should store the estimated cost in cents', () => {
+    it('should store the estimated cost in cents', () => {
 
       expect(ingr3.estimatedCostInCents).to.equal(250);
     })
