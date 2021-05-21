@@ -2,116 +2,128 @@ import {
   expect
 } from 'chai';
 import User from '../src/classes/User';
+import Recipe from '../src/classes/Recipe';
+import {
+  testRecipes
+} from '../test/test-data';
+import {
+  testIngredients
+} from '../test/test-data';
 
 describe('User', function() {
   let user1;
   let recipe1;
-  let ingr1;
+  let userData;
+  let recipe2;
 
   beforeEach(() => {
-    user1 = new User()
-    ingr1 = new Ingredient(0, 'rice', 150);
-    user1.favoriteRecipes = []
-    user1.recipesToCook = []
-    recipe1 = new Recipe(1, "https://soufflebombay.com/wp-content/uploads/2017/01/Fried-Egg-Avocado-Rice-Bowl.jpg", [{
-          "id": 0,
-          "quantity": {
-            "amount": 2,
-            "unit": "c"
-          }
+    userData = [{
+      "id": 1,
+      "name": "Saige O'Kon",
+      "pantry": [{
+          "ingredient": 0,
+          "amount": 4
         },
         {
-          "id": 1,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
+          "ingredient": 1,
+          "amount": 10
         },
         {
-          "id": 2,
-          "quantity": {
-            "amount": 1,
-            "unit": "large"
-          }
+          "ingredient": 2,
+          "amount": 5
         }
-      ], [{
-          "instruction": "Cook rice.",
-          "number": 1
-        },
-        {
-          "instruction": "Fry egg.",
-          "number": 2
-        },
-        {
-          "instruction": "Slice avocado.",
-          "number": 3
-        },
-        {
-          "instruction": "Once rice is cooked, scoop out desired portion into a bowl and top with egg and avocado slices. Garnish with chives and lime wedge.",
-          "number": 4
-        }
-      ], "Rice bowl with Fried Egg",
-       [
-        "rice",
-        "egg",
-        "avocado",
-        "bowl",
-        "breakfast",
-        "morning meal",
-        "snack",
-        "appetizer"
-      ]);
+      ]
+    }];
+
+    user1 = new User(userData[0])
+    recipe1 = new Recipe(testRecipes[0]);
+    recipe2 = new Recipe(testRecipes[1]);
+    recipe1.updateEachRecipeIngredients(testIngredients);
+    recipe2.updateEachRecipeIngredients(testIngredients);
+    recipe1.returnIngredientNames(testIngredients)
+    recipe2.returnIngredientNames(testIngredients)
   })
 
-  it.skip('should be a function', function() {
+  it('should be a function', function() {
     expect(User).to.be.a('function');
   });
 
-  it.skip('should instantiate a User', function() {
+  it('should instantiate a User', function() {
     expect(user1).to.be.an.instanceof(User);
   });
 
-  it.skip('should be able to store favorite recipes', function() {
+  it('should be able to store favorite recipes', function() {
     expect(user1.favoriteRecipes).to.be.an('array')
     expect(user1.favoriteRecipes).to.deep.equal([])
   })
 
-  it.skip('should be able to store recipes to cook', function() {
+  it('should be able to store recipes to cook', function() {
     expect(user1.recipesToCook).to.be.an('array')
     expect(user1.recipesToCook).to.deep.equal([])
   })
 
-  it.skip('should instantiate a Recipe', function() {
-    expect(recipe1).to.be.an.instanceof(Recipe);
-  });
-
-  it.skip('should add favorited recipes in an array', function() {
+  it('should add favorited recipes in an array', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
-    user1.addToFavorites(recipe);
+    user1.addToFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
   });
 
+  it('should remove recipes from favorites', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.removeFromFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([])
 
-  it.skip('should add recipes to cook in an array', function() {
+  });
+
+  it('should add recipes to cook in an array', function() {
     expect(user1.recipesToCook).to.deep.equal([])
-    user1.addRecipeToCook(recipe);
+    user1.addRecipeToCook(recipe1);
     expect(user1.recipesToCook).to.deep.equal([recipe1])
   });
 
-  it.skip('should filter through recipes by tag or name', function() {
-    user1.filterRecipes("avocado");
-    expect(user.filterRecipes("avocado")).to.equal(recipe1);
-    user1.filterRecipes("Rice bowl with Fried Egg");
-    expect(user.filterRecipes("Rice bowl with Fried Egg")).to.equal(recipe1);
+  it('should remove recipes to cook', function() {
+    expect(user1.recipesToCook).to.deep.equal([])
+    user1.addRecipeToCook(recipe1);
+    expect(user1.recipesToCook).to.deep.equal([recipe1])
+    user1.removeRecipeToCook(recipe1);
+    expect(user1.recipesToCook).to.deep.equal([])
+
   });
 
-  it.skip('should instantiate an Ingredient', function() {
-    expect(ingr1).to.be.an.instanceof(Ingredient);
+  it('should filter through favorite recipes by tag or name', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.filterFavoriteRecipes("breakfast");
+    expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
   });
 
-  it.skip('should filter through recipes by ingredient', function() {
-    user1.filterRecipes("rice");
-    expect(user.filterRecipes("rice")).to.equal(ingr1)
+  it('should filter through favorite recipes by multiple tags', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.filterFavoriteRecipes("breakfast", "lunch");
+    expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
+  });
+
+  it('should filter through favorite recipes by name', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.filterFavoriteRecipes("Rice bowl with Fried Egg");
+    expect(user1.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.deep.equal([recipe1]);
+  });
+
+  it('should filter through recipes by ingredient', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipesIng("rice");
+    // console.log("HELPppppppppp", recipe1);
+    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal(recipe1)
   });
 
 
