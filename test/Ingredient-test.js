@@ -1,5 +1,9 @@
-import { expect } from 'chai';
-import { testIngredients } from '../test/test-data';
+import {
+  expect
+} from 'chai';
+import {
+  testIngredients
+} from '../test/test-data';
 import Ingredient from '../src/classes/Ingredient';
 
 describe.only('Ingredient', () => {
