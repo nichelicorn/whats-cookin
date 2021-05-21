@@ -4,6 +4,7 @@ import {
 import User from '../src/classes/User';
 import Recipe from '../src/classes/Recipe';
 import { testRecipes } from '../test/test-data';
+import { testIngredients } from '../test/test-data';
 
 describe('User', function() {
   let user1;
@@ -89,22 +90,28 @@ describe('User', function() {
     user1.addToFavorites(recipe1);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
     user1.filterFavoriteRecipes("breakfast");
-    console.log("testarray", user1.favoriteRecipes[0])
     expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
   });
 
-it('should filter through favorite recipes by multiple tags', function() {
-  expect(user1.favoriteRecipes).to.deep.equal([])
-  user1.addToFavorites(recipe1);
-  expect(user1.favoriteRecipes).to.deep.equal([recipe1])
-  user1.filterFavoriteRecipes("breakfast", "lunch");
-  console.log("testarray", user1.favoriteRecipes[0])
-  expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
-  });
+  it('should filter through favorite recipes by multiple tags', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.filterFavoriteRecipes("breakfast", "lunch");
+    expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
+    });
 
-  it.skip('should instantiate an Ingredient', function() {
-    expect(ingr1).to.be.an.instanceof(Ingredient);
-  });
+    it('should filter through favorite recipes by name', function() {
+      expect(user1.favoriteRecipes).to.deep.equal([])
+      user1.addToFavorites(recipe1);
+      expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+      user1.filterFavoriteRecipes("Rice bowl with Fried Egg");
+      expect(user1.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.deep.equal([recipe1]);
+      });
+
+  // it.skip('should instantiate an Ingredient', function() {
+  //   expect(ingr1).to.be.an.instanceof(Ingredient);
+  // });
 
   it.skip('should filter through recipes by ingredient', function() {
     user1.filterRecipes("rice");
