@@ -36,8 +36,8 @@ describe('User', function() {
     }];
 
     user1 = new User(userData[0])
-    recipe1 = new Recipe(testRecipes[0]);
-    recipe2 = new Recipe(testRecipes[1]);
+    recipe1 = new Recipe (testRecipes[0], testIngredients);
+    recipe2 = new Recipe(testRecipes[1], testIngredients);
     recipe1.updateEachRecipeIngredients(testIngredients);
     recipe2.updateEachRecipeIngredients(testIngredients);
     recipe1.returnIngredientNames(testIngredients)
