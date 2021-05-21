@@ -100,7 +100,7 @@ describe.only('User', function() {
     expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
   });
 
-  it.only('should return an empty array if tag is not found', function() {
+  it('should return an empty array if tag is not found', function() {
     expect(user1.recipesToCook).to.deep.equal([])
     user1.addRecipeToCook(recipe1);
     user1.addRecipeToCook(recipe2)
@@ -125,6 +125,15 @@ describe.only('User', function() {
     expect(user1.favoriteRecipes).to.deep.equal([recipe1])
     user1.filterFavoriteRecipes("Rice bowl with Fried Egg");
     expect(user1.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.deep.equal([recipe1]);
+  });
+
+  it('should return an empty array if name is not found', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipes("Burgers");
+    expect(user1.filterFavoriteRecipes("burgers")).to.deep.equal([]);
   });
 
   it('should filter through recipes by ingredient', function() {

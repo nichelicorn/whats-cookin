@@ -36,7 +36,6 @@ class User {
     let filteredEntry = this.favoriteRecipes.filter(recipe => {
       return recipe.tags.includes(entry) || recipe.name.includes(entry)
     })
-    // console.log("filtered", filteredEntry)
     return filteredEntry
   }
 
