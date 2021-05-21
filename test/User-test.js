@@ -10,7 +10,7 @@ import {
   testIngredients
 } from '../test/test-data';
 
-describe('User', function() {
+describe.only('User', function() {
   let user1;
   let recipe1;
   let userData;
@@ -83,13 +83,13 @@ describe('User', function() {
     expect(user1.recipesToCook).to.deep.equal([recipe1])
   });
 
-  it('should remove recipes to cook', function() {
+  it.only('should remove recipes to cook', function() {
     expect(user1.recipesToCook).to.deep.equal([])
     user1.addRecipeToCook(recipe1);
-    expect(user1.recipesToCook).to.deep.equal([recipe1])
+    user1.addRecipeToCook(recipe2)
+    expect(user1.recipesToCook).to.deep.equal([recipe1, recipe2])
     user1.removeRecipeToCook(recipe1);
-    expect(user1.recipesToCook).to.deep.equal([])
-
+    expect(user1.recipesToCook).to.deep.equal([recipe2])
   });
 
   it('should filter through favorite recipes by tag or name', function() {
