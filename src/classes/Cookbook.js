@@ -1,35 +1,36 @@
+import { recipeData } from '../data/recipes.js';
+
+import Recipe from '../classes/Recipe.js';
+import Ingredient from '../classes/Ingredient.js';
+
+
 class Cookbook {
-  constructor(recipeData) {
-    this.recipeData = recipeData;
+  constructor(recipes) {
+    this.recipes = recipes
   }
 
-  filterByTag(filtTags) {
-    const tagFilterResults = this.recipeData.filter(recipe => {
-      return filtTags.some(tag => {
-        return recipe.tags.includes(tag);
-      })
-    })
-    return tagFilterResults;
+  filterByTag(tagsSearched) {
+    let findTag = this.recipes.filter(recipe => recipe.tags.some(tag => tagsSearched.includes(tag.toLowerCase())))
+    return findTag
+
   }
+
 
   filterByName(filtName) {
-    const nameFilterResults = this.recipeData.filter(recipe => {
+    const filterNameResults = this.recipes.filter(recipe => {
       return recipe.name.includes(filtName);
     })
-    return nameFilterResults;
+    return filterNameResults;
   }
 
-  filterByIngredient(filtIngr) {
-    // filter through recipes
-    // filter through the ingredient search params
-    // filter through recipe.ingredients [{ name : }] to find out if there is a match in the two strings
-    const ingrFilterResults = this.recipeData.filter(recipe => {
-      return filtIngr.some(ingr => {
-        console.log('recipe <>>>', recipe);
-        // return recipe.ingredients
-      })
+
+  filterByIngredient(findIngredient) {
+    let filterIngredient = this.recipes.filter(recipe => {
+      return recipe.ingredientNames.some(name => name.includes(findIngredient.toLowerCase()))
     })
+    return filterIngredient
   }
+
 }
 
 export default Cookbook;
