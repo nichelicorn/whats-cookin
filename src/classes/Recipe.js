@@ -21,23 +21,18 @@ class Recipe {
       ingredient.name = foundIng.name
       ingredient.estimatedCostInCents = foundIng.estimatedCostInCents
       arr.push(ingredient)
-      // console.log("foundIng", foundIng)
-      // console.log("ingredeitn", ingredient)
       return arr
     }, [])
     this.recipeIngredients = matchNames
-    // console.log('testMatchNames', matchNames)
   }
 
 
 
   returnInstructions() {
-    // console.log("allInstr", this.instructions)
     return this.instructions;
   }
 
   returnIngredients() {
-    // console.log("allIngs", this.recipeIngredients)
     return this.recipeIngredients
   }
 
@@ -53,9 +48,12 @@ class Recipe {
   calculateCost(ingredientsData) {
     let costCount = 0;
     this.recipeIngredients.forEach(ingredient => {
-      costCount += ingredient.estimatedCostInCents * ingredient.quantity.amount
+      costCount += (ingredient.estimatedCostInCents *
+       ingredient.quantity.amount)
     })
-    return `$${costCount/100}`
+
+    let finalCost = costCount/100
+    return `$${finalCost}`
 
 
   }
