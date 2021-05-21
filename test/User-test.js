@@ -10,7 +10,7 @@ import {
   testIngredients
 } from '../test/test-data';
 
-describe.only('User', function() {
+describe('User', function() {
   let user1;
   let recipe1;
   let userData;
