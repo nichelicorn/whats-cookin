@@ -6,7 +6,7 @@ import {
 } from '../test/test-data';
 import Ingredient from '../src/classes/Ingredient';
 
-describe.only('Ingredient', () => {
+describe('Ingredient', () => {
   let ingr1, ingr2, ingr3;
 
   beforeEach(() => {
