@@ -105,28 +105,38 @@ const testRecipes = [
     "ingredients": [
       {
         "id": 2,
-        "name": "avocado",
-        "estimatedCostInCents": 250
+        "quantity": {
+          "amount": 2,
+          "unit": "large"
+        }
       },
       {
         "id": 3,
-        "name": "tomatillo",
-        "estimatedCostInCents": 50
+        "quantity": {
+          "amount": 3,
+          "unit": "large"
+        }
       },
       {
         "id": 4,
-        "name": "garlic",
-        "estimatedCostInCents": 25
+        "quantity": {
+          "amount": 1,
+          "unit": "small"
+        }
       },
-      {
-        "id": 5,
-        "name": "jalapeno",
-        "estimatedCostInCents": 10
-      },
-      {
-        "id": 6,
-        "name": "cilantro",
-        "estimatedCostInCents": 50
+        {
+          "id": 5,
+          "quantity": {
+            "amount": 5,
+            "unit": "large"
+          }
+        },
+          {
+            "id": 6,
+            "quantity": {
+              "amount": 1,
+              "unit": "bunch"
+            }
       }
     ],
     "instructions": [
@@ -159,24 +169,32 @@ const testRecipes = [
     "ingredients": [
       {
         "id": 0,
-        "name": "rice",
-        "estimatedCostInCents": 150
+        "quantity": {
+          "amount": 2,
+          "unit": "c"
+        }
       },
       {
         "id": 1,
-        "name": "egg",
-        "estimatedCostInCents": 10
+        "quantity": {
+          "amount": 3,
+          "unit": "large"
+        }
       },
       {
         "id": 7,
-        "name": "soy sauce",
-        "estimatedCostInCents": 5
+        "quantity": {
+          "amount": 1,
+          "unit": "c"
+        }
       },
-      {
-        "id": 8,
-        "name": "brown sugar",
-        "estimatedCostInCents": 10
-      }
+        {
+          "id": 8,
+          "quantity": {
+            "amount": 1,
+            "unit": "c"
+          }
+        }
     ],
     "instructions": [
       {
