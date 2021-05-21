@@ -42,9 +42,9 @@ class User {
 
   filterFavoriteRecipesIng(ingredient) {
     let filterIngredient = this.favoriteRecipes.find(recipe => {
-       recipe.ingredientNames.includes(ingredient)
-       // console.log("FUCK", recipe.ingredientNames)
-       return recipe
+      recipe.ingredientNames.includes(ingredient)
+      // console.log("FUCK", recipe.ingredientNames)
+      return recipe
     })
     // console.log("FILTERING", filterIngredient)
     return filterIngredient
