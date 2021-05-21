@@ -1,6 +1,11 @@
-
-import { expect } from 'chai';
-import { testRecipes, testRecipeData, testIngredients } from '../test/test-data';
+import {
+  expect
+} from 'chai';
+import {
+  testRecipes,
+  testRecipeData,
+  testIngredients
+} from '../test/test-data';
 import Cookbook from '../src/classes/Cookbook';
 import Recipe from '../src/classes/Recipe';
 import Ingredient from '../src/classes/Ingredient.js';
@@ -10,9 +15,9 @@ describe('Cookbook', () => {
   let recipe1, recipe2, recipe3, testCookbook, allRecipes;
 
   beforeEach(() => {
-    recipe1 = new Recipe (testRecipes[0], testIngredients);
-    recipe2 = new Recipe (testRecipes[1], testIngredients);
-    recipe3 = new Recipe (testRecipes[2], testIngredients);
+    recipe1 = new Recipe(testRecipes[0], testIngredients);
+    recipe2 = new Recipe(testRecipes[1], testIngredients);
+    recipe3 = new Recipe(testRecipes[2], testIngredients);
     recipe1.updateEachRecipeIngredients(testIngredients);
     recipe2.updateEachRecipeIngredients(testIngredients);
     recipe3.updateEachRecipeIngredients(testIngredients);
@@ -34,8 +39,8 @@ describe('Cookbook', () => {
   describe('Cookbook properties', () => {
 
     it('Should be have a new recipe', () => {
-  expect(testCookbook.recipes[0]).to.be.an.instanceof(Recipe);
-});
+      expect(testCookbook.recipes[0]).to.be.an.instanceof(Recipe);
+    });
   })
 
   describe('Cookbook filter methods', () => {
@@ -45,7 +50,7 @@ describe('Cookbook', () => {
     })
 
     it('should be able to filter by more than one tag', () => {
-    testCookbook.filterByTag('breakfast', 'appetizer');
+      testCookbook.filterByTag('breakfast', 'appetizer');
       expect(testCookbook.filterByTag('breakfast', 'appetizer')).to.deep.equal([recipe1, recipe3]);
     })
 

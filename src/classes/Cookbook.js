@@ -1,4 +1,6 @@
-import { recipeData } from '../data/recipes.js';
+import {
+  recipeData
+} from '../data/recipes.js';
 
 import Recipe from '../classes/Recipe.js';
 import Ingredient from '../classes/Ingredient.js';
