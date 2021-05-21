@@ -45,7 +45,6 @@ describe('Cookbook', () => {
 
   describe('Cookbook filter methods', () => {
     it('should filter by tags and return an array of recipes', () => {
-      // console.log("CONSOLEMEEE", recipe1)
       expect(testCookbook.filterByTag('breakfast')).to.deep.equal([recipe1, recipe3]);
     })
 
