@@ -10,6 +10,7 @@ describe('User', function() {
   let user1;
   let recipe1;
   let userData;
+  let recipe2;
 
   beforeEach(() => {
     userData = [
@@ -35,6 +36,11 @@ describe('User', function() {
 
     user1 = new User(userData[0])
     recipe1 = new Recipe (testRecipes[0]);
+    recipe2 = new Recipe(testRecipes[1]);
+    recipe1.updateEachRecipeIngredients(testIngredients);
+    recipe2.updateEachRecipeIngredients(testIngredients);
+    recipe1.returnIngredientNames(testIngredients)
+    recipe2.returnIngredientNames(testIngredients)
   })
 
   it('should be a function', function() {
@@ -109,13 +115,14 @@ describe('User', function() {
       expect(user1.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.deep.equal([recipe1]);
       });
 
-  // it.skip('should instantiate an Ingredient', function() {
-  //   expect(ingr1).to.be.an.instanceof(Ingredient);
-  // });
-
-  it.skip('should filter through recipes by ingredient', function() {
-    user1.filterRecipes("rice");
-    expect(user.filterRecipes("rice")).to.equal(ingr1)
+  it('should filter through recipes by ingredient', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipesIng("rice");
+    // console.log("HELPppppppppp", recipe1);
+    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal(recipe1)
   });
 
 
