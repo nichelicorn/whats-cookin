@@ -36,8 +36,8 @@ describe('User', function() {
     }];
 
     user1 = new User(userData[0])
-    recipe1 = new Recipe(testRecipes[0]);
-    recipe2 = new Recipe(testRecipes[1]);
+    recipe1 = new Recipe (testRecipes[0], testIngredients);
+    recipe2 = new Recipe(testRecipes[1], testIngredients);
     recipe1.updateEachRecipeIngredients(testIngredients);
     recipe2.updateEachRecipeIngredients(testIngredients);
     recipe1.returnIngredientNames(testIngredients)
@@ -86,10 +86,10 @@ describe('User', function() {
   it('should remove recipes to cook', function() {
     expect(user1.recipesToCook).to.deep.equal([])
     user1.addRecipeToCook(recipe1);
-    expect(user1.recipesToCook).to.deep.equal([recipe1])
+    user1.addRecipeToCook(recipe2)
+    expect(user1.recipesToCook).to.deep.equal([recipe1, recipe2])
     user1.removeRecipeToCook(recipe1);
-    expect(user1.recipesToCook).to.deep.equal([])
-
+    expect(user1.recipesToCook).to.deep.equal([recipe2])
   });
 
   it('should filter through favorite recipes by tag or name', function() {
@@ -100,10 +100,21 @@ describe('User', function() {
     expect(user1.filterFavoriteRecipes("breakfast")).to.deep.equal([recipe1]);
   });
 
+  it('should return an empty array if tag is not found', function() {
+    expect(user1.recipesToCook).to.deep.equal([])
+    user1.addRecipeToCook(recipe1);
+    user1.addRecipeToCook(recipe2)
+    expect(user1.recipesToCook).to.deep.equal([recipe1, recipe2])
+    user1.filterFavoriteRecipes("dinner");
+    expect(user1.filterFavoriteRecipes("dinner")).to.deep.equal([]);
+  });
+
+
   it('should filter through favorite recipes by multiple tags', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
     user1.addToFavorites(recipe1);
-    expect(user1.favoriteRecipes).to.deep.equal([recipe1])
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
     user1.filterFavoriteRecipes("breakfast", "lunch");
     expect(user1.filterFavoriteRecipes("breakfast", "lunch")).to.deep.equal([recipe1]);
   });
@@ -116,14 +127,31 @@ describe('User', function() {
     expect(user1.filterFavoriteRecipes("Rice bowl with Fried Egg")).to.deep.equal([recipe1]);
   });
 
+  it('should return an empty array if name is not found', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipes("Burgers");
+    expect(user1.filterFavoriteRecipes("burgers")).to.deep.equal([]);
+  });
+
   it('should filter through recipes by ingredient', function() {
     expect(user1.favoriteRecipes).to.deep.equal([])
     user1.addToFavorites(recipe1);
     user1.addToFavorites(recipe2);
     expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
     user1.filterFavoriteRecipesIng("rice");
-    // console.log("HELPppppppppp", recipe1);
-    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal(recipe1)
+    expect(user1.filterFavoriteRecipesIng("rice")).to.deep.equal([recipe1])
+  });
+
+  it('should return an empty array if ingredient not found', function() {
+    expect(user1.favoriteRecipes).to.deep.equal([])
+    user1.addToFavorites(recipe1);
+    user1.addToFavorites(recipe2);
+    expect(user1.favoriteRecipes).to.deep.equal([recipe1, recipe2]);
+    user1.filterFavoriteRecipesIng("spaghetti");
+    expect(user1.filterFavoriteRecipesIng("spaghetti")).to.deep.equal([])
   });
 
 

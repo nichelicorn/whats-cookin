@@ -5,14 +5,17 @@ import { testIngredients } from '../test/test-data';
 import Recipe from '../src/classes/Recipe';
 import Ingredient from '../src/classes/Ingredient.js';
 
-describe('Recipe', () => {
+describe.only('Recipe', () => {
   let recipe1;
+  let recipe2;
   let ingr1, ingr2, ingr3;
 
 
   beforeEach(() => {
     recipe1 = new Recipe (testRecipes[0], testIngredients);
+    recipe2 = new Recipe (testRecipes[1], testIngredients)
     recipe1.updateEachRecipeIngredients(testIngredients);
+    recipe2.updateEachRecipeIngredients(testIngredients);
     ingr1 = new Ingredient(testIngredients[0]);
     ingr2 = new Ingredient(testIngredients[1]);
     ingr3 = new Ingredient(testIngredients[2]);
@@ -106,6 +109,8 @@ describe('Recipe', () => {
           "estimatedCostInCents": 250
         }
       ])
+  recipe2.updateEachRecipeIngredients(testIngredients);
+
     });
 
     it('should store recipe instructions', () => {
@@ -223,12 +228,13 @@ describe('Recipe', () => {
       expect(recipe1.returnIngredientNames(testIngredients)).to.deep.equal(['rice', 'egg', 'avocado']);
     })
 
-  })
-
-  describe('A method to determind the total cost of making a recipe', () => {
 
     it('should return the cost of making a recipe', () => {
+      recipe1.calculateCost(testIngredients);
       expect(recipe1.calculateCost(testIngredients)).to.equal('$5.6');
+      recipe2.updateEachRecipeIngredients(testIngredients)
+      recipe2.calculateCost(testIngredients);
+      expect(recipe2.calculateCost(testIngredients)).to.equal('$7.75');
     })
   })
 
