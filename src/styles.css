@@ -48,7 +48,21 @@ display: none;
 }
 
 .recipe-card-display {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.recipe-category-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card-container {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 25px;
 }
 
 /* 🎨 Color Palette */
