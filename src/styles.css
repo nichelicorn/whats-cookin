@@ -23,13 +23,19 @@ body, main {
   justify-content: center;
 }
 
-.featured-recipe-container {
+.main-content-features {
+  
+}
+
+.featured-recipe-container,
+.welcome-abstract-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border: 1px solid #454851;
 }
+
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
