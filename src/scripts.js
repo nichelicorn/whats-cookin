@@ -1,5 +1,14 @@
 import './styles.css';
 import apiCalls from './apiCalls';
+import Cookbook from "./classes/Cookbook";
+import Recipe from "./classes/Recipe";
+import Ingredient from "./classes/Ingredient";
+import User from "./classes/User";
+import { recipeData } from "./data/recipes";
+import { usersData } from "./data/users"
+import { ingredientsData } from "./data/ingredients";
+
+
 // console.log('Hello world');
 //---------------------Query Selectors---------------------//
 let myFavoritesBtn = document.getElementById('myFavoritesBtn');
@@ -16,6 +25,8 @@ let addToGroceryBtn = document.getElementById('groceryListBtn');
 let recipe;
 let user;
 let cookbook;
+let ingredient;
+
 
 //----------------Event Listeners -------------------------//
 myFavoritesBtn.addEventListener('click', function() {
