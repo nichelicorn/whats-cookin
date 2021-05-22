@@ -41,6 +41,18 @@ window.addEventListener('load', startUpPage);
 
 // -------------------Event Handlers -----------------------//
 
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
+
 
 function startUpPage() {
 
@@ -50,10 +62,12 @@ function customizeForUser() {
 
 }
 
-function searchForXYZ(entry) {
+function searchForItem(entry) {
+   entry = input.value
+
   cookbook.filterByTag(entry);
   cookbook.filterByName(entry);
-  cookbook.filterByIngredient(etnry);
+  cookbook.filterByIngredient(entry);
 
 }
 
