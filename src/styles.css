@@ -74,6 +74,18 @@ display: none;
 
 }
 
+.recipe-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.ingredients-container {
+  display: flex;
+  flex-direction: column;
+}
+
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
 /* peach: #ffe5d4 	(255,229,212) */
