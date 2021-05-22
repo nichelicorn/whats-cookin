@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <title>What's Cookin</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>What's Cookin'</title>
+  </head>
 
-<body>
+  <body>
   <main class="main-page-view" id="mainPage">
-    <nav class="main-page-container" id="mainPageContainer">
-      <button class="my-favorites-button" id="myFavoritesBtn" value=""> My Favorites ❤️ </button>
-      <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
-      <button class="recipes-to-cook-button" id="recipesCookLtrBtn" value=""> Cook This Week </button>
+    <nav class="header-nav" id="mainPageContainer">
+      <div class="header-nav-container">
+        <button class="my-favorites button" id="myFavoritesBtn" value=""> My Favorites ❤️ </button>
+        <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
+        <button class="recipes-to-cook button" id="recipesCookLtrBtn" value=""> Cook This Week </button>
+    </div>
+    <form class="header-search" action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search">Submit</i></button>
+      </form>
     </nav>
     <section class="featured-recipe-container" id="featuredRecipeContainer">
       <h2 class="main-title" id="mainTitle">Featured Recipe</h2>
@@ -65,9 +71,9 @@
     <section class="recipe-page-view hidden" id="recipePage">
       <section class="recipe-container" id="recipeContainer">
         <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
-        <button class="add-favorites-button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-        <button class="cook-later-button" id="cookLaterBtn" value="change">Cook Me Later!</button>
-        <button class="grocery-list-button" id="groceryListBtn" value="change">Grocery List</button>
+        <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
+        <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+        <button class="grocery-list button" id="groceryListBtn" value="change">Grocery List</button>
       </section>
       <section class="ingredients-container hidden" id="ingredientsContainer">
         <h2 class="ingredients-title" id="ingredientsTitle">Ingredients</h2>

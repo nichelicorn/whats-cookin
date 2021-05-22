@@ -1,3 +1,41 @@
-body {
-  background-color: lavender;
+* {
+  border: 1px solid lavender;
 }
+
+body, main {
+  background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
+            linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
+            linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
+  /* background-color: #63768d; */
+  margin: 0;
+  height: 100%;
+  font-family: 'Verdana', sans-serif;
+}
+
+.header-nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-search {
+  display: flex;
+  justify-content: center;
+}
+
+.featured-recipe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #454851;
+}
+
+/* 🎨 Color Palette */
+/* dark gray: #454851 	(69,72,81) */
+/* peach: #ffe5d4 	(255,229,212) */
+/* slate blue: #63768d 	(99,118,141) (background-color body,main) */
+/* aqua: #aed9e0 	(174,217,224) */
+/* light gray: #aaaaaa 	(170,170,170) */
+/* black: #000 (0,0,0) */
+/* whtie: #fff (255,255,255) */
