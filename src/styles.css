@@ -12,6 +12,10 @@ body, main {
   font-family: 'Verdana', sans-serif;
 }
 
+/* .hidden {
+display: none;
+} */
+
 .header-nav-container {
   display: flex;
   flex-direction: row;
@@ -24,7 +28,9 @@ body, main {
 }
 
 .main-content-features {
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .featured-recipe-container,
@@ -34,8 +40,16 @@ body, main {
   justify-content: center;
   align-items: center;
   border: 1px solid #454851;
+  width: 50%;
 }
 
+.category-header {
+  text-align: center;
+}
+
+.recipe-card-display {
+
+}
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
