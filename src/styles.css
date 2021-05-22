@@ -16,7 +16,8 @@ body, main {
 display: none;
 } */
 
-.header-nav-container {
+.header-nav-container,
+.recipe-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -63,6 +64,14 @@ display: none;
   grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
   padding: 25px;
+}
+
+.recipe-nav {
+  justify-content: space-around;
+}
+
+.ingredients-container {
+
 }
 
 /* 🎨 Color Palette */
