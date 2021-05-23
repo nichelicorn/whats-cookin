@@ -156,7 +156,33 @@ display: none;
   width: 65%;
 }
 
-/* ❤️ My Favorites Styles */
+/* 💻 > 📱 Media Queries */
+
+/* Jumbo Desktop 📺 */
+@media screen and (min-width: 1450px) {
+
+}
+
+/* Desktop 🖥 */
+@media screen and (min-width: 1200px) and (max-width: 1449px) {
+
+}
+
+/* Laptop 💻 */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+}
+
+/* Tablet 📱 */
+@media screen and (min-width: $tablet) and (max-width: $laptop - 1) {
+
+}
+
+/* Mobile 📱 */
+@media screen and (min-width: $mobile) and (max-width: $tablet - 1) {
+
+}
+
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
