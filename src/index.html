@@ -1,110 +1,166 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What's Cookin'</title>
   </head>
+
   <body>
+
     <main class="main-page-view" id="mainPage">
+
       <nav class="header-nav" id="mainPageContainer">
-        <div class="header-nav-container">
+        <section class="header-nav-container">
           <button class="my-favorites button" id="myFavoritesBtn" value=""> My Favorites ❤️ </button>
           <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
           <button class="recipes-to-cook button" id="recipesCookLtrBtn" value=""> Cook This Week </button>
-      </div>
-      <form class="header-search" action="/action_page.php">
-          <input type="text" placeholder="Search.." name="search">
+        </section>
+        <form class="header-search" action="/action_page.php">
+          <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
           <button type="submit"><i class="fa fa-search">Submit</i></button>
         </form>
       </nav>
-      <div class="main-content-features">
+
+      <section class="main-content-features">
+
         <section class="featured-recipe-container" id="featuredRecipeContainer">
-          <h2 class="featured-recipe" id="featuredRecipe">Featured Recipe</h2>
+          <h2>Pizza Dough</h2>
+          <h3 class="main-title" id="mainTitle">Featured Recipe</h3>
         </section>
+
         <section class="welcome-abstract-container" id="welcomeAbstractContainer">
-          <h2 class="main-title" id="mainTitle">Welcome to What's Cookin'!</h2>
-          <p class="ingredient-one" id="ingredientOne"> find recipes to cook </p>
-          <p class="ingredient-two" id="ingredientTwo"> save your favorites </p>
-          <p class="ingredient-three" id="ingredientThree"> search recipe properties to return matches </p>
-          <p class="ingredient-four" id="ingredientFour"> search your favorite recipes </p>
+          <h2 class="main-title" id="mainTitle">Welcome to What's Cookin', Beverly!</h2>
+          <p>Find recipes to cook using the search feature. Save and search your favorites, and save recipes to cook this week.</p>
+          <p>Enjoy your new cookbook!</p>
         </section>
-      </div>
-      <div class="recipe-card-display">
+
+      </section>
+
+      <section class="recipe-card-display">
+
         <section class="recipe-category-container" id="recipeCategoryOne">
-          <h2 class="category-title-one category-header" id="categoryTitle1">Category: Breakfast </h2>
-          <div class="recipe-card-container">
-            <section class="recipe-card-one" id="recipeCardOne">
-              <h3 class="recipe-card-name-one" id="recipeCardNameOne">Recipe Card One</h3>
+          <h2 class="category-header" id="categoryTitle1">Recipes for Breakfast </h2>
+
+          <section class="recipe-card-container">
+
+            <section class="recipe-card" id="recipeCardOne">
+
+              <section class="card-nav">
+                <button type="small-btn" name="smallFavBtn"> ❤️ </button>
+                <button type="small-btn" name="smallThisWeekBtn"> 🗓 </button>
+              </section>
+
+              <h3 class="recipe-card-name" id="recipeCardNameOne">Recipe Name One</h3>
+
             </section>
-            <section class="recipe-card-two" id="recipeCardTwo">
-              <h3 class="recipe-card-name-two" id="recipeCardNameTwo">Recipe Card Two</h3>
+
+            <section class="recipe-card" id="recipeCardTwo">
+              <h3 class="recipe-card-name" id="recipeCardNameTwo">Recipe Name Two</h3>
             </section>
-            <section class="recipe-card-three" id="recipeCardThree">
-              <h3 class="recipe-card-name-one" id="recipeCardNameOne">Recipe Card Three</h3>
+
+            <section class="recipe-card" id="recipeCardThree">
+              <h3 class="recipe-card-name" id="recipeCardNameOne">Recipe Name Three</h3>
             </section>
-          </div>
+          </section>
+
         </section>
+
         <section class="recipe-category-container" id="recipeCategoryTwo">
-          <h2 class="category-title-two category-header" id="categoryTitle2">Category: Lunch </h2>
-          <div class="recipe-card-container">
-            <section class="recipe-card-one" id="recipeCardFour">
-              <h3 class="recipe-card-name-one" id="recipeCardNameFour">Recipe Card One</h3>
+          <h2 class="category-header" id="categoryTitle2">Recipes for Lunch </h2>
+
+          <section class="recipe-card-container">
+            <section class="recipe-card" id="recipeCardFour">
+              <h3 class="recipe-card-name" id="recipeCardNameFour">Recipe Name One</h3>
             </section>
-            <section class="recipe-card-two" id="recipeCardFive">
-              <h3 class="recipe-card-name-two" id="recipeCardNameFive">Recipe Card Two</h3>
+            <section class="recipe-card" id="recipeCardFive">
+              <h3 class="recipe-card-name" id="recipeCardNameFive">Recipe Name Two</h3>
             </section>
-            <section class="recipe-card-three" id="recipeCardSix">
-              <h3 class="recipe-card-name-one" id="recipeCardNameSix">Recipe Card Three</h3>
+            <section class="recipe-card" id="recipeCardSix">
+              <h3 class="recipe-card-name" id="recipeCardNameSix">Recipe Name Three</h3>
             </section>
           </section>
-        </div>
+
+        </section>
+
         <section class="recipe-category-container" id="recipeCategoryThree">
-          <h2 class="category-title-three category-header" id="categoryTitle3">Category: Dinner </h2>
-          <div class="recipe-card-container">
-            <section class="recipe-card-one" id="recipeCardSeven">
-              <h3 class="recipe-card-name-one" id="recipeCardNameSeven">Recipe Card One</h3>
+          <h2 class="category-header" id="categoryTitle3">Recipes for Dinner </h2>
+
+          <section class="recipe-card-container">
+            <section class="recipe-card" id="recipeCardSeven">
+              <h3 class="recipe-card-name" id="recipeCardNameSeven">Recipe Name One</h3>
             </section>
-            <section class="recipe-card-two" id="recipeCardEight">
-              <h3 class="recipe-card-name-two" id="recipeCardNameEight">Recipe Card Two</h3>
+            <section class="recipe-card" id="recipeCardEight">
+              <h3 class="recipe-card-name" id="recipeCardNameEight">Recipe Name Two</h3>
             </section>
-            <section class="recipe-card-three" id="recipeCardNine">
-              <h3 class="recipe-card-name-one" id="recipeCardNameNine">Recipe Card Three</h3>
+            <section class="recipe-card" id="recipeCardNine">
+              <h3 class="recipe-card-name" id="recipeCardNameNine">Recipe Name Three</h3>
             </section>
-          </div>
-        </section>
-      </div>
-    </main>
-    <section class="recipe-page-view hidden" id="recipePage">
-      <section class="recipe-container" id="recipeContainer">
-        <nav class="recipe-nav">
-          <!-- <h1 class="main-title" id="mainTitle">What's Cookin'</h1> -->
-          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
-          <button type="home-button" name="button">Take me Home 🏠</button>
-        </nav>
-      <section class="ingredients-container" id="ingredientsContainer">
-        <h2 class="category-header">Recipe Title</h1>
-        <h3 class="ingredients-cost category-header" id="ingredientsCost">Cost: </h3>
-          <div class="recipe-details-container">
-            <div class="ingredients-container">
-              <h3 class="ingredients-title" id="ingredientsTitle">Ingredients:</h2>
-              <p class="ingredient-one" id="ingredientOne">1. Salt</p>
-              <p class="ingredient-two" id="ingredientTwo">2. Flour</p>
-              <p class="ingredient-three" id="ingredientThree">3. Water</p>
-              <p class="ingredient-four" id="ingredientFour">4. Yeast</p>
-          </div>
-        </section>
-        <div class="recipe-instructions-container">
-          <section class="instructions" id="instructionsContainer">
-            <h2 class="instructions-title" id="instructionsTitle">Instructions:</h2>
-            <p class="ingredient-one" id="ingredientOne">1. </p>
-            <p class="ingredient-two" id="ingredientTwo">2. </p>
-            <p class="ingredient-three" id="ingredientThree">3. </p>
-            <p class="ingredient-four" id="ingredientFour">4. </p>
           </section>
-        </div>
-      </div>
         </section>
+
+      </section>
+
+    </main>
+
+    <section class="recipe-page hidden" id="recipePage">
+
+      <section class="recipe-view" id="recipeView">
+
+        <nav class="recipe-nav">
+          <section class="recipe-nav-container">
+            <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
+            <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
+            <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+            <button type="home-button" name="button">Take me Home 🏠</button>
+            <form class="header-search" action="/action_page.php">
+              <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+              <button type="submit"><i class="fa fa-search">Submit</i></button>
+            </form>
+          </section>
+        </nav>
+
+      <section class="recipe-container" >
+
+        <h2 class="category-header">Pizza Dough</h1>
+
+        <p class="ingredients-cost category-header" id="ingredientsCost"> Cost: $1.11 </p>
+
+        <section class="recipe-details-container">
+
+          <section class="ingredients-container" id="ingredientsContainer">
+            <h2 class="ingredients-title" id="ingredientsTitle">Ingredients:</h2>
+            <p class="ingredient" id="ingredientOne">3 1/2 cups bread flour, plus more for rolling </p>
+            <p class="ingredient" id="ingredientTwo">1 tsp sugar </p>
+            <p class="ingredient" id="ingredientThree">1 tsp instant dry yeast</p>
+            <p class="ingredient-four" id="ingredientFour">2 tsp salt</p>
+            <p class="ingredient" id="ingredient">1 1/2 cups water at 110℉</p>
+            <p class="ingredient" id="ingredient"> 2 tbsp olive oil, plus 2 tsp</p>
+          </section>
+
+          <section class="instructions-container" id="instructionsContainer">
+
+            <section class="instructions">
+              <h2 class="instructions-title" id="instructionsTitle">Instructions:</h2>
+              <p class="instruction" id="instruction">Combine the bread flour, sugar, yeast and kosher salt in a bowl and combine.</p>
+              <p class="instruction" id="instructioninstruction">Stir in the water and 2 tablespoons of oil and mix until the dough forms into a ball. If the dough is sticky, add additional flour, 1 tablespoon at a time, until the dough forms a solid ball. If the dough is too dry, add additional water. </p>
+              <p class="instruction" id="instruction">Scrape the dough onto a lightly floured surface and gently knead into a smooth, firm ball.</p>
+              <p class="instruction" id="instruction">Grease a large bowl with the remaining oil, add the dough, and cover with plastic wrap and place in a warm area to double in size, about 1 hour.</p>
+              <pclass="instruction" id="instruction">Turn the dough out ont a lightly floured surface and divide it into two equal pieces. Cover each with a clean kitchen towel or plastic wrap and allow to rest for 10 minutes.</p>
+              <pclass="instruction" id="instruction">The dough is now ready to use as desired.</p>
+            </section>
+
+          </section>
+
+        </section>
+
+      </section>
+
+      </section>
+
     </section>
+
   </body>
+
 </html>
