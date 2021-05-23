@@ -30,12 +30,17 @@ let category3 = document.getElementById('categoryTitle3');
 let addToFavoritesBtn = document.getElementById('addFavoritesBtn');
 let saveForLaterBtn = document.getElementById('cookLaterBtn');
 let addToGroceryBtn = document.getElementById('groceryListBtn');
+let featuredRecipe = document.getElementById('featuredRecipe');
 
 //----------------Global Variables -------------------------//
-let recipe, user, cookbook, ingredient;
+let ingredient;
 let usersArray;
 let recipesArray;
 let ingredientsArray;
+let getRandomIndex = Math.floor(Math.random() * recipeData.length)
+let recipe = makeRecipes();
+let user = makeUser();
+let cookbook = makeBook();
 
 
 //----------------Event Listeners -------------------------//
@@ -48,10 +53,16 @@ window.onclick = function() {
 }
 
 window.addEventListener('load', onPageLoad);
-// window.addEventListener('load', greetUser);
 
 // -------------------Event Handlers -----------------------//
 
+function show(element) {
+  element.classList.remove('hidden');
+}
+
+function hide(element) {
+  element.classList.add('hidden');
+}
 
 
 function onPageLoad() {
@@ -60,6 +71,7 @@ function onPageLoad() {
   makeUser();
   makeIngredients();
   greetUser();
+  featureRecipe();
 }
 
 
@@ -74,10 +86,11 @@ function makeRecipes() {
 }
 
 
+
 function makeBook() {
-  cookbook = new Cookbook(makeRecipes())
+  let aCookbook = new Cookbook(makeRecipes())
   // console.log("theBook", cookbook)
-  return cookbook
+  return aCookbook
 }
 // console.log("tesssst", makeBook())
 
@@ -87,9 +100,9 @@ function makeUser() {
   let userIndex = Math.floor(Math.random(42) * usersData.length + 1);
   // console.log(userIndex)
   let randomUser = usersData.find(user => user.id === userIndex)
-  user = new User(randomUser.name, randomUser.id, randomUser.pantry)
+  let aUser = new User(randomUser.name, randomUser.id, randomUser.pantry)
   // console.log("user", user)
-  return user
+  return aUser
 }
 
 function makeIngredients() {
@@ -103,36 +116,29 @@ function makeIngredients() {
   return allIngredients
 }
 
-// function makeRecipes() {
-//   let allRecipes = [];
-//   recipeData.forEach((recipe, index) => {
-//     let aRecipe = new Recipe(recipeData[index], ingredientsData)
-//     allRecipes.push(aRecipe)
-//   })
-//   // console.log('allRecipes', allRecipes)
-//   return allRecipes
-// }
-
-
-
-
-
-
 function greetUser() {
   mainTitle.innerHTML = '';
   mainTitle.innerHTML += `
-  What's Cookin', ${makeUser().name}?`
+  What's Cookin', ${user.name}?`
 }
 
+function featureRecipe() {
+  featuredRecipe.innerHTML = '';
+  featuredRecipe.innerHTML += `
+<section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="aFeaturedRecipe">
+        <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}"> Featured Recipe: ${recipe[getRandomIndex].name}
+            <img class="${recipe[getRandomIndex].name} fighter-image" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
+        </section>
+      </section>
 
-// console.log("test", user)
+`
+}
 
-// function greetUser(){
-//   mainTitle.innerHTML +=
-//         'Whats cooking, Luly?';
-// }
+// console.log("test", makeRecipes()[getRandomIndex].name)
 
 
+
+//FUNCTION FOR API DATA
 // function startUpPage() {
 //   getUsers()
 //   .then(response => usersArray = response)
@@ -160,28 +166,7 @@ function greetUser() {
 //     })
 //
 //   }
-
-
-
-
-
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
-}
-
-
-
-
-// function customizeForUser() {
-// mainTitle.innerHTML = ''
-// mainTitle.innerHTML += `Welcome to What's Cookin, ${user.name} `
-// console.log(mainTitle.innerHTML)
-// }
-
+//THIS IS TO SEARCH FOR ENTRIES
 // function searchForItem(entry) {
 //    entry = input.value
 //
