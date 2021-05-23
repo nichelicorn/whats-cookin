@@ -124,6 +124,7 @@ display: none;
 }
 
 .category-header {
+  font-size: 2.5em;
   text-align: center;
   text-shadow: #ffe5d4 1px 0 10px;
   background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
