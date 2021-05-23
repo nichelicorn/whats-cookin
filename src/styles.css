@@ -17,7 +17,7 @@ display: none;
 } */
 
 .header-nav-container,
-.recipe-nav {
+.recipe-nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -66,12 +66,19 @@ display: none;
   padding: 25px;
 }
 
-.recipe-nav {
-  justify-content: space-around;
+.recipe-page {
+  /* display: flex;
+  justify-content: center;
+  width: 95%;
+  border-radius: 20px; */
 }
 
-.ingredients-container {
+.recipe-container {
+  /* width: 100%; */
+}
 
+.recipe-nav {
+  justify-content: space-around;
 }
 
 .recipe-details-container {
@@ -79,14 +86,12 @@ display: none;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  /* width: 98%; */
 }
 
 .ingredients-container,
 .instructions-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
 }
 
 /* 🎨 Color Palette */
