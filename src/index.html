@@ -12,18 +12,18 @@
     <main class="main-page-view" id="mainPage">
 
       <nav class="header-nav" id="mainPageContainer">
-        <div class="header-nav-container">
+        <section class="header-nav-container">
           <button class="my-favorites button" id="myFavoritesBtn" value=""> My Favorites ❤️ </button>
           <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
           <button class="recipes-to-cook button" id="recipesCookLtrBtn" value=""> Cook This Week </button>
-        </div>
+        </section>
         <form class="header-search" action="/action_page.php">
           <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
           <button type="submit"><i class="fa fa-search">Submit</i></button>
         </form>
       </nav>
 
-      <div class="main-content-features">
+      <section class="main-content-features">
 
         <section class="featured-recipe-container" id="featuredRecipeContainer">
           <h2 class="main-title" id="mainTitle">Featured Recipe</h2>
@@ -37,14 +37,14 @@
           <p class="ingredient-four" id="ingredientFour"> search your favorite recipes </p>
         </section>
 
-      </div>
+      </section>
 
-      <div class="recipe-card-display">
+      <section class="recipe-card-display">
 
         <section class="recipe-category-container" id="recipeCategoryOne">
           <h2 class="category-header" id="categoryTitle1">Category: Breakfast </h2>
 
-          <div class="recipe-card-container">
+          <section class="recipe-card-container">
             <section class="recipe-card-one" id="recipeCardOne">
               <h3 class="recipe-card-name-one" id="recipeCardNameOne">Recipe Title One</h3>
             </section>
@@ -54,14 +54,14 @@
             <section class="recipe-card-three" id="recipeCardThree">
               <h3 class="recipe-card-name-one" id="recipeCardNameOne">Recipe Title Three</h3>
             </section>
-          </div>
+          </section>
 
         </section>
 
         <section class="recipe-category-container" id="recipeCategoryTwo">
           <h2 class="category-header" id="categoryTitle2">Category: Lunch </h2>
 
-          <div class="recipe-card-container">
+          <section class="recipe-card-container">
             <section class="recipe-card-one" id="recipeCardFour">
               <h3 class="recipe-card-name-one" id="recipeCardNameFour">Recipe Title One</h3>
             </section>
@@ -71,13 +71,13 @@
             <section class="recipe-card-three" id="recipeCardSix">
               <h3 class="recipe-card-name-one" id="recipeCardNameSix">Recipe Title Three</h3>
             </section>
-          </div>
+          </section>
         </section>
 
         <section class="recipe-category-container" id="recipeCategoryThree">
           <h2 class="category-header" id="categoryTitle3">Category: Dinner </h2>
 
-          <div class="recipe-card-container">
+          <section class="recipe-card-container">
             <section class="recipe-card-one" id="recipeCardSeven">
               <h3 class="recipe-card-name-one" id="recipeCardNameSeven">Recipe Title One</h3>
             </section>
@@ -87,33 +87,40 @@
             <section class="recipe-card-three" id="recipeCardNine">
               <h3 class="recipe-card-name-one" id="recipeCardNameNine">Recipe Title Three</h3>
             </section>
-          </div>
+          </section>
         </section>
 
-      </div>
+      </section>
 
     </main>
-    
-    <section class="recipe-page-view hidden" id="recipePage">
+
+    <section class="recipe-page hidden" id="recipePage">
+
       <section class="recipe-container" id="recipeContainer">
+
         <nav class="recipe-nav">
-          <!-- <h1 class="main-title" id="mainTitle">What's Cookin'</h1> -->
+          <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
           <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
           <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
           <button type="home-button" name="button">Take me Home 🏠</button>
+          <form class="header-search" action="/action_page.php">
+            <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+            <button type="submit"><i class="fa fa-search">Submit</i></button>
+          </form>
         </nav>
+
       <section class="ingredients-container" id="ingredientsContainer">
         <h2 class="category-header">Recipe Title</h1>
         <h3 class="ingredients-cost category-header" id="ingredientsCost">Cost: </h3>
-          <div class="recipe-details-container">
-            <div class="ingredients-container">
+          <section class="recipe-details-container">
+            <section class="ingredients-container">
               <h3 class="ingredients-title" id="ingredientsTitle">Ingredients:</h2>
               <p class="ingredient-one" id="ingredientOne">1. Salt</p>
               <p class="ingredient-two" id="ingredientTwo">2. Flour</p>
               <p class="ingredient-three" id="ingredientThree">3. Water</p>
               <p class="ingredient-four" id="ingredientFour">4. Yeast</p>
-          </div>
-          <div class="instructions-container">
+          </section>
+          <section class="instructions-container">
             <section class="instructions" id="instructionsContainer">
               <h2 class="instructions-title" id="instructionsTitle">Instructions:</h2>
               <p class="ingredient-one" id="ingredientOne">1. </p>
@@ -121,10 +128,12 @@
               <p class="ingredient-three" id="ingredientThree">3. </p>
               <p class="ingredient-four" id="ingredientFour">4. </p>
             </section>
-          </div>
+          </section>
         </section>
-      </div>
+      </section>
         </section>
+
     </section>
+
   </body>
 </html>
