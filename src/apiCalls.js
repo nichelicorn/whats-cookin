@@ -1,34 +1,45 @@
 // Your fetch requests will live here!
 // const apiCalls =
 
-// console.log('I will be a fetch request!')
 
-export function getUsers() {
-fetch('http://localhost:3001/api/v1/users')
+// export const checkError = () => {
+//   if(!response.ok) {
+//     return "Sorry, that was not found."
+//   } else {
+//     return (response.json())
+//   }
+// }
+
+export const getUsers = () => {
+return fetch('http://localhost:3001/api/v1/users')
 .then(response => response.json())
-.then(response => console.log("succcess"))
-// .then(data => console.log(data))
+// .then(usersData => usersData)
 .catch(err => console.log("Sorry, that user was not found"))
 }
 
 
-export function getRecipes() {
-fetch('http://localhost:3001/api/v1/recipes')
+export const getRecipes = () => {
+return fetch('http://localhost:3001/api/v1/recipes')
 .then(response => response.json())
-.then(response => console.log("succcess"))
-.catch(err => console.log("Sorry, that recipe was not found"))
+// .then(checkError)
+// .then(recipesData => recipesData)
+.catch(err => "Sorry, that recipe was not found")
 }
 
-// getRecipes();
-
-export function getIngredients() {
-fetch('http://localhost:3001/api/v1/ingredients')
-.then(response => response.json())
-.then(response => console.log("succcess"))
-.catch(err => console.log("Sorry, that ingredient was not found"))
+export const getIngredients = () => {
+  return fetch('http://localhost:3001/api/v1/ingredients')
+  .then(response => response.json())
+  // .then(checkError)
+  // .then(ingredientsData => ingredientsData)
+  .catch(err => "Sorry, that ingredient was not found")
 }
 
-// getIngredients()
+// export function getAPIData() {
+//   console.log(Promise.all([getUsers(), getRecipes(), getIngredients()]));
+//   return Promise.all([getUsers(), getRecipes(), getIngredients()])
+// }
 
 
-// export default {getUsers, getRecipes, getIngredients}
+
+
+export default {getUsers, getRecipes, getIngredients}
