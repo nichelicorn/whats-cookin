@@ -12,9 +12,9 @@ body, main {
   border: 1px solid #454851;
 }
 
-/* .hidden {
+.hidden {
 display: none;
-} */
+}
 
 /* 📔 Main Page Styles */
 .header-nav-container,

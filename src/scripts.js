@@ -22,6 +22,9 @@ import {
 //---------------------Query Selectors---------------------//
 let myFavoritesBtn = document.getElementById('myFavoritesBtn');
 let recipesToCookBtn = document.getElementById('recipesCookLtrBtn');
+let mainPageView = document.getElementById('mainPage');
+let recipePageView = document.getElementById('recipePage');
+let myFavoritesPageView = document.getElementById('myFavoritesPage');
 let mainPageContainer = document.getElementById('mainPageContainer');
 let mainTitle = document.getElementById('mainTitle');
 let category1 = document.getElementById('categoryTitle1');
@@ -35,6 +38,10 @@ let welcomeMessage = document.getElementById('welcomeMessage');
 let recipeCardContainer = document.getElementById('recipeContainer');
 let viewRecipeBtn = document.getElementById('viewRecipeButton');
 let featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
+let recipeDisplayHeader = document.getElementById('recipeDisplayHeader');
+let ingredientsCostHeader = document.getElementById('ingredientsCost');
+let ingredientsContainer = document.getElementById('ingredientsContainer');
+let instructionsContainer = document.getElementById('instructionsContainer');
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -99,6 +106,8 @@ function makeRecipes() {
   let allRecipes = [];
   recipeData.forEach((recipe, index) => {
     let aRecipe = new Recipe(recipeData[index], ingredientsData)
+    aRecipe.updateEachRecipeIngredients(ingredientsData);
+    aRecipe.returnIngredientNames();
     allRecipes.push(aRecipe)
   })
   // console.log('allRecipes', allRecipes)
@@ -158,9 +167,36 @@ function featureRecipe() {
  function identifyRecipe (id) {
     id = parseInt(event.target.id)
   const findRecipe = cookbook.recipes.find(recipe => {return id === recipe.id})
-
+  // console.log(findRecipe)
+  displayRecipeCard(findRecipe)
+  return findRecipe
   }
 
+
+function displayRecipeCard(recipe) {
+console.log("lets see", recipe)
+hide(mainPageView);
+show(recipePageView);
+let recipeCost = recipe.calculateCost(recipe.recipeIngredients)
+console.log(recipeCost)
+recipeDisplayHeader.innerText = `${recipe.name}`
+ingredientsCostHeader.innerText =  recipeCost
+
+ingredientsContainer.innerHTML+= ``
+instructionsContainer.innerHTML += ``
+
+
+
+}
+
+
+// function recipeDetails(recipe) {
+//   recipePageImageContainer.id = `${recipe.id}`
+//   recipeName.innerText = `${recipe.name}`;
+//   recipeImage.src = `${recipe.image}`;
+//   let totalCost = recipe.getRecipeCost();
+//   ingredientTotal.innerText = `${totalCost}`
+//
 // function seeRecipeCard(recipeID) {
 //   show()
 //
