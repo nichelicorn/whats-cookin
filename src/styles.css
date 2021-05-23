@@ -17,6 +17,12 @@ display: none;
 } */
 
 /* 📔 Main Page Styles */
+.header-nav {
+  background: rgba(255, 255, 255, 0.4);
+  margin: 15px;
+  border-radius: 15px;
+}
+
 .header-nav-container,
 .recipe-nav-container {
   display: flex;
