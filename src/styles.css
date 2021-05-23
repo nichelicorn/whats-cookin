@@ -79,11 +79,14 @@ display: none;
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+  /* width: 98%; */
 }
 
-.ingredients-container {
+.ingredients-container,
+.instructions-container {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 /* 🎨 Color Palette */
