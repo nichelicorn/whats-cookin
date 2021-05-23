@@ -6,7 +6,6 @@ body, main {
   background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
             linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
             linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
-  /* background-color: #63768d; */
   margin: 0;
   height: 100%;
   font-family: 'Verdana', sans-serif;
@@ -42,14 +41,21 @@ display: none;
   justify-content: center;
   align-items: center;
   border: 1px solid #454851;
-  width: 50%;
+  text-align: center;
+  /* width: 50%; */
 }
+
 
 .featured-recipe-container {
   display: flex;
   justify-content: space-between;
   background-image: url("https://images.unsplash.com/photo-1590759668572-8de3b2052908?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
   background-size: cover;
+  width: 70%;
+}
+
+.welcome-abstract-container {
+  width: 30%;
 }
 
 .category-header {
