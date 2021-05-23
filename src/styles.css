@@ -47,19 +47,22 @@ display: none;
   /* width: 50%; */
 }
 
-
-/* .featured-recipe-container {
+.featured-recipe-container {
+=======
+.featured-recipe-container {
+>>>>>>> main
   display: flex;
   justify-content: space-between;
   background-image: url("https://images.unsplash.com/photo-1590759668572-8de3b2052908?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
   background-size: cover;
   width: 70%;
-} */
+}
 
 .welcome-abstract-container {
   width: 30%;
 }
 
+/* 🗂 Recipe Card Display Styles */
 .recipe-card-display {
   display: flex;
   justify-content: center;
@@ -89,6 +92,7 @@ display: none;
   border: 1px solid #454851;
 }
 
+/* 🗂 Recipe Card Styles */
 .recipe-card {
   height: 11em;
   display: flex;
@@ -106,6 +110,12 @@ display: none;
 
 .card-nav {
   padding-top: 10px;
+}
+
+.small-btn {
+  background-color: #aaa;
+  height: 25px;
+  border-radius: 9px;
 }
 
 .recipe-card:hover {
@@ -148,6 +158,8 @@ display: none;
 .instructions-container {
   width: 65%;
 }
+
+/* ❤️ My Favorites Styles */
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
