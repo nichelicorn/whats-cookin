@@ -6480,3 +6480,5 @@ const usersData = [
       ]
     }
   ]
+
+  export { usersData };
