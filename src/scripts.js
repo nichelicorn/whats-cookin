@@ -32,6 +32,9 @@ let saveForLaterBtn = document.getElementById('cookLaterBtn');
 let addToGroceryBtn = document.getElementById('groceryListBtn');
 let featuredRecipe = document.getElementById('featuredRecipe');
 let welcomeMessage = document.getElementById('welcomeMessage');
+let recipeCardContainer = document.getElementById('recipeContainer');
+let viewRecipeBtn = document.getElementById('viewRecipeButton');
+let featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -42,6 +45,8 @@ let getRandomIndex = Math.floor(Math.random() * recipeData.length)
 let recipe = makeRecipes();
 let user = makeUser();
 let cookbook = makeBook();
+let id;
+
 
 
 //----------------Event Listeners -------------------------//
@@ -49,13 +54,27 @@ myFavoritesBtn.addEventListener('click', function() {
   location.reload()
 });
 
-window.onclick = function() {
-  console.log("test", event.target.id)
-}
+window.onclick = function testID(id) {
+  id = event.target.id
+  console.log("testtttttt", id)
+};
 
 window.addEventListener('load', onPageLoad);
 
+featuredRecipeContainer.addEventListener('click', identifyRecipe);
+
+// allRecipesView.addEventListener()
+
+
 // -------------------Event Handlers -----------------------//
+
+// function testID(id) {
+//   id = event.target.id
+//   console.log(id)
+// }
+
+
+
 
 function show(element) {
   element.classList.remove('hidden');
@@ -126,17 +145,26 @@ function greetUser() {
 function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
-<section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="aFeaturedRecipe">
+<section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
         <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
-            <img class="${recipe[getRandomIndex].name} fighter-image" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
+            <img class="${recipe[getRandomIndex].name} recipe" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
         </section>
       </section>
 
 `
 }
 
-// console.log("test", makeRecipes()[getRandomIndex].name)
 
+ function identifyRecipe (id) {
+    id = parseInt(event.target.id)
+  const findRecipe = cookbook.recipes.find(recipe => {return id === recipe.id})
+
+  }
+
+// function seeRecipeCard(recipeID) {
+//   show()
+//
+// }
 
 
 //FUNCTION FOR API DATA
@@ -167,6 +195,8 @@ function featureRecipe() {
 //     })
 //
 //   }
+
+
 //THIS IS TO SEARCH FOR ENTRIES
 // function searchForItem(entry) {
 //    entry = input.value
