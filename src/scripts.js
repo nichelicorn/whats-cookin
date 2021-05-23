@@ -1,5 +1,5 @@
 import './styles.css';
-import apiCalls from './apiCalls';
+import {getUsers, getRecipes, getIngredients} from './apiCalls';
 import Cookbook from "./classes/Cookbook";
 import Recipe from "./classes/Recipe";
 import Ingredient from "./classes/Ingredient";
@@ -14,6 +14,7 @@ import { ingredientsData } from "./data/ingredients";
 let myFavoritesBtn = document.getElementById('myFavoritesBtn');
 let recipesToCookBtn = document.getElementById('recipesCookLtrBtn');
 let mainPageContainer = document.getElementById('mainPageContainer');
+let mainTitle = document.getElementById('mainTitle');
 let category1 = document.getElementById('categoryTitle1');
 let category2 = document.getElementById('categoryTitle2');
 let category3 = document.getElementById('categoryTitle3');
@@ -26,6 +27,9 @@ let recipe;
 let user;
 let cookbook;
 let ingredient;
+let usersArray;
+let recipesArray;
+let ingredientsArray;
 
 
 //----------------Event Listeners -------------------------//
@@ -41,35 +45,81 @@ window.addEventListener('load', startUpPage);
 
 // -------------------Event Handlers -----------------------//
 
-function getRandomIndex(array) {
-  return Math.floor(Math.random() * array.length);
-}
 
-function show(element) {
-  element.classList.remove('hidden');
-}
-
-function hide(element) {
-  element.classList.add('hidden');
-}
-
+// const getRandomIndex = (array) => {
+//   return Math.floor(Math.random() * array.length );
+// }
 
 function startUpPage() {
+  getUsers()
+  .then(response => usersArray = response)
+  .then(() => {
+    let userIndex = Math.floor(Math.random(42) * usersArray.usersData.length);
+    let randomUser = usersArray.usersData.find(user => user.id === userIndex)
+    user = new User(randomUser.name, randomUser.id, randomUser.pantry)
+  console.log(user)
+
+  })
+  getRecipes()
+  .then(response => recipesArray = response)
+  .then(() => {
+      cookbook = new Cookbook(recipesArray.recipeData)
+      console.log(cookbook)
+     })
+
+getIngredients()
+.then(ingredients =>  ingredientsArray = ingredients.ingredientsData)
+.then(() => {
+  let ingIndex = Math.floor(Math.random(247) * ingredientsArray.length);
+  ingredient = new Ingredient(ingredientsArray[ingIndex])
+  console.log(ingredient)
+})
+
+
+
+// console.log(ingredientsArray)
+// .then(() => {
+//   ingredient = new Ingredient(ingredientsArray.ingredientsData)
+//   console.log(ingredient)
+// })
+// .then(() => {
+  // ingredient = new Ingredient()
+// })
+  // return ingredientsArray
+// console.log("test", ingredientsArray)
 
 }
 
-function customizeForUser() {
+// console.log(user)
+//
+// function show(element) {
+//   element.classList.remove('hidden');
+// }
+//
+// function hide(element) {
+//   element.classList.add('hidden');
+// }
+//
+//
+// function startUpPage() {
+// getRandomIndex(recipeData);
+// getRandomIndex(usersData);
+// }
+//
+// function customizeForUser() {
+// mainTitle.innerHTML = ''
+// mainTitle.innerHTML += `Welcome to What's Cookin, ${user.name} `
+// console.log(mainTitle.innerHTML)
+// }
 
-}
-
-function searchForItem(entry) {
-   entry = input.value
-
-  cookbook.filterByTag(entry);
-  cookbook.filterByName(entry);
-  cookbook.filterByIngredient(entry);
-
-}
+// function searchForItem(entry) {
+//    entry = input.value
+//
+//   cookbook.filterByTag(entry);
+//   cookbook.filterByName(entry);
+//   cookbook.filterByIngredient(entry);
+//
+// }
 
 
 
