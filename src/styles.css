@@ -47,7 +47,6 @@ display: none;
   /* width: 50%; */
 }
 
-
 .featured-recipe-container {
   display: flex;
   justify-content: space-between;
@@ -60,6 +59,7 @@ display: none;
   width: 30%;
 }
 
+/* 🗂 Recipe Card Display Styles */
 .recipe-card-display {
   display: flex;
   justify-content: center;
@@ -89,6 +89,7 @@ display: none;
   border: 1px solid #454851;
 }
 
+/* 🗂 Recipe Card Styles */
 .recipe-card {
   height: 11em;
   display: flex;
@@ -106,6 +107,12 @@ display: none;
 
 .card-nav {
   padding-top: 10px;
+}
+
+.small-btn {
+  background-color: #aaa;
+  height: 25px;
+  border-radius: 9px;
 }
 
 .recipe-card:hover {
@@ -148,6 +155,8 @@ display: none;
 .instructions-container {
   width: 65%;
 }
+
+/* ❤️ My Favorites Styles */
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */
