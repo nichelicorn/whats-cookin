@@ -59,6 +59,12 @@ display: none;
   width: 30%;
 }
 
+.button {
+  height: 2em;
+  font-size: 1em;
+  border-radius: 10px;
+}
+
 /* 🗂 Recipe Card Display Styles */
 .recipe-card-display {
   display: flex;
@@ -157,7 +163,6 @@ display: none;
 }
 
 /* 💻 > 📱 Media Queries */
-
 /* Jumbo Desktop 📺 */
 @media screen and (min-width: 1450px) {
 
@@ -174,12 +179,12 @@ display: none;
 }
 
 /* Tablet 📱 */
-@media screen and (min-width: $tablet) and (max-width: $laptop - 1) {
+@media screen and (min-width: 540px) and (max-width: 1023px) {
 
 }
 
 /* Mobile 📱 */
-@media screen and (min-width: $mobile) and (max-width: $tablet - 1) {
+@media screen and (min-width: 250px) and (max-width: 539px) {
 
 }
 
