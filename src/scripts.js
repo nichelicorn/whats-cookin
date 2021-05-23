@@ -31,6 +31,7 @@ let addToFavoritesBtn = document.getElementById('addFavoritesBtn');
 let saveForLaterBtn = document.getElementById('cookLaterBtn');
 let addToGroceryBtn = document.getElementById('groceryListBtn');
 let featuredRecipe = document.getElementById('featuredRecipe');
+let welcomeMessage = document.getElementById('welcomeMessage');
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -117,8 +118,8 @@ function makeIngredients() {
 }
 
 function greetUser() {
-  mainTitle.innerHTML = '';
-  mainTitle.innerHTML += `
+  welcomeMessage.innerHTML = '';
+  welcomeMessage.innerHTML += `
   What's Cookin', ${user.name}?`
 }
 
@@ -126,7 +127,7 @@ function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
 <section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="aFeaturedRecipe">
-        <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}"> Featured Recipe: ${recipe[getRandomIndex].name}
+        <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
             <img class="${recipe[getRandomIndex].name} fighter-image" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
         </section>
       </section>
