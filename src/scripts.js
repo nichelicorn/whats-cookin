@@ -36,12 +36,13 @@ let addToGroceryBtn = document.getElementById('groceryListBtn');
 let featuredRecipe = document.getElementById('featuredRecipe');
 let welcomeMessage = document.getElementById('welcomeMessage');
 let recipeCardContainer = document.getElementById('recipeContainer');
-let viewRecipeBtn = document.getElementById('viewRecipeButton');
+// let viewRecipeBtn = document.getElementById('viewRecipeButton');
 let featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
 let recipeDisplayHeader = document.getElementById('recipeDisplayHeader');
 let ingredientsCostHeader = document.getElementById('ingredientsCost');
 let ingredientsContainer = document.getElementById('ingredientsContainer');
 let instructionsContainer = document.getElementById('instructionsContainer');
+let viewHomePageBtn = document.getElementById('homeViewBtn');
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -57,9 +58,9 @@ let id;
 
 
 //----------------Event Listeners -------------------------//
-myFavoritesBtn.addEventListener('click', function() {
-  location.reload()
-});
+// myFavoritesBtn.addEventListener('click', function() {
+//   location.reload()
+// });
 
 window.onclick = function testID(id) {
   id = event.target.id
@@ -70,7 +71,11 @@ window.addEventListener('load', onPageLoad);
 
 featuredRecipeContainer.addEventListener('click', identifyRecipe);
 
-// allRecipesView.addEventListener()
+viewHomePageBtn.addEventListener('click', goHome);
+
+myFavoritesBtn.addEventListener('click', seeFavorites);
+//still need a page to view later
+// recipesToCookBtn.addEventListener('click', viewCookLater);
 
 
 // -------------------Event Handlers -----------------------//
@@ -79,9 +84,30 @@ featuredRecipeContainer.addEventListener('click', identifyRecipe);
 //   id = event.target.id
 //   console.log(id)
 // }
+function goHome() {
+  console.log(event)
+  // event.preventDefault();
+  show(mainPageView);
+  hide(recipePageView);
+  hide(myFavoritesPageView);
+  // hide(recipePageView)
+}
 
+function seeFavorites() {
+  // console.log(event.target.id)
+  show(myFavoritesPageView);
+  hide(recipePageView);
+  hide(mainPageView);
+  // hide(cook later page )
+}
 
-
+// function viewCookLater() {
+// // show()still need html for this
+// hide(recipePageView);
+// hide(mainPageView);
+// hide(myFavoritesPageView);
+//
+// }
 
 function show(element) {
   element.classList.remove('hidden');
@@ -101,7 +127,6 @@ function onPageLoad() {
   featureRecipe();
 }
 
-
 function makeRecipes() {
   let allRecipes = [];
   recipeData.forEach((recipe, index) => {
@@ -115,14 +140,11 @@ function makeRecipes() {
 }
 
 
-
 function makeBook() {
   let aCookbook = new Cookbook(makeRecipes())
   // console.log("theBook", cookbook)
   return aCookbook
 }
-// console.log("tesssst", makeBook())
-
 
 function makeUser() {
 
@@ -164,39 +186,66 @@ function featureRecipe() {
 }
 
 
- function identifyRecipe (id) {
-    id = parseInt(event.target.id)
-  const findRecipe = cookbook.recipes.find(recipe => {return id === recipe.id})
+function identifyRecipe(id) {
+  id = parseInt(event.target.id)
+  const findRecipe = cookbook.recipes.find(recipe => {
+    return id === recipe.id
+  })
   // console.log(findRecipe)
   displayRecipeCard(findRecipe)
   return findRecipe
-  }
-
-
-function displayRecipeCard(recipe) {
-console.log("lets see", recipe)
-hide(mainPageView);
-show(recipePageView);
-let recipeCost = recipe.calculateCost(recipe.recipeIngredients)
-console.log(recipeCost)
-recipeDisplayHeader.innerText = `${recipe.name}`
-ingredientsCostHeader.innerText =  recipeCost
-
-ingredientsContainer.innerHTML+= ``
-instructionsContainer.innerHTML += ``
-
-
-
 }
 
 
-// function recipeDetails(recipe) {
-//   recipePageImageContainer.id = `${recipe.id}`
-//   recipeName.innerText = `${recipe.name}`;
-//   recipeImage.src = `${recipe.image}`;
-//   let totalCost = recipe.getRecipeCost();
-//   ingredientTotal.innerText = `${totalCost}`
+function displayRecipeCard(recipe) {
+  // console.log("lets see", recipe)
+  hide(mainPageView);
+  show(recipePageView);
+
+  let recipeCost = recipe.calculateCost(recipe.recipeIngredients)
+  let allIngredients = recipe.returnIngredients();
+  let allInstructions = recipe.returnInstructions();
+
+  // console.log("allIng", allIngredients)
+  // console.log(allInstructions)
+  recipeDisplayHeader.innerText = `${recipe.name}`
+  ingredientsCostHeader.innerText = recipeCost
+
+  ingredientsContainer.innerHTML = '';
+  instructionsContainer.innerHTML = '';
+
+  allIngredients.forEach((ing, index) => {
+    return ingredientsContainer.innerHTML +=
+
+      `
+
+<h3 class="ingredients-title" id="ingredientsTitle">Ingredient ${[index + 1]}:</h3>
+<p class="ingredient" id="ingredientOne">Name: ${allIngredients[index].name}</p>
+    <p class"ingredient-amount" id="ingredientAmount">Amount: ${allIngredients[index].quantity.amount}</p>
+    <p class"ingredient-unit" id="ingredientUnit">Unit: ${allIngredients[index].quantity.unit}</p>
+    <p class"ingredient-cent-cost" id="ingredientInCents">Cost: $${allIngredients[index].estimatedCostInCents / 100}</p>
+
+  `
+  })
+
+  allInstructions.forEach((ins, index) => {
+    return instructionsContainer.innerHTML += `
+
+  <h3 class="instructions-title" id="instructionsTitle">Instruction ${allInstructions[index].number}:</h3>
+  <p class="instruction" id="instructionOne"> ${allInstructions[index].instruction}</p>
+
+  `
+  })
+
+}
+
+// function viewAllRecipes(){
 //
+//   cook
+//
+//
+// }
+
 // function seeRecipeCard(recipeID) {
 //   show()
 //
