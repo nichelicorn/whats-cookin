@@ -36,12 +36,19 @@ let addToGroceryBtn = document.getElementById('groceryListBtn');
 let featuredRecipe = document.getElementById('featuredRecipe');
 let welcomeMessage = document.getElementById('welcomeMessage');
 let recipeCardContainer = document.getElementById('recipeContainer');
-let viewRecipeBtn = document.getElementById('viewRecipeButton');
+// let viewRecipeBtn = document.getElementById('viewRecipeButton');
 let featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
 let recipeDisplayHeader = document.getElementById('recipeDisplayHeader');
 let ingredientsCostHeader = document.getElementById('ingredientsCost');
 let ingredientsContainer = document.getElementById('ingredientsContainer');
 let instructionsContainer = document.getElementById('instructionsContainer');
+let viewHomePageBtn = document.getElementById('homeViewBtn');
+let viewAllRecipesBtn = document.getElementById('viewAllButton');
+let allRecipesView = document.getElementById('allRecipesView');
+let allRecipesContainer = document.getElementById('allRecipesList');
+let searchBar = document.getElementById('searchBar');
+let searchPageView = document.getElementById('searchContainer');
+let searchSubmitBtn = document.getElementById('searchSubmit');
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -57,12 +64,12 @@ let id;
 
 
 //----------------Event Listeners -------------------------//
-myFavoritesBtn.addEventListener('click', function() {
-  location.reload()
-});
+// myFavoritesBtn.addEventListener('click', function() {
+//   location.reload()
+// });
 
 window.onclick = function testID(id) {
-  id = event.target.id
+  id = event.target
   console.log("testtttttt", id)
 };
 
@@ -70,7 +77,19 @@ window.addEventListener('load', onPageLoad);
 
 featuredRecipeContainer.addEventListener('click', identifyRecipe);
 
-// allRecipesView.addEventListener()
+viewHomePageBtn.addEventListener('click', goHome);
+
+myFavoritesBtn.addEventListener('click', seeFavorites);
+viewAllRecipesBtn.addEventListener('click', viewAllRecipes);
+allRecipesContainer.addEventListener('click', identifyRecipe);
+searchSubmitBtn.addEventListener('click', function preventEvent(e) {
+  e.preventDefault();
+})
+
+searchSubmitBtn.addEventListener('click', searchCookbook);
+
+//still need a page to view later
+// recipesToCookBtn.addEventListener('click', viewCookLater);
 
 
 // -------------------Event Handlers -----------------------//
@@ -79,8 +98,43 @@ featuredRecipeContainer.addEventListener('click', identifyRecipe);
 //   id = event.target.id
 //   console.log(id)
 // }
+function goHome() {
+  console.log(event.target)
+  // event.preventDefault();
+  show(mainPageView);
+  hide(recipePageView);
+  hide(myFavoritesPageView);
+  hide(allRecipesView);
+  // hide(recipePageView)
+}
+
+function seeFavorites() {
+  // console.log(event.target.id)
+  show(myFavoritesPageView);
+  hide(recipePageView);
+  hide(mainPageView);
+  hide(allRecipesView);
+  // hide(cook later page )
+}
+
+function viewAllRecipes() {
+    show(allRecipesView);
+
+    hide(myFavoritesPageView);
+    hide(recipePageView);
+    hide(mainPageView);
 
 
+    viewAllRecipesPage()
+}
+
+// function viewCookLater() {
+// // show()still need html for this
+// hide(recipePageView);
+// hide(mainPageView);
+// hide(myFavoritesPageView);
+//
+// }
 
 
 function show(element) {
@@ -99,8 +153,9 @@ function onPageLoad() {
   makeIngredients();
   greetUser();
   featureRecipe();
+  console.log("book", cookbook)
+  console.log("recipe", recipe)
 }
-
 
 function makeRecipes() {
   let allRecipes = [];
@@ -115,14 +170,11 @@ function makeRecipes() {
 }
 
 
-
 function makeBook() {
   let aCookbook = new Cookbook(makeRecipes())
   // console.log("theBook", cookbook)
   return aCookbook
 }
-// console.log("tesssst", makeBook())
-
 
 function makeUser() {
 
@@ -155,51 +207,121 @@ function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
 <section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
-        <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
+        <p class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
             <img class="${recipe[getRandomIndex].name} recipe" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
-        </section>
+        </p>
       </section>
 `
 }
 
+function searchCookbook(entry) {
+  show(searchPageView);
+  hide(mainPageView);
+  hide(myFavoritesPageView)
+  hide(allRecipesView);
+  hide(recipePageView);
 
- function identifyRecipe (id) {
-    id = parseInt(event.target.id)
-  const findRecipe = cookbook.recipes.find(recipe => {return id === recipe.id})
-  // console.log(findRecipe)
-  displayRecipeCard(findRecipe)
-  return findRecipe
-  }
+  entry = searchBar.value
 
+  let result1 = cookbook.filterByTag(entry);
+  let result2 = cookbook.filterByName(entry);
+  let result3 = cookbook.filterByIngredient(entry);
 
-function displayRecipeCard(recipe) {
-console.log("lets see", recipe)
-hide(mainPageView);
-show(recipePageView);
-let recipeCost = recipe.calculateCost(recipe.recipeIngredients)
-console.log(recipeCost)
-recipeDisplayHeader.innerText = `${recipe.name}`
-ingredientsCostHeader.innerText =  recipeCost
-
-ingredientsContainer.innerHTML+= ``
-instructionsContainer.innerHTML += ``
-
-
+  let tagSearch = result1.forEach(result => {
+    console.log("test1", result.name)
+    return result.name
+    //this is where the innerHTMl content has to go to display on the page.
+  })
+//THESE MIGHT NEED TO BE IN ANOTHER FUNCTION BECAUSE THEY'RE NOT WORKING YET
+  // let nameSearch = result2.forEach(result => {
+  //   console.log("test2", result.name)
+  //   return result.name
+  //   //this is where the innerHTMl content has to go to display on the page.
+  // })
+  //
+  // let ingredientSearch = result3.forEach(result => {
+  //   console.log("test3", result.name)
+  //   return result.name
+  //   //this is where the innerHTMl content has to go to display on the page.
+  // })
 
 }
 
 
-// function recipeDetails(recipe) {
-//   recipePageImageContainer.id = `${recipe.id}`
-//   recipeName.innerText = `${recipe.name}`;
-//   recipeImage.src = `${recipe.image}`;
-//   let totalCost = recipe.getRecipeCost();
-//   ingredientTotal.innerText = `${totalCost}`
-//
-// function seeRecipeCard(recipeID) {
-//   show()
-//
-// }
+
+function identifyRecipe(id) {
+  id = parseInt(event.target.id)
+  const findRecipe = cookbook.recipes.find(recipe => {
+    return id === recipe.id
+  })
+  // console.log(findRecipe)
+  displayRecipeCard(findRecipe)
+  return findRecipe
+}
+
+
+function displayRecipeCard(recipe) {
+  // console.log("lets see", recipe)
+  show(recipePageView);
+  hide(mainPageView);
+  hide(myFavoritesPageView)
+  hide(allRecipesView);
+
+  let recipeCost = recipe.calculateCost(recipe.recipeIngredients)
+  let allIngredients = recipe.returnIngredients();
+  let allInstructions = recipe.returnInstructions();
+
+  // console.log("allIng", allIngredients)
+  // console.log(allInstructions)
+  recipeDisplayHeader.innerText = `${recipe.name}`
+  ingredientsCostHeader.innerText = recipeCost
+
+  ingredientsContainer.innerHTML = '';
+  instructionsContainer.innerHTML = '';
+
+  allIngredients.forEach((ing, index) => {
+    return ingredientsContainer.innerHTML +=
+
+      `
+
+<h3 class="ingredients-title" id="ingredientsTitle">Ingredient ${[index + 1]}:</h3>
+<p class="ingredient" id="ingredientOne">Name: ${allIngredients[index].name}</p>
+    <p class"ingredient-amount" id="ingredientAmount">Amount: ${allIngredients[index].quantity.amount}</p>
+    <p class"ingredient-unit" id="ingredientUnit">Unit: ${allIngredients[index].quantity.unit}</p>
+    <p class"ingredient-cent-cost" id="ingredientInCents">Cost: $${allIngredients[index].estimatedCostInCents / 100}</p>
+
+  `
+  })
+
+  allInstructions.forEach((ins, index) => {
+    return instructionsContainer.innerHTML += `
+
+  <h3 class="instructions-title" id="instructionsTitle">Instruction ${allInstructions[index].number}:</h3>
+  <p class="instruction" id="instructionOne"> ${allInstructions[index].instruction}</p>
+
+  `
+  })
+
+}
+
+
+function viewAllRecipesPage() {
+// console.log("viewAll", cookbook.recipes)
+allRecipesContainer.innerHTML = '';
+
+  cookbook.recipes.forEach((recipe, index) => {
+    // console.log("index", index)
+    return allRecipesContainer.innerHTML += `
+      <p class="recipe-name recipeContainer" id="${cookbook.recipes[index].id}">${index + 1}. ${cookbook.recipes[index].name}</p>
+    `
+      //This could be added to get the images on the view.
+          // <img class="${cookbook.recipes[index].name} recipe" src="${cookbook.recipes[index].image}" id="${cookbook.recipes[index].id}" alt="featured-recipe-image ${cookbook.recipes[index].name}"/>
+
+  })
+
+}
+
+
 
 
 //FUNCTION FOR API DATA
