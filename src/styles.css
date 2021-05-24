@@ -4,8 +4,8 @@
 
 body, main {
   background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
-            linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
-            linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
+              linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
+              linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
   margin: 0;
   height: 100%;
   font-family: 'Verdana', sans-serif;
@@ -13,7 +13,7 @@ body, main {
 }
 
 .hidden {
-display: none;
+  display: none;
 }
 
 /* 📔 Main Page Styles */
