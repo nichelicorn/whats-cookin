@@ -159,7 +159,6 @@ function featureRecipe() {
             <img class="${recipe[getRandomIndex].name} recipe" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
         </section>
       </section>
-
 `
 }
 
