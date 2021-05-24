@@ -19,8 +19,8 @@
           <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
         </section>
         <form class="header-search" action="/action_page.php">
-          <input type="text" placeholder="Find recipes" name="search">
-          <button type="submit"><i class="fa fa-search">Submit</i></button>
+          <input type="text" class="search-bar" id="searchBar" placeholder="Find recipes" name="search">
+          <button type="submit"><i class="fa fa-search" id="searchSubmit">Submit</i></button>
         </form>
       </nav>
 
@@ -121,10 +121,16 @@
             <button class="home-button button" id="homeViewBtn" name="button">Take me Home 🏠</button>
             <form class="header-search" action="/action_page.php">
               <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
-              <button type="submit"><i class="fa fa-search">Submit</i></button>
+              <button type="submit"><i class="fa fa-search" id="searchSubmit">Submit</i></button>
             </form>
           </section>
         </nav>
+
+    <section class="search-view-container hidden" id="searchContainer" >
+
+        <p class="search-view-list" id="searchViewList">"Sorry, nothing was found"</p>
+
+    </section>
 
       <section class="recipe-container" id="recipeContainer" >
 
