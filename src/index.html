@@ -18,8 +18,8 @@
           <button class="recipes-to-cook button" id="recipesCookLtrBtn" value=""> Cook This Week 🗓 </button>
         </section>
         <form class="header-search" action="/action_page.php">
-          <input type="text" placeholder="Search by ingredient, name, or category..." name="search" class="search-input">
-          <button type="submit" class="search-button button"><i>Submit</i></button>
+          <input type="text" placeholder="Find recipes" name="search">
+          <button type="submit"><i class="fa fa-search">Submit</i></button>
         </form>
       </nav>
 
@@ -27,14 +27,14 @@
 
 
         <section class="featured-recipe-container" id="featuredRecipeContainer">
-          <p class="feature-header"> Pizza Dough </p>
-          <p class="feature-title" id="mainTitle">Featured Recipe</p>
+          <h2>Featured Recipe</h2>
+          <h3 class="featured-recipe" id="featuredRecipe">Featured Recipe</h3>
         </section>
 
         <section class="welcome-abstract-container" id="welcomeAbstractContainer">
-          <h2 class="welcome-msg" id="mainTitle">Welcome to What's Cookin', Beverly!</h2>
-          <p class="welcome-text">Find recipes to cook using the search feature. Save and search your favorites, and save recipes to cook this week.</p>
-          <p class="welcome-text">Enjoy your new cookbook!</p>
+          <h2 class="welcome-message" id="welcomeMessage">Welcome to What's Cookin', Beverly!</h2>
+          <p>Find recipes to cook using the search feature. Save and search your favorites, and save recipes to cook this week.</p>
+          <p>Enjoy your new cookbook!</p>
         </section>
 
       </section>
@@ -52,8 +52,6 @@
                 <button type="small-btn" name="smallFavBtn"> ❤️ </button>
                 <button type="small-btn" name="smallThisWeekBtn"> 🗓 </button>
               </section>
-
-              <img src="">
 
               <h3 class="recipe-card-name" id="recipeCardNameOne">Recipe Name One</h3>
 
@@ -107,19 +105,19 @@
 
     </main>
 
-    <section class="recipe-page" id="recipePage">
+    <section class="recipe-page hidden" id="recipePage">
 
       <section class="recipe-view" id="recipeView">
 
         <nav class="recipe-nav">
-          <!-- <h1 class="category-header" id="mainTitle">What's Cookin'</h1> -->
           <section class="recipe-nav-container">
+            <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
             <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-            <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 🗓 </button>
-            <button class="go-home button" name="button">Take me Home 🏠</button>
+            <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+            <button type="home-button" name="button">Take me Home 🏠</button>
             <form class="header-search" action="/action_page.php">
-              <input type="text" placeholder="Search by ingredient, name, or category..." name="search" class="search-input">
-              <button type="submit" class="search-button button"><i >Submit</i></button>
+              <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+              <button type="submit"><i class="fa fa-search">Submit</i></button>
             </form>
           </section>
         </nav>
@@ -147,7 +145,7 @@
             <section class="instructions">
               <h2 class="instructions-title" id="instructionsTitle">Instructions:</h2>
               <p class="instruction" id="instruction">Combine the bread flour, sugar, yeast and kosher salt in a bowl and combine.</p>
-              <p class="instruction" id="instruction">Stir in the water and 2 tablespoons of oil and mix until the dough forms into a ball. If the dough is sticky, add additional flour, 1 tablespoon at a time, until the dough forms a solid ball. If the dough is too dry, add additional water. </p>
+              <p class="instruction" id="instructioninstruction">Stir in the water and 2 tablespoons of oil and mix until the dough forms into a ball. If the dough is sticky, add additional flour, 1 tablespoon at a time, until the dough forms a solid ball. If the dough is too dry, add additional water. </p>
               <p class="instruction" id="instruction">Scrape the dough onto a lightly floured surface and gently knead into a smooth, firm ball.</p>
               <p class="instruction" id="instruction">Grease a large bowl with the remaining oil, add the dough, and cover with plastic wrap and place in a warm area to double in size, about 1 hour.</p>
               <pclass="instruction" id="instruction">Turn the dough out ont a lightly floured surface and divide it into two equal pieces. Cover each with a clean kitchen towel or plastic wrap and allow to rest for 10 minutes.</p>
@@ -164,16 +162,16 @@
 
     </section>
 
-    <section class="my-favorites-page" id="myFavoritesPage">
+    <section class="my-favorites-page hidden" id="myFavoritesPage">
       <nav class="recipe-nav">
-        <h1 class="category-header" id="mainTitle"> My Favorite Recipes ❤️ </h1>
         <section class="recipe-nav-container">
+          <h1 class="main-title" id="mainTitle"> My Favorite Recipes ❤️ </h1>
           <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 🗓 </button>
-          <button class="go-home button" name="button">Take me Home 🏠</button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+          <button type="home-button" name="button">Take me Home 🏠</button>
           <form class="header-search" action="/action_page.php">
-            <input type="text" placeholder="Search by ingredient, name, or category..." name="search" class="search-input">
-            <button type="submit" class="search-button button"><i>Submit</i></button>
+            <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+            <button type="submit"><i class="fa fa-search">Submit</i></button>
           </form>
         </section>
       </nav>
@@ -201,16 +199,16 @@
       </section>
     </section>
 
-    <section class="all-recipes-view" id="allRecipesView">
-      <h1 class="category-header" id="mainTitle"> All Recipes </h1>
+    <section class="all-recipes-view hidden" id="allRecipesView">
       <nav class="recipe-nav">
         <section class="recipe-nav-container">
+          <h1 class="main-title" id="mainTitle"> All Recipes </h1>
           <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 🗓 </button>
-          <button class="go-home button" name="button">Take me Home 🏠</button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+          <button type="home-button" name="button">Take me Home 🏠</button>
           <form class="header-search" action="/action_page.php">
-            <input type="text" placeholder="Search by ingredient, name, or category..." name="search" class="search-input">
-            <button type="submit" class="search-button button"><i>Submit</i></button>
+            <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+            <button type="submit"><i class="fa fa-search">Submit</i></button>
           </form>
         </section>
       </nav>
