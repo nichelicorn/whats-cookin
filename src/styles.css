@@ -148,12 +148,12 @@ display: none;
   grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
   padding: 25px;
-  border: 1px solid #454851;
+  /* border: 1px solid #454851; */
 }
 
 /* 🗂 Recipe Card Styles */
 .recipe-card {
-  height: 11em;
+  height: 20em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
