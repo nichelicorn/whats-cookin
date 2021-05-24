@@ -125,6 +125,8 @@ function onPageLoad() {
   makeIngredients();
   greetUser();
   featureRecipe();
+  console.log("book", cookbook)
+  console.log("recipe", recipe)
 }
 
 function makeRecipes() {
@@ -239,12 +241,15 @@ function displayRecipeCard(recipe) {
 
 }
 
-// function viewAllRecipes(){
-//
-//   cook
-//
-//
-// }
+
+function viewAllRecipes(){
+  recipe.forEach((recipe, index) => {
+    return blank.innerHTML+= `
+      <p class="recipe-name" id="recipeName">${index + 1}. ${recipe[index].name}</p>
+    `
+  })
+
+}
 
 // function seeRecipeCard(recipeID) {
 //   show()
