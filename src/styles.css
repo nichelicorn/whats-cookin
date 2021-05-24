@@ -4,8 +4,8 @@
 
 body, main {
   background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
-            linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
-            linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
+              linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
+              linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
   margin: 0;
   height: 100%;
   font-family: 'Verdana', sans-serif;
@@ -13,27 +13,67 @@ body, main {
 }
 
 .hidden {
-display: none;
+  display: none;
 }
 
 /* 📔 Main Page Styles */
+.header-nav {
+  background: rgba(255, 255, 255, 0.4);
+  margin: 15px;
+  border-radius: 15px;
+}
+
 .header-nav-container,
 .recipe-nav-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid #454851;
+  justify-content: space-evenly;
+  align-items: center;
+  /* border: 1px solid #454851; */
+  font-size: 2em;
+}
+
+.button {
+  height: 2em;
+  font-size: 1em;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  text-underline-offset: 9px;
+}
+
+.button:hover,
+.search-button:hover {
+  background-color: #aed9e0;
+  box-shadow: 5px 5px 40px #aed9e0git;
+  border-radius: 15px;
 }
 
 .header-search {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.search-input {
+  width: 400px;
+  height: 2em;
+  padding: 20px;
+  margin: 0;
+  font-size: 12px;
+}
+
+.search-button {
+  font-size: 16px;
+  margin: 0;
 }
 
 .main-content-features {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 40vw;
+  margin: 10px;
 }
 
 .featured-recipe-container,
@@ -42,21 +82,41 @@ display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #454851;
+  /* border: 1px solid #454851; */
   text-align: center;
-  /* width: 50%; */
+  margin: 5px;
+  border-radius: 25px;
 }
 
-/* .featured-recipe-container {
+.featured-recipe-container {
   display: flex;
   justify-content: space-between;
   background-image: url("https://images.unsplash.com/photo-1590759668572-8de3b2052908?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
   background-size: cover;
   width: 70%;
-} */
+  color: white;
+}
+
+.feature-header {
+  font-size: 3em;
+}
+
+.feature-title {
+  font-size: 2em;
+}
 
 .welcome-abstract-container {
   width: 30%;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.welcome-msg {
+  font-size: 2em;
+}
+
+.welcome-text {
+  font-size: 1.5em;
 }
 
 /* 🗂 Recipe Card Display Styles */
@@ -72,13 +132,17 @@ display: none;
 }
 
 .category-header {
+  font-size: 2.5em;
   text-align: center;
   text-shadow: #ffe5d4 1px 0 10px;
-  background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
+  /* background: linear-gradient(217deg, rgba(174,217,224,.8), rgba(170,170,170,.5) 70.71%),
             linear-gradient(127deg, rgba(99,118,141,.8), rgba(174,217,224,.3) 70.71%),
-            linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%);
+            linear-gradient(336deg, rgba(99,118,141,.8), rgba(255,229,212,1) 70.71%); */
   margin: 0;
   padding: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 15px;
+  border-radius: 15px;
 }
 
 .recipe-card-container {
@@ -86,12 +150,12 @@ display: none;
   grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
   padding: 25px;
-  border: 1px solid #454851;
+  /* border: 1px solid #454851; */
 }
 
 /* 🗂 Recipe Card Styles */
 .recipe-card {
-  height: 11em;
+  height: 20em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -156,7 +220,32 @@ display: none;
   width: 65%;
 }
 
-/* ❤️ My Favorites Styles */
+/* 💻 > 📱 Media Queries */
+/* Jumbo Desktop 📺 */
+@media screen and (min-width: 1450px) {
+
+}
+
+/* Desktop 🖥 */
+@media screen and (min-width: 1200px) and (max-width: 1449px) {
+
+}
+
+/* Laptop 💻 */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+}
+
+/* Tablet 📱 */
+@media screen and (min-width: 540px) and (max-width: 1023px) {
+
+}
+
+/* Mobile 📱 */
+@media screen and (min-width: 250px) and (max-width: 539px) {
+
+}
+
 
 /* 🎨 Color Palette */
 /* dark gray: #454851 	(69,72,81) */

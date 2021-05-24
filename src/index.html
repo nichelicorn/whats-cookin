@@ -12,10 +12,11 @@
     <main class="main-page-view" id="mainPage">
 
       <nav class="header-nav" id="mainPageContainer">
+        <h1 class="main-title" id="mainTitle"> What's Cookin'? </h1>
         <section class="header-nav-container">
-          <button class="my-favorites button" id="myFavoritesBtn" value=""> My Favorites ❤️ </button>
-          <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
-          <button class="recipes-to-cook button" id="recipesCookLtrBtn" value=""> Cook This Week 🗓 </button>
+          <button class="my-favorites button" id="myFavoritesBtn"> My Favorites ❤️ </button>
+          <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+          <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
         </section>
         <form class="header-search" action="/action_page.php">
           <input type="text" placeholder="Find recipes" name="search">
@@ -112,8 +113,11 @@
         <nav class="recipe-nav">
           <section class="recipe-nav-container">
             <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
-            <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-            <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+            <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite This Recipe ❤️ </button>
+            <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 📌 </button>
+            <button class="my-favorites button" id="myFavoritesBtn" value=""> View My Favorites 💗 </button>
+            <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+            <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
             <button type="home-button" name="button">Take me Home 🏠</button>
             <form class="header-search" action="/action_page.php">
               <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
@@ -163,11 +167,56 @@
     </section>
 
     <section class="my-favorites-page hidden" id="myFavoritesPage">
+
       <nav class="recipe-nav">
         <section class="recipe-nav-container">
-          <h1 class="main-title" id="mainTitle"> My Favorite Recipes ❤️ </h1>
-          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+          <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
+          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite This Recipe ❤️ </button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 📌 </button>
+          <button class="my-favorites button" id="myFavoritesBtn" value=""> View My Favorites 💗 </button>
+          <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+          <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
+          <button type="home-button" name="button">Take me Home 🏠</button>
+          <form class="header-search" action="/action_page.php">
+            <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+            <button type="submit"><i class="fa fa-search">Submit</i></button>
+          </form>
+        </section>
+      </nav>
+
+      <section class="recipe-card-container">
+
+        <section class="recipe-card" id="recipeCardOne">
+
+          <section class="card-nav">
+            <button type="small-btn" name="smallFavBtn"> ❤️ </button>
+            <button type="small-btn" name="smallThisWeekBtn"> 🗓 </button>
+          </section>
+
+          <h3 class="recipe-card-name" id="recipeCardNameOne">Recipe Name One</h3>
+
+        </section>
+
+        <section class="recipe-card" id="recipeCardTwo">
+          <h3 class="recipe-card-name" id="recipeCardNameTwo">Recipe Name Two</h3>
+        </section>
+
+        <section class="recipe-card" id="recipeCardThree">
+          <h3 class="recipe-card-name" id="recipeCardNameOne">Recipe Name Three</h3>
+        </section>
+      </section>
+    </section>
+
+    <section class="recipes-to-cook-page hidden" id="recipesToCookPage">
+
+      <nav class="recipe-nav">
+        <section class="recipe-nav-container">
+          <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
+          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite This Recipe ❤️ </button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 📌 </button>
+          <button class="my-favorites button" id="myFavoritesBtn" value=""> View My Favorites 💗 </button>
+          <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+          <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
           <button type="home-button" name="button">Take me Home 🏠</button>
           <form class="header-search" action="/action_page.php">
             <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
@@ -202,9 +251,12 @@
     <section class="all-recipes-view hidden" id="allRecipesView">
       <nav class="recipe-nav">
         <section class="recipe-nav-container">
-          <h1 class="main-title" id="mainTitle"> All Recipes </h1>
-          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite ❤️ </button>
-          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later!</button>
+          <h1 class="main-title" id="mainTitle">What's Cookin'</h1>
+          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite This Recipe ❤️ </button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 📌 </button>
+          <button class="my-favorites button" id="myFavoritesBtn" value=""> View My Favorites 💗 </button>
+          <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+          <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
           <button type="home-button" name="button">Take me Home 🏠</button>
           <form class="header-search" action="/action_page.php">
             <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
@@ -215,7 +267,10 @@
 
       <section class="recipe-card-container">
 
+        <p class="all-recipe-list" id="allRecipeList"> Recipe Name Here </p>
+
         <section class="recipe-card" id="recipeCardOne">
+
 
           <section class="card-nav">
             <button type="small-btn" name="smallFavBtn"> ❤️ </button>
