@@ -43,6 +43,10 @@ let ingredientsCostHeader = document.getElementById('ingredientsCost');
 let ingredientsContainer = document.getElementById('ingredientsContainer');
 let instructionsContainer = document.getElementById('instructionsContainer');
 let viewHomePageBtn = document.getElementById('homeViewBtn');
+let viewAllRecipesBtn = document.getElementById('viewAllButton');
+let allRecipesView = document.getElementById('allRecipesView');
+
+let allRecipesContainer = document.getElementById('allRecipesList')
 
 //----------------Global Variables -------------------------//
 let ingredient;
@@ -63,7 +67,7 @@ let id;
 // });
 
 window.onclick = function testID(id) {
-  id = event.target.id
+  id = event.target
   console.log("testtttttt", id)
 };
 
@@ -74,6 +78,7 @@ featuredRecipeContainer.addEventListener('click', identifyRecipe);
 viewHomePageBtn.addEventListener('click', goHome);
 
 myFavoritesBtn.addEventListener('click', seeFavorites);
+viewAllRecipesBtn.addEventListener('click', viewAllRecipes);
 //still need a page to view later
 // recipesToCookBtn.addEventListener('click', viewCookLater);
 
@@ -85,7 +90,7 @@ myFavoritesBtn.addEventListener('click', seeFavorites);
 //   console.log(id)
 // }
 function goHome() {
-  console.log(event)
+  console.log(event.target)
   // event.preventDefault();
   show(mainPageView);
   hide(recipePageView);
@@ -101,6 +106,15 @@ function seeFavorites() {
   // hide(cook later page )
 }
 
+function viewAllRecipes() {
+    show(allRecipesView);
+    hide(myFavoritesPageView);
+    hide(recipePageView);
+    hide(mainPageView);
+
+    viewAllRecipesPage()
+}
+
 // function viewCookLater() {
 // // show()still need html for this
 // hide(recipePageView);
@@ -108,6 +122,7 @@ function seeFavorites() {
 // hide(myFavoritesPageView);
 //
 // }
+
 
 function show(element) {
   element.classList.remove('hidden');
@@ -179,9 +194,9 @@ function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
 <section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
-        <section class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
+        <p class="${recipe[getRandomIndex].name} recipe title" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
             <img class="${recipe[getRandomIndex].name} recipe" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
-        </section>
+        </p>
       </section>
 `
 }
@@ -241,11 +256,18 @@ function displayRecipeCard(recipe) {
 }
 
 
-function viewAllRecipes(){
-  recipe.forEach((recipe, index) => {
-    return blank.innerHTML+= `
-      <p class="recipe-name" id="recipeName">${index + 1}. ${recipe[index].name}</p>
+function viewAllRecipesPage() {
+// console.log("viewAll", cookbook.recipes)
+allRecipesContainer.innerHTML = '';
+
+  cookbook.recipes.forEach((recipe, index) => {
+    // console.log("index", index)
+    return allRecipesContainer.innerHTML += `
+      <p class="recipe-name recipeContainer" id="${cookbook.recipes[index].id}">${index + 1}. ${cookbook.recipes[index].name}</p>
     `
+      //This could be added to get the images on the view.
+          // <img class="${cookbook.recipes[index].name} recipe" src="${cookbook.recipes[index].image}" id="${cookbook.recipes[index].id}" alt="featured-recipe-image ${cookbook.recipes[index].name}"/>
+
   })
 
 }
