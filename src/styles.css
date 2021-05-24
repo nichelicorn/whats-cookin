@@ -249,9 +249,11 @@ body, main {
     font-size: 12px;
   }
 
-  .header-nav-container {
+  .header-nav-container,
+  .search-input {
     margin: 15px;
   }
+
 
 }
 
