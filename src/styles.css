@@ -57,14 +57,14 @@ body, main {
 }
 
 .search-input {
-  height: 2em;
+  /* height: 2em; */
   padding: 20px;
   margin: 0;
   font-size: 12px;
 }
 
 .search-button {
-  font-size: 16px;
+  /* font-size: 16px; */
   margin: 0;
 }
 
