@@ -12,9 +12,9 @@ body, main {
   border: 1px solid #454851;
 }
 
-/* .hidden {
+.hidden {
 display: none;
-} */
+}
 
 /* 📔 Main Page Styles */
 .header-nav {
@@ -86,12 +86,13 @@ display: none;
   border-radius: 25px;
 }
 
-.featured-recipe-container {
+/* .featured-recipe-container {
   display: flex;
   justify-content: space-between;
   background-image: url("https://images.unsplash.com/photo-1590759668572-8de3b2052908?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80");
   background-size: cover;
   width: 70%;
+<<<<<<< HEAD
   color: white;
 }
 
@@ -102,6 +103,9 @@ display: none;
 .feature-title {
   font-size: 2em;
 }
+=======
+} */
+>>>>>>> main
 
 .welcome-abstract-container {
   width: 30%;
