@@ -136,7 +136,8 @@ body, main {
   flex-direction: column;
 }
 
-.category-header {
+.category-header,
+.recipe-name {
   font-size: 2.5em;
   text-align: center;
   text-shadow: #ffe5d4 1px 0 10px;
@@ -152,6 +153,10 @@ body, main {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   padding: 25px;
+}
+
+.recipe-name {
+  margin: 0;
 }
 
 /* 🗂 Recipe Card Styles */
