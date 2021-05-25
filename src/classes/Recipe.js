@@ -10,7 +10,7 @@ class Recipe {
     this.image = recipe.image
     this.recipeIngredients = recipe.ingredients
     this.instructions = recipe.instructions
-    this.name = recipe.name
+    this.name = recipe.name.toLowerCase();
     this.tags = recipe.tags
     this.ingredientNames = []
   }
