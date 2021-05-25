@@ -276,6 +276,17 @@ body, main {
     margin: 10px;
   }
 
+  .main-content-features {
+    height: 55vw;
+  }
+
+  .recipe-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    padding: 25px;
+  }
+
   .recipe-nav-container {
     flex-flow: wrap;
   }
