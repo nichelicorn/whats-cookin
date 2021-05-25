@@ -314,6 +314,11 @@ body, main {
     width: 85vw;
   }
 
+  .all-recipes-list {
+    display: flex;
+    flex-direction: column;
+  }
+
 }
 
 
