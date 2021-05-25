@@ -27,16 +27,10 @@ let recipePageView = document.getElementById('recipePage');
 let myFavoritesPageView = document.getElementById('myFavoritesPage');
 let mainPageContainer = document.getElementById('mainPageContainer');
 let mainTitle = document.getElementById('mainTitle');
-let category1 = document.getElementById('categoryTitle1');
-let category2 = document.getElementById('categoryTitle2');
-let category3 = document.getElementById('categoryTitle3');
 let addToFavoritesBtn = document.getElementById('addFavoritesBtn');
 let saveForLaterBtn = document.getElementById('cookLaterBtn');
-let addToGroceryBtn = document.getElementById('groceryListBtn');
 let featuredRecipe = document.getElementById('featuredRecipe');
 let welcomeMessage = document.getElementById('welcomeMessage');
-let recipeCardContainer = document.getElementById('recipeContainer');
-// let viewRecipeBtn = document.getElementById('viewRecipeButton');
 let featuredRecipeContainer = document.getElementById('featuredRecipeContainer');
 let recipeDisplayHeader = document.getElementById('recipeDisplayHeader');
 let ingredientsCostHeader = document.getElementById('ingredientsCost');
@@ -49,83 +43,69 @@ let allRecipesContainer = document.getElementById('allRecipesList');
 let searchBar = document.getElementById('searchBar');
 let searchPageView = document.getElementById('searchContainer');
 let searchSubmitBtn = document.getElementById('searchSubmit');
+// let category1 = document.getElementById('categoryTitle1');
+// let category2 = document.getElementById('categoryTitle2');
+// let category3 = document.getElementById('categoryTitle3');
+// let recipeCardContainer = document.getElementById('recipeContainer');
 
 //----------------Global Variables -------------------------//
 let ingredient;
-let usersArray;
-let recipesArray;
-let ingredientsArray;
 let getRandomIndex = Math.floor(Math.random() * recipeData.length)
 let recipe = makeRecipes();
 let user = makeUser();
 let cookbook = makeBook();
 let id;
-
+// let usersArray;
+// let recipesArray;
+// let ingredientsArray;
 
 
 //----------------Event Listeners -------------------------//
-// myFavoritesBtn.addEventListener('click', function() {
-//   location.reload()
-// });
-
-window.onclick = function testID(id) {
-  id = event.target
-  console.log("testtttttt", id)
-};
-
 window.addEventListener('load', onPageLoad);
-
 featuredRecipeContainer.addEventListener('click', identifyRecipe);
-
 viewHomePageBtn.addEventListener('click', goHome);
-
 myFavoritesBtn.addEventListener('click', seeFavorites);
 viewAllRecipesBtn.addEventListener('click', viewAllRecipes);
 allRecipesContainer.addEventListener('click', identifyRecipe);
 searchSubmitBtn.addEventListener('click', function preventEvent(e) {
   e.preventDefault();
 })
-
+searchBar.addEventListener('keydown', function preventEvent(e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+  }
+});
 searchSubmitBtn.addEventListener('click', searchCookbook);
-
-//still need a page to view later
+searchPageView.addEventListener('click', identifyRecipe);
 // recipesToCookBtn.addEventListener('click', viewCookLater);
-
+// window.onclick = function testID(id) {
+//   id = event.target
+//   console.log("testtttttt", id)
+// };
 
 // -------------------Event Handlers -----------------------//
 
-// function testID(id) {
-//   id = event.target.id
-//   console.log(id)
-// }
 function goHome() {
-  console.log(event.target)
-  // event.preventDefault();
   show(mainPageView);
   hide(recipePageView);
   hide(myFavoritesPageView);
   hide(allRecipesView);
-  // hide(recipePageView)
 }
 
 function seeFavorites() {
-  // console.log(event.target.id)
   show(myFavoritesPageView);
   hide(recipePageView);
   hide(mainPageView);
   hide(allRecipesView);
-  // hide(cook later page )
 }
 
 function viewAllRecipes() {
-    show(allRecipesView);
+  show(allRecipesView);
+  hide(myFavoritesPageView);
+  hide(recipePageView);
+  hide(mainPageView);
 
-    hide(myFavoritesPageView);
-    hide(recipePageView);
-    hide(mainPageView);
-
-
-    viewAllRecipesPage()
+  viewAllRecipesPage()
 }
 
 // function viewCookLater() {
@@ -153,8 +133,6 @@ function onPageLoad() {
   makeIngredients();
   greetUser();
   featureRecipe();
-  console.log("book", cookbook)
-  console.log("recipe", recipe)
 }
 
 function makeRecipes() {
@@ -182,7 +160,7 @@ function makeUser() {
   // console.log(userIndex)
   let randomUser = usersData.find(user => user.id === userIndex)
   let aUser = new User(randomUser.name, randomUser.id, randomUser.pantry)
-  // console.log("user", user)
+  // console.log("user", aUser)
   return aUser
 }
 
@@ -227,23 +205,29 @@ function searchCookbook(entry) {
   let result2 = cookbook.filterByName(entry);
   let result3 = cookbook.filterByIngredient(entry);
 
+  let allSearches = [result1, result2, result3]
+
+  searchContainer.innerHTML = ''
+
+
   let tagSearch = result1.forEach(result => {
-    console.log("test1", result.name)
-    return result.name
-    //this is where the innerHTMl content has to go to display on the page.
+    // console.log("test1", result.name)
+
+    return searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
   })
-//THESE MIGHT NEED TO BE IN ANOTHER FUNCTION BECAUSE THEY'RE NOT WORKING YET
-  // let nameSearch = result2.forEach(result => {
-  //   console.log("test2", result.name)
-  //   return result.name
-  //   //this is where the innerHTMl content has to go to display on the page.
-  // })
-  //
-  // let ingredientSearch = result3.forEach(result => {
-  //   console.log("test3", result.name)
-  //   return result.name
-  //   //this is where the innerHTMl content has to go to display on the page.
-  // })
+
+  let nameSearch = result2.forEach(result => {
+    // console.log("test2", result.name)
+    return searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
+  })
+
+  let ingredientSearch = result3.forEach(result => {
+    // console.log("test3", result.name)
+    return searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
+  })
 
 }
 
@@ -306,16 +290,16 @@ function displayRecipeCard(recipe) {
 
 
 function viewAllRecipesPage() {
-// console.log("viewAll", cookbook.recipes)
-allRecipesContainer.innerHTML = '';
+  // console.log("viewAll", cookbook.recipes)
+  allRecipesContainer.innerHTML = '';
 
   cookbook.recipes.forEach((recipe, index) => {
     // console.log("index", index)
     return allRecipesContainer.innerHTML += `
       <p class="recipe-name recipeContainer" id="${cookbook.recipes[index].id}">${index + 1}. ${cookbook.recipes[index].name}</p>
     `
-      //This could be added to get the images on the view.
-          // <img class="${cookbook.recipes[index].name} recipe" src="${cookbook.recipes[index].image}" id="${cookbook.recipes[index].id}" alt="featured-recipe-image ${cookbook.recipes[index].name}"/>
+    //This could be added to get the images on the view, but there is currently not a container to hold the images well.
+    // <img class="${cookbook.recipes[index].name} recipe" src="${cookbook.recipes[index].image}" id="${cookbook.recipes[index].id}" alt="featured-recipe-image ${cookbook.recipes[index].name}"/>
 
   })
 
@@ -352,14 +336,3 @@ allRecipesContainer.innerHTML = '';
 //     })
 //
 //   }
-
-
-//THIS IS TO SEARCH FOR ENTRIES
-// function searchForItem(entry) {
-//    entry = input.value
-//
-//   cookbook.filterByTag(entry);
-//   cookbook.filterByName(entry);
-//   cookbook.filterByIngredient(entry);
-//
-// }
