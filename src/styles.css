@@ -8,9 +8,9 @@ body, main {
   border: 1px solid #454851;
 }
 
-.hidden {
+/* .hidden {
   display: none;
-}
+} */
 
 /* 📔 Main Page Styles */
 .header-nav {
@@ -19,6 +19,15 @@ body, main {
   margin: 15px;
   border-radius: 15px;
   text-align: center;
+}
+
+.main-title {
+  padding: 10px;
+}
+
+.main-title,
+.header-nav-container {
+  margin: 20px;
 }
 
 .header-nav-container,
@@ -30,7 +39,8 @@ body, main {
   font-size: 2em;
 }
 
-.button {
+.button,
+.search-button {
   height: 1em;
   font-size: .5em;
   border: none;
@@ -39,7 +49,7 @@ body, main {
 
 .button:hover,
 .search-button:hover {
-  box-shadow: 5px 5px 40px #aed9e0git;
+  box-shadow: 5px 5px 40px #aed9e0;
   border-radius: 15px;
   text-decoration: underline;
   text-underline-offset: 9px;
@@ -52,8 +62,10 @@ body, main {
 }
 
 .search-input {
-  padding: 20px;
-  margin: 0;
+  width: 35%;
+  height: 3em;
+  margin: 20px 0 20px 20px;
+  border-radius: 15px;
   font-size: 12px;
 }
 
