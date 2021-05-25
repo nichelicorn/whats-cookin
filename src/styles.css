@@ -39,7 +39,6 @@ body, main {
 
 .button:hover,
 .search-button:hover {
-  /* background-color: #aed9e0; */
   box-shadow: 5px 5px 40px #aed9e0git;
   border-radius: 15px;
   text-decoration: underline;
@@ -76,7 +75,6 @@ body, main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* justify-content: center; */
   align-items: center;
   text-align: center;
   margin: 5px;
@@ -86,7 +84,6 @@ body, main {
 
 .featured-recipe-container {
   display: flex;
-  /* justify-content: space-between; */
   width: 63vw;
 }
 
@@ -214,24 +211,13 @@ body, main {
 }
 
 /* 💻 > 📱 Media Queries */
-/* Jumbo Desktop 📺 */
-@media screen and (min-width: 1450px) {
-
-}
-
-/* Desktop 🖥 */
-@media screen and (min-width: 1200px) and (max-width: 1449px) {
-
-}
-
-/* Laptop 💻 */
-@media screen and (min-width: 1024px) and (max-width: 1199px) {
-
-}
-
 /* Tablet 📱 */
 @media screen and (min-width: 540px) and (max-width: 1023px) {
-
+  body,
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* Mobile 📱 */
@@ -252,6 +238,18 @@ body, main {
   }
 
   .main-content-features {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .featured-recipe-container,
+  .welcome-abstract-container {
+    width: 90vw;
+    padding: 0;
+  }
+
+  .recipe-card-container {
+    display: flex;
     flex-direction: column;
   }
 
