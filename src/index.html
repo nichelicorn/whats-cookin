@@ -97,9 +97,6 @@
             </form>
           </section>
         </nav>
-        <section class="search-view-container hidden" id="searchContainer" >
-            <p class="search-view-list" id="searchViewList"></p>
-        </section>
         <section class="recipe-container" id="recipeContainer" >
           <section class="recipe-notes">
             <p class="ingredients-cost category-header" id="ingredientsCost"> Cost: $1.11 </p>
@@ -212,6 +209,26 @@
       </nav>
       <section class="all-recipes-list" id="allRecipesList">
         <p class="category-header" id="allRecipeList"> Recipe Name Here </p>
+      </section>
+    </section>
+    <section class="search-result-page">
+      <h1 class="category-header" id="mainTitle">Search Results</h1>
+      <nav class="recipe-nav">
+        <section class="recipe-nav-container">
+          <button class="add-favorites button" id="addFavoritesBtn" value="change">Favorite This Recipe ❤️ </button>
+          <button class="cook-later button" id="cookLaterBtn" value="change">Cook Me Later! 📌 </button>
+          <button class="my-favorites button" id="myFavoritesBtn" value=""> View My Favorites 💗 </button>
+          <button class="recipes-to-cook button" id="recipesCookLtrBtn"> To Cook This Week 🗓 </button>
+          <button type="button" class="view-all button" id="viewAllButton"> View All Recipes 📔 </button>
+          <button class="home-button button" id="homeViewBtn" name="button">Take me Home 🏠</button>
+          <form class="header-search" action="/action_page.php">
+            <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
+            <button type="submit"><i class="fa fa-search">Submit</i></button>
+          </form>
+        </section>
+      </nav>
+      <section class="search-view-container hidden" id="searchContainer" >
+        <p class="search-view-list" id="searchViewList"></p>
       </section>
     </section>
   </body>
