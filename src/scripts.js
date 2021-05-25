@@ -87,6 +87,7 @@ searchSubmitBtn.addEventListener('click', function preventEvent(e) {
 })
 
 searchSubmitBtn.addEventListener('click', searchCookbook);
+searchPageView.addEventListener('click', identifyRecipe);
 
 //still need a page to view later
 // recipesToCookBtn.addEventListener('click', viewCookLater);
@@ -227,23 +228,29 @@ function searchCookbook(entry) {
   let result2 = cookbook.filterByName(entry);
   let result3 = cookbook.filterByIngredient(entry);
 
+  let allSearches = [result1, result2, result3]
+
+  searchContainer.innerHTML = ''
+
+
   let tagSearch = result1.forEach(result => {
     console.log("test1", result.name)
-    return result.name
-    //this is where the innerHTMl content has to go to display on the page.
+
+    return console.log(searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `)
   })
-//THESE MIGHT NEED TO BE IN ANOTHER FUNCTION BECAUSE THEY'RE NOT WORKING YET
-  // let nameSearch = result2.forEach(result => {
-  //   console.log("test2", result.name)
-  //   return result.name
-  //   //this is where the innerHTMl content has to go to display on the page.
-  // })
-  //
-  // let ingredientSearch = result3.forEach(result => {
-  //   console.log("test3", result.name)
-  //   return result.name
-  //   //this is where the innerHTMl content has to go to display on the page.
-  // })
+
+  let nameSearch = result2.forEach(result => {
+    console.log("test2", result.name)
+    return console.log(searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `)
+  })
+
+  let ingredientSearch = result3.forEach(result => {
+    console.log("test3", result.name)
+    return console.log(searchContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `)
+  })
 
 }
 
