@@ -1,4 +1,3 @@
-// Your fetch requests will live here!
 // const apiCalls =
 
 
@@ -13,7 +12,7 @@
 export const getUsers = () => {
 return fetch('http://localhost:3001/api/v1/users')
 .then(response => response.json())
-// .then(usersData => usersData)
+.then(usersData => {return usersData})
 .catch(err => console.log("Sorry, that user was not found"))
 }
 
@@ -21,16 +20,16 @@ return fetch('http://localhost:3001/api/v1/users')
 export const getRecipes = () => {
 return fetch('http://localhost:3001/api/v1/recipes')
 .then(response => response.json())
-// .then(checkError)
-// .then(recipesData => recipesData)
+.then(recipeData => {
+  return recipeData
+})
 .catch(err => "Sorry, that recipe was not found")
 }
 
 export const getIngredients = () => {
   return fetch('http://localhost:3001/api/v1/ingredients')
   .then(response => response.json())
-  // .then(checkError)
-  // .then(ingredientsData => ingredientsData)
+  .then(ingredientsData => {return ingredientsData})
   .catch(err => "Sorry, that ingredient was not found")
 }
 
