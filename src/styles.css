@@ -39,7 +39,7 @@ body, main {
 
 .button:hover,
 .search-button:hover {
-  background-color: #aed9e0;
+  /* background-color: #aed9e0; */
   box-shadow: 5px 5px 40px #aed9e0git;
   border-radius: 15px;
   text-decoration: underline;
@@ -244,6 +244,9 @@ body, main {
     margin: 15px;
   }
 
+  .main-content-features {
+    flex-direction: column;
+  }
 
 }
 
