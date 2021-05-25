@@ -48,7 +48,8 @@ body, main {
 }
 
 .button:hover,
-.search-button:hover {
+.search-button:hover,
+.feature-image:hover {
   box-shadow: 5px 5px 40px #aed9e0;
   border-radius: 15px;
   text-decoration: underline;
@@ -107,10 +108,8 @@ body, main {
   font-size: 2em;
 }
 
-.recipe,
 .feature-image {
-  height: 20vw;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .welcome-abstract-container {
@@ -195,7 +194,28 @@ body, main {
 }
 
 .recipe-nav {
+  margin: 20px;
   justify-content: space-around;
+}
+
+.recipe-notes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 15em;
+  text-align: center;
+}
+
+.ingredients-cost,
+.recipe-page-image {
+  width: 45vw;
+}
+
+.recipe-page-image {
+  padding: 16px;
+  border-radius: 15px;
+  background-position: center;
+  background-size: cover;
 }
 
 .recipe-details-container {
