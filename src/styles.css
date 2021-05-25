@@ -139,8 +139,8 @@ body, main {
 
 .recipe-card-container {
   display: grid;
-  grid-gap: 30px;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
   padding: 25px;
 }
 
@@ -250,6 +250,10 @@ body, main {
 
   .recipe-card-container {
     display: flex;
+    flex-direction: column;
+  }
+
+  .recipe-nav-container {
     flex-direction: column;
   }
 
