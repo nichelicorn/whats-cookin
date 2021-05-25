@@ -185,9 +185,9 @@ function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
 <section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
-        <p class="${recipe[getRandomIndex].name} recipe title feat-img" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}
-            <img class="${recipe[getRandomIndex].name} recipe" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
-        </p>
+        <p class="${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}</p>
+            <img class="${recipe[getRandomIndex].name} feature-image" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
+
       </section>
 `
 }

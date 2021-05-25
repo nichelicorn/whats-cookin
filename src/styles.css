@@ -97,6 +97,12 @@ body, main {
   font-size: 2em;
 }
 
+.recipe,
+.feature-image {
+  height: 20vw;
+  border-radius: 25px;
+}
+
 .welcome-abstract-container {
   width: 33vw;
   padding: 3vw;
