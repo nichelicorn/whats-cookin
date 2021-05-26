@@ -6,8 +6,8 @@ A cookbook app to view and save recipes
 ✨ Welcome page
 <img width="1440" alt="Screen Shot 2021-05-25 at 8 54 41 PM" src="https://user-images.githubusercontent.com/63027000/119595926-8ee6c100-bd9b-11eb-98e7-b115834022e9.png">
 
-🗂 Recipe Page
-<img width="1440" alt="Screen Shot 2021-05-25 at 8 56 56 PM" src="https://user-images.githubusercontent.com/63027000/119596286-1df3d900-bd9c-11eb-9892-91c70c2c5444.png">
+📱 Mobile View
+<img width="403" alt="Screen Shot 2021-05-26 at 10 21 42 AM" src="https://user-images.githubusercontent.com/63027000/119696333-4f0bf200-be0c-11eb-9365-5c837bf80c37.png">
 
 
 ## Install/Setup instructions
