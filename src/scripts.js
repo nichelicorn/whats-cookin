@@ -41,8 +41,11 @@ let viewAllRecipesBtn = document.getElementById('viewAllButton');
 let allRecipesView = document.getElementById('allRecipesView');
 let allRecipesContainer = document.getElementById('allRecipesList');
 let searchBar = document.getElementById('searchBar');
-let searchPageView = document.getElementById('searchContainer');
+let searchPageContainer = document.getElementById('searchContainer');
 let searchSubmitBtn = document.getElementById('searchSubmit');
+let searchPageView = document.getElementById('searchPageView');
+let recipeImageContainer = document.getElementById('recipeImageContainer');
+
 // let category1 = document.getElementById('categoryTitle1');
 // let category2 = document.getElementById('categoryTitle2');
 // let category3 = document.getElementById('categoryTitle3');
@@ -55,6 +58,7 @@ let recipe = makeRecipes();
 let user = makeUser();
 let cookbook = makeBook();
 let id;
+let entry = searchBar.value
 // let usersArray;
 // let recipesArray;
 // let ingredientsArray;
@@ -76,12 +80,12 @@ searchBar.addEventListener('keydown', function preventEvent(e) {
   }
 });
 searchSubmitBtn.addEventListener('click', searchCookbook);
-searchPageView.addEventListener('click', identifyRecipe);
+searchPageContainer.addEventListener('click', identifyRecipe);
 // recipesToCookBtn.addEventListener('click', viewCookLater);
-// window.onclick = function testID(id) {
-//   id = event.target
-//   console.log("testtttttt", id)
-// };
+window.onclick = function testID(id) {
+  id = event.target
+  console.log("testtttttt", id)
+};
 
 // -------------------Event Handlers -----------------------//
 
@@ -90,6 +94,7 @@ function goHome() {
   hide(recipePageView);
   hide(myFavoritesPageView);
   hide(allRecipesView);
+  hide(searchPageView);
 }
 
 function seeFavorites() {
@@ -97,6 +102,7 @@ function seeFavorites() {
   hide(recipePageView);
   hide(mainPageView);
   hide(allRecipesView);
+  hide(searchPageView);
 }
 
 function viewAllRecipes() {
@@ -104,6 +110,7 @@ function viewAllRecipes() {
   hide(myFavoritesPageView);
   hide(recipePageView);
   hide(mainPageView);
+  hide(searchPageView);
 
   viewAllRecipesPage()
 }
@@ -184,8 +191,8 @@ function greetUser() {
 function featureRecipe() {
   featuredRecipe.innerHTML = '';
   featuredRecipe.innerHTML += `
-<section class="a-featured-recipe ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
-        <p class="${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}</p>
+<section class="a-feature-image ${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">
+        <h2 class="${recipe[getRandomIndex].name}" id="${recipe[getRandomIndex].id}">  ${recipe[getRandomIndex].name}</h2>
             <img class="${recipe[getRandomIndex].name} feature-image" src="${recipe[getRandomIndex].image}" id="${recipe[getRandomIndex].id}" alt="featured-recipe-image ${recipe[getRandomIndex].name}"/>
 
       </section>
@@ -205,28 +212,25 @@ function searchCookbook(entry) {
   let result2 = cookbook.filterByName(entry);
   let result3 = cookbook.filterByIngredient(entry);
 
-  let allSearches = [result1, result2, result3]
-
   searchContainer.innerHTML = ''
-
 
   let tagSearch = result1.forEach(result => {
     // console.log("test1", result.name)
 
-    return searchContainer.innerHTML += `
-      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
+    searchPageContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}">   • • ${result.name}</p> `
   })
 
   let nameSearch = result2.forEach(result => {
     // console.log("test2", result.name)
-    return searchContainer.innerHTML += `
-      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
+    searchPageContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}">   • • ${result.name}</p> `
   })
 
   let ingredientSearch = result3.forEach(result => {
     // console.log("test3", result.name)
-    return searchContainer.innerHTML += `
-      <p class=" search-Container" id="${result.id}"> •${result.name}</p> `
+    searchPageContainer.innerHTML += `
+      <p class=" search-Container" id="${result.id}">   • • ${result.name}</p> `
   })
 
 }
@@ -245,7 +249,7 @@ function identifyRecipe(id) {
 
 
 function displayRecipeCard(recipe) {
-  // console.log("lets see", recipe)
+  console.log("lets see", recipe)
   show(recipePageView);
   hide(mainPageView);
   hide(myFavoritesPageView)
@@ -262,6 +266,12 @@ function displayRecipeCard(recipe) {
 
   ingredientsContainer.innerHTML = '';
   instructionsContainer.innerHTML = '';
+  recipeImageContainer.innerHTML = '';
+
+  recipeImageContainer.innerHTML +=
+    `<img class="recipe-page-image" id="recipeImageContainer" src="${recipe.image}" alt="${recipe.id}-${recipe.name}" >
+
+  `
 
   allIngredients.forEach((ing, index) => {
     return ingredientsContainer.innerHTML +=
@@ -298,8 +308,6 @@ function viewAllRecipesPage() {
     return allRecipesContainer.innerHTML += `
       <p class="recipe-name recipeContainer" id="${cookbook.recipes[index].id}">${index + 1}. ${cookbook.recipes[index].name}</p>
     `
-    //This could be added to get the images on the view, but there is currently not a container to hold the images well.
-    // <img class="${cookbook.recipes[index].name} recipe" src="${cookbook.recipes[index].image}" id="${cookbook.recipes[index].id}" alt="featured-recipe-image ${cookbook.recipes[index].name}"/>
 
   })
 
