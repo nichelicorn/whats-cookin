@@ -1,10 +1,17 @@
 # What's Cookin'?
 A cookbook app to view and save recipes
 
-## See the app in action
+## Dashboard layouts
+
+✨ Welcome page
+<img width="1440" alt="Screen Shot 2021-05-25 at 8 54 41 PM" src="https://user-images.githubusercontent.com/63027000/119595926-8ee6c100-bd9b-11eb-98e7-b115834022e9.png">
+
+🗂 Recipe Page
+<img width="1440" alt="Screen Shot 2021-05-25 at 8 56 56 PM" src="https://user-images.githubusercontent.com/63027000/119596286-1df3d900-bd9c-11eb-9892-91c70c2c5444.png">
+
 
 ## Install/Setup instructions
-* Clone this repo to your machine. You may copy the url by clicking the `⬇ Code` button
+* Clone this repo to your machine. You can copy the url by clicking the `⬇ Code` button and selecting a clone type
 * Once the repo is cloned, `cd` into the directory
 * Run `npm i` or `npm install` to install the required dependencies
 * Run `npm start` and visit `localhost:8080` in your browser to view the page
