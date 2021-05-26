@@ -25,8 +25,12 @@
           <h3 class="featured-recipe" id="featuredRecipe">Featured Recipe</h3>
         </section>
         <section class="welcome-abstract-container" id="welcomeAbstractContainer">
-          <h2 class="welcome-message" id="welcomeMessage">Welcome to What's Cookin', Beverly!</h2>
-          <p>Find recipes to cook using the search feature. Save and search your favorites, and save recipes to cook this week.</p>
+          <h2 class="welcome-message" id="welcomeMessage">Welcome to What's Cookin'!</h2>
+          <p>Find recipes to cook using the search feature.</p>
+          <p>You can search by ingredient, name or tags.</p>
+          <p>Search through our All Recipes section if you aren't sure where to begin.</p>
+          <p>Click on the name of the recipe you want to see to take you to the recipe card, which includes a photo, total recipe cost, ingredients to purhase, and instructions.</p>
+          <p>Save and search your favorites, and save recipes to cook this week.</p>
           <p>Enjoy your new cookbook!</p>
         </section>
       </section>
@@ -81,7 +85,7 @@
     </main>
     <section class="recipe-page hidden" id="recipePage">
       <section class="recipe-view" id="recipeView">
-        <h2 class="category-header" id="recipeDisplayHeader">Pizza Dough</h1>
+        <h2 class="category-header" id="mainTitle">What's Cookin'</h1>
         <nav class="recipe-nav">
           <section class="recipe-nav-container">
             <!-- <h1 class="main-title" id="mainTitle">What's Cookin'</h1> -->
@@ -95,12 +99,14 @@
               <input type="text" placeholder="Search by ingredient, name, or category..." name="search">
               <button type="submit"><i class="fa fa-search" id="searchSubmit">Submit</i></button>
             </form>
+          <!-- <h2 class="category-header" id="recipeDisplayHeader"></h2> -->
           </section>
         </nav>
+        <h2 class="category-header" id="recipeDisplayHeader"></h2>
         <section class="recipe-container" id="recipeContainer" >
           <section class="recipe-notes">
             <p class="ingredients-cost category-header" id="ingredientsCost"> Cost: $1.11 </p>
-            <img src="https://images.unsplash.com/photo-1590759668572-8de3b2052908?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" alt="A ball of dough resting on a floured wood surface" class="recipe-page-image">
+            <p class="recipe-page-image" id="recipeImageContainer"></p>
           </section>
           <section class="recipe-details-container">
             <section class="ingredients-container" id="ingredientsContainer">
@@ -211,7 +217,7 @@
         <p class="category-header" id="allRecipeList"> Recipe Name Here </p>
       </section>
     </section>
-    <section class="search-result-page hidden">
+    <section class="search-result-page hidden" id="searchPageView">
       <h1 class="category-header" id="mainTitle">Search Results</h1>
       <nav class="recipe-nav">
         <section class="recipe-nav-container">
@@ -227,7 +233,8 @@
           </form>
         </section>
       </nav>
-      <section class="search-view-container hidden" id="searchContainer" >
+      <h1 class="search-results-header" id="searchResultsHeader">Here are your results:</h1>
+      <section class="search-view-container" id="searchContainer" >
         <p class="search-view-list" id="searchViewList"></p>
       </section>
     </section>
