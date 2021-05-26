@@ -28,10 +28,10 @@ A cookbook app to view and save recipes
         <td>Nichele D 🦄 <a href="https://github.com/nichelicorn">GitHub</td>
         <td>Lourdes Mendoza 🦄 <a href="https://github.com/mendozalourdes">GitHub</td>
     </tr>
-    </tr>
+    <tr>
         <td><img src="https://avatars.githubusercontent.com/u/63027000?v=4" alt="Nichele D, aka nichelicorn" width="150" height="auto" /></td>
     </tr>
-    </tr>
+    <tr>
         <td><img src="https://avatars.githubusercontent.com/u/78240633?v=4" alt="Lourdes Mendoza, aka mendozalourdes" width="150" height="auto" /></td>
     </tr>
 </table>
